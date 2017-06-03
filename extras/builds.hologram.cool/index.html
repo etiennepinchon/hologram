@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Hologram Builds</title>
+	<link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+	<h1>Hologram Builds</h1>
+	<p>
+		These are builds for <a href="http://hologram.cool">Hologram</a>. Keep in mind that most of these are beta and some of them might be broken.
+	</p>
+	<table>
+		{{#commits}}
+		<tr>
+			<td><a href="https://github.com/etiennepinchon/Hologram/commit/{{hash}}">{{hash}}</a></td>
+			<td>{{date}}</td>
+			<td>{{author}}</td>
+			<td><a href="/{{hash}}/hologram.js">hologram.js</a></td>
+			<td><a href="/{{hash}}/Hologram.zip">download</a></td>
+		</tr>
+		{{/commits}}
+	</table>
+</body>
+</html>
