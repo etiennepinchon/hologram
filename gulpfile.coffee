@@ -1,7 +1,6 @@
 _ 					= require("lodash")
 async 			= require("async")
 gulp 				= require("gulp")
-phantomjs 	= require("gulp-mocha-phantomjs")
 webpack 		= require("webpack")
 rename 			= require("gulp-rename")
 template 		= require("gulp-template")
@@ -9,37 +8,32 @@ gutil 			= require("gulp-util")
 {exec} 			= require("child_process")
 coffeelint 	= require('gulp-coffeelint')
 
-#-------------------------------------------------------------------------------
+#-------------------------------------------------------
 # Base webpack config
 
 WEBPACK =
 	entry: "./hologram/Hologram.coffee"
 	module:
-		loaders: [{test: /\.coffee$/, loader: "coffee-loader"}]
+		loaders: [
+			{test: /\.coffee$/, loader: "coffee-loader"}
+		]
 	resolve:
 		extensions: ["", ".web.coffee", ".web.js", ".coffee", ".js"]
 	devtool: "sourcemap"
 	cache: true
 	quiet: true
 
-#-------------------------------------------------------------------------------
+#-------------------------------------------------------
 # Gulp tasks
 
-gulp.task "watch", ["test"], ->
-	gulp.watch(["./*.coffee", "hologram/**", "test/tests/**", "!Version.coffee"], ["test"])
+gulp.task "vendors", ->
+	importVendors()
 
-gulp.task "test", ["webpack:tests", "lint"], ->
-	return gulp
-		.src("test/phantomjs/index.html")
-		.pipe(phantomjs({
-			reporter: "dot",
-			viewportSize: {width: 1024, height: 768},
-			useColors: true,
-			loadImages: false
-		}))
+gulp.task "watch", ["webpack:debug"], ->
+	gulp.watch(["./*.coffee", "hologram/**", "!Version.coffee"], ["webpack:debug"])
 
 gulp.task 'lint', ->
-	gulp.src(["./hologram/**/*.coffee", "!./hologram/Version.coffee.template", "./test/tests/**", "./test/tests.coffee", "./gulpfile.coffee", "scripts/site.coffee"])
+	gulp.src(["./hologram/**/*.coffee", "!./hologram/Version.coffee.template", "./gulpfile.coffee", "scripts/site_builder.coffee"])
 		.pipe(coffeelint())
 		.pipe(coffeelint.reporter())
 
@@ -64,8 +58,17 @@ gulp.task "version", (callback) ->
 
 		callback(null, task)
 
-################################################################################
+#-------------------------------------------------------
 # Webpack tasks
+
+gulp.task "webpack:debug", ["version"], (callback) ->
+	config = _.extend WEBPACK,
+		debug: true
+		output:
+			filename: "build/hologram.debug.js"
+			sourceMapFilename: "[file].map?hash=[hash]"
+
+	webpackDev("webpack:debug", config, callback)
 
 gulp.task "webpack:release", ["version"], (callback) ->
 
@@ -84,18 +87,25 @@ gulp.task "webpack:release", ["version"], (callback) ->
 
 	webpackDev("webpack:release", config, callback)
 
-gulp.task "webpack:tests", ["webpack:debug"], (callback) ->
+gulp.task 'webpack:dev-server', (callback) ->
 
 	config = _.extend WEBPACK,
-		entry: "./test/tests.coffee"
+		debug: true
 		output:
-			filename: "test/phantomjs/tests.js"
-	debug: true
+			path: __dirname+'/test/default'
+			filename: "test/default/hologram.debug.js"
+			sourceMapFilename: "[file].map?hash=[hash]"
 
-	webpackDev("webpack:tests", config, callback)
+  # Start a webpack-dev-server
+	new webpackDevServer(webpack(_.clone(config)),
+		publicPath: __dirname+'/test/default/'
+		stats: colors: true).listen 8080, 'localhost', (err) ->
+		if err
+		  throw new (gutil.PluginError)('webpack-dev-server', err)
+		log 'webpack-dev-server', 'http://localhost:8080/webpack-dev-server'
+		return
 
-
-################################################################################
+#-------------------------------------------------------
 # Utils
 
 log = (task, args...) ->
@@ -125,3 +135,31 @@ versionInfo = (callback) ->
 			hash: results[1]
 			build: results[2]
 			date: Math.floor(Date.now() / 1000)
+
+importVendors = ->
+	http 					= require 'https'
+	fs 						= require 'fs'
+	replaceStream = require 'replacestream'
+
+	vendors = [
+			name: 'aframe'
+			path: 'https://aframe.io/releases/0.5.0/aframe.min.js'
+		,
+			name: 'aframe_gif_shader'
+			path: 'https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js'
+	]
+	dir = './vendors'
+
+	if not fs.existsSync(dir)
+	    fs.mkdirSync(dir)
+	vendors.map (vendor) ->
+		file_path = dir+"/#{vendor.name}.js"
+		if not fs.existsSync(file_path)
+			log "vendors", gutil.colors.green("Fetching #{vendor.path}")
+			file = fs.createWriteStream(file_path)
+			request = http.get(vendor.path, (response) ->
+				response
+					.pipe(replaceStream('new Image;', 'new _Image;'))
+					.pipe file
+				return
+			)

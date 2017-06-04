@@ -1,11 +1,3 @@
-#
-#  Utils.coffee
-#  Hologram Framework
-#
-#  Created by Etienne Pinchon.
-#  Copyright © 2017 Etienne Pinchon. All rights reserved.
-#
-
 Utils = {}
 
 # Difference between 2 arrays
@@ -191,9 +183,6 @@ Utils.insertCSS = (css) ->
 	Utils.domComplete ->
 		head = document.head or document.getElementsByTagName('head')[0]
 		head.appendChild styleElement
-
-# Load reset CSS
-Utils.domComplete -> Utils.insertCSS(_css_reset)
 
 #-------------------------------------------------------
 # INSPECTOR

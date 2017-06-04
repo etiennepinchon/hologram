@@ -2,7 +2,7 @@
   "name": "hologramjs",
   "version": "0.0.1",
   "description": "Creative WebVR Framework",
-  "main": "lib/Hologram.js",
+  "main": "build/hologram.js",
   "directories": {
     "doc": "docs",
     "test": "test"
@@ -24,7 +24,6 @@
     "eventemitter3": "^1.1.1",
     "gulp": "^3.8.11",
     "gulp-coffeelint": "^0.6.0",
-    "gulp-mocha-phantomjs": "^0.11.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-template": "^4.0.0",
@@ -38,6 +37,7 @@
     "mustache": "^2.0.0",
     "simulate": "^0.0.5",
     "webpack": "^1.7.3",
+    "webpack-append": "^0.1.2",
     "webpack-dev-server": "^1.14.1",
     "webpack-stream": "^3.0.1"
   },
@@ -51,5 +51,11 @@
   "bugs": {
     "url": "https://github.com/etiennepinchon/Hologram/issues"
   },
-  "homepage": "https://hologram.cool"
+  "homepage": "https://hologram.cool",
+  "dependencies": {
+    "eventemitter3": "^1.2.0",
+    "prepend-webpack-plugin": "^1.0.2",
+    "replacestream": "^4.0.2",
+    "webpack-dev-server": "^1.16.5"
+  }
 }

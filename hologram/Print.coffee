@@ -1,13 +1,5 @@
-#
-#  Print.coffee
-#  Hologram Framework
-#
-#  Created by Etienne Pinchon.
-#  Copyright © 2017 Etienne Pinchon. All rights reserved.
-#
-
 print = (args...)->
-	message 	= '» '+args.map((obj) -> Utils.inspect(obj)).join(", ")
+	message 		= '» '+args.map((obj) -> Utils.inspect(obj)).join(", ")
 	sameOrigin 	= undefined
 
 	if App.inWebView()

@@ -1,49 +1,57 @@
-# Configuration
+# Config
 
 BIN = $(CURDIR)/node_modules/.bin
 
-.PHONY: watch test debug release
+.PHONY: bootstrap unbootstrap clean watch build debug lint release
 
-default: lazy_bootstrap lazy_build test
+default: build
 
-# Utilities
+#-------------------------------------------------------
+# Utils
 
 bootstrap:
 	npm install
 
-lazy_bootstrap: ; @test -d ./node_modules || make bootstrap
-
 unbootstrap:
 	rm -Rf node_modules
 
-
-clean:
+clean: clearvendors
 	rm -rf build
 	rm -Rf node_modules
 
+clearvendors: SHELL:=/bin/bash
+clearvendors:
+	bash -c "rm -R ./vendors"
 
-# Building and testing
-build: lazy_bootstrap
+#-------------------------------------------------------
+# Build
+
+vendors: clearvendors
+	$(BIN)/gulp vendors
+
+build: bootstrap vendors
 	$(BIN)/gulp webpack:debug
 
-lazy_build: ; @test -f ./build/hologram.debug.js || make build
-
-test: lazy_build
-	$(BIN)/gulp test
-
-lint: lazy_build
+lint: build
 	$(BIN)/gulp lint
 
-release: lazy_bootstrap
+release: bootstrap vendors
 	$(BIN)/gulp webpack:release
 
-# Distribution
+watch: bootstrap vendors
+		$(BIN)/gulp watch
+
+dev: bootstrap vendors
+	$(BIN)/gulp webpack:dev-server
+
+#-------------------------------------------------------
+# Dist
 
 dist: release
 	scripts/dist.sh
 
-site-build: dist
+predeploy: dist
 	scripts/site_builder.sh
 
-site-upload: bootstrap site-build
+deploy: predeploy
 	$(BIN)/coffee scripts/site_builder.coffee upload
