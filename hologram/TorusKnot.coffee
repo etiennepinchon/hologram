@@ -1,14 +1,15 @@
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
 
 class exports.TorusKnot extends Entity
 
-	_kind 		 	: 'TorusKnot'
-	_elementType 	: 'a-torus-knot'
+	entity :
+		name: "TorusKnot"
+		type: "a-torus-knot"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	@_d 'radius', 			1
-	@_d 'radiusTubular', 	.2
-	@_d 'segmentsRadial', 	0
-	@_d 'segmentsTubular', 	32
+	@define "radius", entityAttribute("radius", "radius", 1)
+	@define "radiusTubular", entityAttribute("radiusTubular", "radius-tubular", .2)
+	@define "segmentsRadial", entityAttribute("segmentsRadial", "segments-radial", 0)
+	@define "segmentsTubular", entityAttribute("segmentsTubular", "segments-tubular", 32)

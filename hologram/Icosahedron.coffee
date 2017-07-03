@@ -1,11 +1,12 @@
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
 
 class exports.Icosahedron extends Entity
 
-	_kind 		 	: 'Icosahedron'
-	_elementType 	: 'a-icosahedron'
+	entity :
+		name: "Icosahedron"
+		type: "a-icosahedron"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	@_d 'radius', 			1
+	@define "radius", entityAttribute("radius", "radius", 1)

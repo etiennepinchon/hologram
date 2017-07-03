@@ -1,15 +1,16 @@
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
 
 class exports.Dodecahedron extends Entity
 
-	_kind 		 	: 'Dodecahedron'
-	_elementType 	: 'a-dodecahedron'
+	entity :
+		name: "Dodecahedron"
+		type: "a-dodecahedron"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	@_d 'radius', 			1
-	@_d 'segmentsHeight', 	18
-	@_d 'segmentsRadial', 	36
-	@_d 'thetaLength',		360
-	@_d 'thetaStart',		0
+	@define "radius", entityAttribute("radius", "radius", 1)
+	@define "segmentsHeight", entityAttribute("segmentsHeight", "segments-height", 18)
+	@define "segmentsRadial", entityAttribute("segmentsRadial", "segments-radial", 36)
+	@define "thetaLength", entityAttribute("thetaLength", "theta-length", 360)
+	@define "thetaStart", entityAttribute("thetaStart", "theta-start", 0)

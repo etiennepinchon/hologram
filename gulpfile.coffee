@@ -2,6 +2,7 @@ _ 					= require("lodash")
 async 			= require("async")
 gulp 				= require("gulp")
 webpack 		= require("webpack")
+webpackDevServer = require "webpack-dev-server"
 rename 			= require("gulp-rename")
 template 		= require("gulp-template")
 gutil 			= require("gulp-util")
@@ -99,7 +100,7 @@ gulp.task 'webpack:dev-server', (callback) ->
   # Start a webpack-dev-server
 	new webpackDevServer(webpack(_.clone(config)),
 		publicPath: __dirname+'/test/default/'
-		stats: colors: true).listen 8080, 'localhost', (err) ->
+		stats: colors: true).listen 8080, '192.168.0.24', (err) ->
 		if err
 		  throw new (gutil.PluginError)('webpack-dev-server', err)
 		log 'webpack-dev-server', 'http://localhost:8080/webpack-dev-server'
@@ -143,10 +144,25 @@ importVendors = ->
 
 	vendors = [
 			name: 'aframe'
-			path: 'https://aframe.io/releases/0.5.0/aframe.min.js'
+			path: 'https://raw.githubusercontent.com/aframevr/aframe/master/dist/aframe-master.min.js'
 		,
 			name: 'aframe_gif_shader'
 			path: 'https://rawgit.com/mayognaise/aframe-gif-shader/master/dist/aframe-gif-shader.min.js'
+		,
+			name: 'aframe_effects'
+			path: 'https://wizgrav.github.io/aframe-effects/dist/aframe-effects.min.js'
+		,
+			name: 'aframe_physics'
+			path: 'https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v1.4.0/dist/aframe-physics-system.min.js'
+		,
+			name: 'aframe_particles'
+			path: 'https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js'
+		,
+			name: 'aframe_look_at'
+			path: 'https://raw.githubusercontent.com/ngokevin/kframe/master/components/look-at/dist/aframe-look-at-component.min.js'
+		,
+			name: 'aframe_mouse_cursor'
+			path: 'https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js'
 	]
 	dir = './vendors'
 
@@ -160,6 +176,7 @@ importVendors = ->
 			request = http.get(vendor.path, (response) ->
 				response
 					.pipe(replaceStream('new Image;', 'new _Image;'))
+					.pipe(replaceStream('console.log(source,material);', '')) # patch for aframe_effects
 					.pipe file
 				return
 			)

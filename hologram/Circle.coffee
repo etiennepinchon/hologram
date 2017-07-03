@@ -1,14 +1,15 @@
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
 
 class exports.Circle extends Entity
 
-	_kind 		 	: 'Circle'
-	_elementType 	: 'a-circle'
+	entity :
+		name: "Circle"
+		type: "a-circle"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	@_d 'radius', 			1
-	@_d 'segments', 		32
-	@_d 'thetaLength', 		360
-	@_d 'thetaStart',		0
+	@define "radius", entityAttribute("radius", "radius", 1)
+	@define "segments", entityAttribute("segments", "segments", 32)
+	@define "thetaLength", entityAttribute("thetaLength", "theta-length", 360)
+	@define "thetaStart", entityAttribute("thetaStart", "theta-start", 0)

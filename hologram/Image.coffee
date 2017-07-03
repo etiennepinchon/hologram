@@ -1,14 +1,15 @@
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
 
 class exports.Image extends Entity
 
-	_kind 		 	: 'Image'
-	_elementType 	: 'a-image'
+	entity :
+		name: "Image"
+		type: "a-image"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	@_d 'width', 			1
-	@_d 'height', 			1
-	@_d 'segmentsWidth', 	1
-	@_d 'segmentsHeight', 	1
+	@define "width", entityAttribute("width", "width", 1)
+	@define "height", entityAttribute("height", "height", 1)
+	@define "segmentsWidth", entityAttribute("segmentsWidth", "segments-width", 1)
+	@define "segmentsHeight", entityAttribute("segmentsHeight", "segments-height", 1)

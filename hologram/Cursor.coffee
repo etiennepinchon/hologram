@@ -2,12 +2,13 @@
 
 class exports.Cursor extends Entity
 
-	_kind 		 	: 'Cursor'
-	_elementType 	: 'a-cursor'
+	entity :
+		name: "Cursor",
+		type: "a-cursor"
 
 	_enabled : false
-	_fuse : false
-	_fuseTimeout : 1.5
+	_fuse : true
+	_fuseTimeout : 0.5
 	_maxDistance : 1000
 	_radiusInner : 0.02
 	_radiusOuter : 0.03

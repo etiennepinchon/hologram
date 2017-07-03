@@ -1,17 +1,18 @@
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
 
 class exports.Sphere extends Entity
 
-	_kind 		 	: 'Sphere'
-	_elementType 	: 'a-sphere'
+	entity :
+		name: "Sphere"
+		type: "a-sphere"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	@_d 'radius', 			1
-	@_d 'segmentsWidth', 	36
-	@_d 'segmentsHeight', 	18
-	@_d 'thetaLength', 		180
-	@_d 'thetaStart', 		0
-	@_d 'phiLength', 		360
-	@_d 'phiStart', 		0
+	@define "radius", entityAttribute("radius", "radius", 1)
+	@define "segmentsWidth", entityAttribute("segmentsWidth", "segments-width", 36)
+	@define "segmentsHeight", entityAttribute("segmentsHeight", "segments-height", 18)
+	@define "thetaLength", entityAttribute("thetaLength", "theta-length", 180)
+	@define "thetaStart", entityAttribute("thetaStart", "theta-start", 0)
+	@define "phiLength", entityAttribute("phiLength", "phi-length", 360)
+	@define "phiStart", entityAttribute("phiStart", "phi-start", 0)

@@ -2,8 +2,10 @@
 
 class exports.GradientSky extends Entity
 
-	_kind 		 	: 'GradientSky'
-	_elementType	: 'a-gradient-sky'
+	entity :
+		name: "GradientSky"
+		type: "a-gradient-sky"
+
 	_colorTop		: '#FFF'
 	_colorBottom	: '#000'
 

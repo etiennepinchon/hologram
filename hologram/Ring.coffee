@@ -1,16 +1,17 @@
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
 
 class exports.Ring extends Entity
 
-	_kind 		 	: 'Ring'
-	_elementType 	: 'a-ring'
+	entity :
+		name: "Ring"
+		type: "a-ring"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	@_d 'radiusInner', 		.8
-	@_d 'radiusOuter', 		1.2
-	@_d 'segmentsPhi', 		10
-	@_d 'segmentsTheta', 	32
-	@_d 'thetaLength', 		360
-	@_d 'thetaStart', 		0
+	@define "radiusInner", entityAttribute("radiusInner", "radius-inner", .8)
+	@define "radiusOuter", entityAttribute("radiusOuter", "radius-outer", 1.2)
+	@define "segmentsPhi", entityAttribute("segmentsPhi", "segments-phi", 10)
+	@define "segmentsTheta", entityAttribute("segmentsTheta", "segments-theta", 32)
+	@define "thetaLength", entityAttribute("thetaLength", "theta-length", 360)
+	@define "thetaStart", entityAttribute("thetaStart", "theta-start", 0)

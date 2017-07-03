@@ -1,16 +1,17 @@
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
 
 class exports.CurvedImage extends Entity
 
-	_kind 		 	: 'CurvedImage'
-	_elementType 	: 'a-curvedimage'
+	entity :
+		name: "CurvedImage",
+		type: "a-curvedimage"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	@_d 'height', 				1
-	@_d 'radius', 				0.8
-	@_d 'segmentsHeight', 		18
-	@_d 'segmentsRadial', 		48
-	@_d 'thetaLength',			270
-	@_d 'thetaStart',			0
+	@define "height", entityAttribute("height", "height", 1)
+	@define "radius", entityAttribute("radius", "radius", .8)
+	@define "segmentsHeight", entityAttribute("segmentsHeight", "segments-height", 18)
+	@define "segmentsRadial", entityAttribute("segmentsRadial", "segments-radial", 48)
+	@define "thetaLength", entityAttribute("thetaLength", "theta-length", 270)
+	@define "thetaStart", entityAttribute("thetaStart", "theta-start", 0)

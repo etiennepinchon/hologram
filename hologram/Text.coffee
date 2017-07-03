@@ -1,28 +1,22 @@
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
 
 class exports.Text extends Entity
 
-	_kind 		 	: 'Text'
-	_color			: '#FFF'
+	entity :
+		name: "Text"
+		type: "a-text"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	@_d 'text',  ""
-	@_d 'width',  null
-	@_d 'height',  null
-	@_d 'align',  'left'
-	@_d 'anchor',  'center'
-	@_d 'baseline',  'center'
-	@_d 'font',  null
-	@_d 'lineHeight',  0
-	@_d 'whitespace',  'normal'
-
-	@define 'zindex',
-		get: ->
-			return 0.001 if not @_zindex
-			@_zindex
-		set: (value)->
-			@_zindex = value
-			@_element.setAttribute 'zOffset', value
-			return
+	@define "text", entityAttribute("text", "value", "")
+	@define "width", entityAttribute("width", "width", null)
+	@define "height", entityAttribute("height", "height", null)
+	@define "align", entityAttribute("align", "align", "left")
+	@define "anchor", entityAttribute("anchor", "anchor", "center")
+	@define "baseline", entityAttribute("baseline", "baseline", "center")
+	@define "font", entityAttribute("font", "font", null)
+	@define "lineHeight", entityAttribute("lineHeight", "line-height", 0)
+	@define "whitespace", entityAttribute("whitespace", "whitespace", "normal")
+	@define "color", entityAttribute("color", "color", "#FFF")
+	@define "zindex", entityAttribute("zindex", "zOffset", 0.001)

@@ -1,26 +1,31 @@
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
 
 class exports.Assets extends Entity
-	_kind 		 : 'Assets'
-	_elementType : 'a-assets'
+	entity :
+		name: "Assets"
+		type: "a-assets"
 
-	@_d 'timeout',  null
+	@define "timeout", entityAttribute("timeout", "timeout", null)
 
 class _AssetItem extends Entity
-	_kind 		 : 'AssetItem'
-	_elementType : 'a-asset-item'
+	entity :
+		name: "AssetItem"
+		type: "a-asset-item"
 
 class _AssetAudio extends Entity
-	_kind 		 : 'AssetAudio'
-	_elementType : 'audio'
+	entity :
+		name: "AssetAudio"
+		type: "audio"
 
 class _AssetImage extends Entity
-	_kind 		 : 'AssetImage'
-	_elementType : 'img'
+	entity :
+		name: "AssetImage"
+		type: "img"
 
 class _AssetVideo extends Entity
-	_kind 		 : 'AssetVideo'
-	_elementType : 'video'
+	entity :
+		name: "AssetVideo"
+		type: "video"
 
 AssetItem = (src) ->
 	asset = new _AssetItem
@@ -45,13 +50,3 @@ AssetVideo = (src) ->
 		src: src
 		parent: Hologram.assets
 	return asset
-
-###
-Hologram.define 'assetsTimeout',
-	get: ->
-		null or @_assetsTimeout
-	set: (value) ->
-		@_assetsTimeout = value
-		@assets.timeout = value
-		return
-###

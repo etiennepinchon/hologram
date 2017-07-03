@@ -1,17 +1,18 @@
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
 
 class exports.VideoSphere extends Entity
 
-	_kind 		 	: 'VideoSphere'
-	_elementType 	: 'a-videosphere'
+	entity :
+		name: "VideoSphere"
+		type: "a-videosphere"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	@_d 'radius', 				5000
-	@_d 'segmentsWidth', 		64
-	@_d 'segmentsHeight', 		64
-	@_d 'crossOrigin', 			'anonymous'
-	@_d 'autoplay', 	no
-	@_d 'loop', 		no
-	@_d 'volume', 		1
+	@define "radius", entityAttribute("radius", "radius", 5000)
+	@define "segmentsWidth", entityAttribute("segmentsWidth", "segments-width", 64)
+	@define "segmentsHeight", entityAttribute("segmentsHeight", "segments-height", 64)
+	@define "crossOrigin", entityAttribute("crossOrigin", "crossOrigin", "anonymous")
+	@define "autoplay", entityAttribute("autoplay", "autoplay", no)
+	@define "loop", entityAttribute("loop", "loop", no)
+	@define "volume", entityAttribute("volume", "volume", 1)

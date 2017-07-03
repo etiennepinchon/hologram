@@ -1,8 +1,10 @@
+Utils = require "./Utils"
+
 print = (args...)->
 	message 		= '» '+args.map((obj) -> Utils.inspect(obj)).join(", ")
 	sameOrigin 	= undefined
 
-	if App.inWebView()
+	if Utils.isEmbed()
 		try
 			sameOrigin = window.parent.location.host is window.location.host
 		catch e

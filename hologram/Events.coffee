@@ -1,3 +1,5 @@
+Events = {}
+
 # Entity
 Events.Load 	       = 'load'
 
@@ -16,7 +18,7 @@ Events.SoundEnd       = 'sound-ended'
 Events.GripDown 			= 'gripdown'
 Events.GripUp         = 'gripup'
 Events.PointUp 			  = 'pointup'
-Event.PointDown 		  = 'pointdown'
+Events.PointDown 		  = 'pointdown'
 Events.ThumbUp 			  = 'thumbup'
 Events.ThumbDown 		  = 'thumbdown'
 Events.PointingStart 	= 'pointingstart'
@@ -25,8 +27,11 @@ Events.PistolStart 		= 'pistolstart'
 Events.PistolEnd 		  = 'pistolend'
 
 # Animation
-Events.AnimationStart 	= 'start'
-Events.AnimationStop 	  = 'stop'
-Events.AnimationEnd 		= 'end'
+Events.AnimationStart 	= 'animationstart'
+Events.AnimationStop 	  = 'animationend'
+Events.AnimationEnd 		= 'animationend'
+
+# Physics
+Events.Collide       = 'collide'
 
 exports.Events = Events

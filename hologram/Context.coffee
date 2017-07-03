@@ -139,9 +139,12 @@ class exports.Context extends BaseClass
 
 	run: (fn) ->
 		if Hologram.scene
-			Hologram.scene.destroy yes
-		Hologram.scene = new Scene()
-		@_element.appendChild Hologram.scene._element
+			for child in Hologram.scene.children
+				child.destroy yes
+		else
+			#Hologram.scene = Hologram.effects = null
+			Hologram.scene = Hologram.effects = new Scene()
+			@_element.appendChild Hologram.scene._element
 
 		# Add asset management system.
 		Hologram.assets = new Assets
@@ -150,6 +153,7 @@ class exports.Context extends BaseClass
 		# Create camera and cursor
 		# Note: cursor is not enabled by default
 		Hologram.camera = new Camera
+			mouseCursor: yes,
 			parent: Hologram.scene
 		Hologram.cursor = new Cursor()
 

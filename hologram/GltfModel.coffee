@@ -1,11 +1,13 @@
 {Entity} = require "./Entity"
+{Events} = require "./Events"
 
 class exports.GltfModel extends Entity
 
-	_kind 		 	: 'GltfModel'
-	_elementType 	: 'a-gltf-model'
+	entity :
+		name: "GltfModel"
+		type: "a-gltf-model"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	onLoad : (callback)-> @on Event.Load, cb
+	onLoad : (cb)-> @on Events.Load, cb

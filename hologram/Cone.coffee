@@ -1,17 +1,18 @@
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
 
 class exports.Cone extends Entity
 
-	_kind 		 	: 'Cone'
-	_elementType 	: 'a-cone'
+	entity :
+		name: "Cone",
+		type: "a-cone"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	@_d 'radiusTop', 		.8
-	@_d 'radiusBottom', 	1
-	@_d 'openEnded', 		no
-	@_d 'segmentsHeight', 	18
-	@_d 'segmentsRadial', 	36
-	@_d 'thetaLength',		360
-	@_d 'thetaStart',		0
+	@define "radiusTop", entityAttribute("radiusTop", "radius-top", .8)
+	@define "radiusBottom", entityAttribute("radiusBottom", "radius-bottom", 1)
+	@define "openEnded", entityAttribute("openEnded", "open-ended", no)
+	@define "segmentsHeight", entityAttribute("segmentsHeight", "segments-height", 18)
+	@define "segmentsRadial", entityAttribute("segmentsRadial", "segments-radial", 36)
+	@define "thetaLength", entityAttribute("thetaLength", "theta-length", 360)
+	@define "thetaStart", entityAttribute("thetaStart", "theta-start", 0)

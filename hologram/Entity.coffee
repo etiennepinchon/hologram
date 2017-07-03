@@ -1,6 +1,29 @@
 Utils = require "./Utils"
-
 {BaseClass} = require "./BaseClass"
+{Events} = require "./Events"
+
+entityAttribute = (name, attributeName, fallback) ->
+	result =
+		default: fallback
+		get: ->
+			return @_properties[name] if @_properties.hasOwnProperty(name)
+			return fallback
+		set: (value) ->
+			if name is "constraint" and Utils.isObject(value)
+				if value.target && Utils.isObject(value.target)
+					value.target = "#Hologram#{value.target.entity.name}-#{value.target.id}"
+			else if name is "lookAt" and Utils.isObject(value)
+				value = "#Hologram#{value.entity.name}-#{value.id}"
+			@_properties[name] = value
+
+			if value is false
+				@_element.removeAttribute attributeName
+				return
+			if Utils.isObject(value)
+				value = AFRAME.utils.styleParser.stringify(value)
+			@_element.setAttribute attributeName, value
+
+exports.entityAttribute = entityAttribute
 
 class exports.Entity extends BaseClass
 	constructor: (options={}) ->
@@ -10,11 +33,12 @@ class exports.Entity extends BaseClass
 
 		super
 
+		@_properties = {}
 		@_children 		 = []
 		@_createElement()
 		@_context.addView @
 
-		if not options.parent && @_kind isnt 'Scene' && @_kind isnt 'Animation' && @_kind isnt 'Cursor'
+		if not options.parent && @entity.name isnt 'Scene' && @entity.name isnt 'Animation' && @entity.name isnt 'Cursor'
 			@parent = Hologram.scene
 		else if options.parent
 			@parent = options.parent
@@ -25,63 +49,43 @@ class exports.Entity extends BaseClass
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	_kind 		 	: 'Entity'
-	_elementType 	: 'a-entity'
+	entity :
+		name: "Entity",
+		type: "a-entity"
 
-	_gif 			: no
-	_oshader 		: undefined
+	@define "position", entityAttribute("position", "position", null)
+	@define "rotation", entityAttribute("rotation", "rotation", null)
+	@define "scale", entityAttribute("scale", "scale", null)
+	@define "geometry",  entityAttribute("geometry", "geometry", null)
+	@define "material",  entityAttribute("material", "material", null)
+	@define "cursor", entityAttribute("cursor", "cursor", null)
+	@define "raycaster",  entityAttribute("raycaster", "raycaster", null)
+	@define "light",  entityAttribute("light", "light", null)
+	@define "sound",  entityAttribute("sound", "sound", null)
+	@define "visible",  entityAttribute("visible", "visible", yes)
+	@define "opacity", entityAttribute("opacity", "opacity", 1)
+	@define "metalness", entityAttribute("metalness", "metalness", 0)
+	@define "repeat", entityAttribute("repeat", "repeat", no)
+	@define "roughness", entityAttribute("roughness", "roughness", .5)
+	@define "shader", entityAttribute("shader", "shader", "standard")
+	@define "side", entityAttribute("side", "side", "front")
+	@define "transparent", entityAttribute("transparent", "transparent", no)
+	@define "wireframe", entityAttribute("wireframe", "wireframe", no)
+	@define "wireframeWidth", entityAttribute("wireframeWidth", "wireframe-width", 2)
+	@define "fog", entityAttribute("fog", "fog", no)
+	@define "color", entityAttribute("color", "color", '#FFF')
+	@define "camera", entityAttribute("camera", "camera", null)
 
-	@_d = (name, value) ->
-		@["_#{name}"] = value
-		@define name,
-			get: -> @["_#{name}"]
-			set: (value) ->
-				@["_#{name}"] = value
-				@_element.setAttribute name.replace(/([A-Z])/g, "-$1").toLowerCase(), value
-				return
+	# Physics
+	@define "static", entityAttribute("static", "static-body", null)
+	@define "dynamic", entityAttribute("dynamic", "dynamic-body", null)
+	@define "constraint", entityAttribute("constraint", "constraint", null)
 
-	# Define and remap
-	@_dr = (name, realName, value) ->
-		@["_#{name}"] = value
-		@define name,
-			get: -> @["_#{name}"]
-			set: (value) ->
-				@["_#{name}"] = value
-				@_element.setAttribute realName.replace(/([A-Z])/g, "-$1").toLowerCase(), value
-				return
+	# Particles
+	@define "particles", entityAttribute("particles", "particle-system", null)
 
-	@_d 'cursor', 		undefined
-	@_d 'raycaster', 	undefined
-	@_d 'geometry', 	undefined
-	@_d 'material', 	undefined
-	@_d 'light', 		undefined
-	@_d 'sound', 		undefined
-	@_d 'visible', 		yes
-
-	@_d 'position', 	undefined
-	@_d 'rotation', 	undefined
-	@_d 'scale', 		undefined
-
-	@_d 'opacity', 				1
-	@_d 'metalness', 			0
-	@_d 'repeat', 				no
-	@_d 'roughness', 			.5
-	@_d 'shader', 				'standard'
-	@_d 'side', 				'front'
-	@_d 'transparent', 			no
-
-	@_d 'wireframe', 			no
-	@_d 'wireframeWidth', 		2
-	@_d 'fog', 					no
-
-	@define 'color',
-		get: ->
-			@_color
-		set: (value) ->
-			value = '#FFF' if not value
-			@_color = value
-			@_element.setAttribute 'color', value
-			return
+	# Look at
+	@define "lookAt", entityAttribute("lookAt", "look-at", null)
 
 	#-------------------------------------------------------
 	# DOM ELEMENTS
@@ -123,40 +127,47 @@ class exports.Entity extends BaseClass
 			@_parent = view
 			return
 
+	@define 'children',
+		enumerable: no
+		exportable: no
+		importable: true
+		get: ->
+			@_children or []
+
 	#-------------------------------------------------------
 	# GIF
 
 	@define 'gif',
 		get: ->
-			@_gif
+			return no if not @_properties["gif"]
+			@_properties["gif"]
 		set: (value)->
-			@_gif = value
+			@_properties["gif"] = value
 			if value
-				if @_shader
-					@_oshader = @_shader
-				@shader = 'gif'
+				if @_properties["shader"]
+					@_properties["oshader"] = @_properties["shader"]
+				@shader = "gif"
 			else
-				if @_oshader
-					@shader = @_oshader
+				if @_properties["oshader"]
+					@shader = @_properties["oshader"]
 			return
 
 	@define 'src',
 		get: ->
-			return undefined if not @_src
-			@_src
+			return null if not @_properties["src"]
+			@_properties["src"]
 		set: (value) ->
-			@_gif = no
+			@_properties["gif"] = null
 			if Utils.isObject value
 				if not value.id
 					return
 				if value._gif
 					@gif = true
-				value = "#Hologram#{value._kind}-#{value.id}"
+				value = "#Hologram#{value.entity.name}-#{value.id}"
 			else if Utils.isString value
-				# enable the gif engine
 				if value.split('.').pop() is "gif"
-					@_gif = true
-			@_src = value
+					@_properties["gif"] = true
+			@_properties["src"] = value
 			@_element.setAttribute 'src', value
 			return
 
@@ -202,10 +213,9 @@ class exports.Entity extends BaseClass
 		@_removeListener(eventName, listener)
 
 	_addListener: (eventName, listener) ->
-		if Utils.domValidEvent(@_element, eventName) or eventName in Utils.values(Gesture)
-			if not @_domEventManager.listeners(eventName).length
-				@_domEventManager.addEventListener eventName, (event) =>
-					@emit(eventName, event)
+		if not @_domEventManager.listeners(eventName).length
+			@_domEventManager.addEventListener eventName, (event) =>
+				@emit(eventName, event)
 
 	_removeListener: (eventName, listener) ->
 		if not @listeners(eventName).length
@@ -218,20 +228,29 @@ class exports.Entity extends BaseClass
 	onClick 				: (cb) ->
 		@on Events.Click, cb
 		return
+
 	onFusing				: (cb) ->
 		@on Events.Fusing, cb
 		return
+
 	onMouseUp 				: (cb) ->
 		@on Events.MouseUp, cb
 		return
+
 	onMouseDown 			: (cb) ->
 		@on Events.MouseDown, cb
 		return
+
 	onMouseIn				: (cb) ->
 		@on Events.MouseIn, cb
 		return
+
 	onMouseOut	 			: (cb) ->
 		@on Events.MouseOut, cb
+		return
+
+	onCollide	 			: (cb) ->
+		@on Events.Collide, cb
 		return
 
 	#-------------------------------------------------------
@@ -239,7 +258,11 @@ class exports.Entity extends BaseClass
 
 	destroy : (descendance) ->
 		@parent._children = Utils.without(@parent._children, @) if @parent
-		@_element.parentNode?.removeChild @_element
+		try
+		  @_element.parentNode?.removeChild @_element
+		catch error
+
+
 		@removeAllListeners()
 		@_context.removeView(@)
 		if descendance
@@ -248,13 +271,13 @@ class exports.Entity extends BaseClass
 		return
 
 	_createElement: ->
-		@_element = document.createElement(@_elementType)
-		@_element.setAttribute 'id', "Hologram#{@_kind}-#{@id}"
-		@_element.instance       = @
+		@_element = document.createElement(@entity.type)
+		@_element.setAttribute 'id', "Hologram#{@entity.name}-#{@id}"
+		@_element.instance = @
 		return
 
 	#-------------------------------------------------------
 	# INSPECTOR
 
 	toInspect: ->
-		return "<#{@_kind} id:#{@id} (#{round(@x)},#{round(@y)})>"
+		return "<#{@entity.name} id:#{@id} (#{round(@x)},#{round(@y)})>"

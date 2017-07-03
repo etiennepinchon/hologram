@@ -1,9 +1,13 @@
 {Entity} = require "./Entity"
+{Events} = require "./Events"
 
 class exports.HandControls extends Entity
 
-	_kind 		 	: 'HandControls'
-	type 			: undefined
+	entity :
+		name: "HandControls"
+		type: "a-entity"
+
+	type 			: null
 
 	constructor: (hand) ->
 		super
@@ -11,27 +15,13 @@ class exports.HandControls extends Entity
 			@type = hand
 			@_element.setAttribute 'hand-controls', hand
 
-	onGripDown 		: (callback)-> @on Event.GripDown, cb
-	onGripUp 		: (callback)-> @on Event.GripUp, cb
-	onPointUp 		: (callback)-> @on Event.PointUp, cb
-	onPointDown 	: (callback)-> @on Event.PointDown, cb
-	onThumbUp 		: (callback)-> @on Event.ThumbUp, cb
-	onThumbDown 	: (callback)-> @on Event.ThumbDown, cb
-	onPointingStart : (callback)-> @on Event.PointingStart, cb
-	onPointingEnd 	: (callback)-> @on Event.PointingEnd, cb
-	onPistolStart 	: (callback)-> @on Event.PistolStart, cb
-	onPistolEnd 	: (callback)-> @on Event.PistolEnd, cb
-
-###
-Hologram.define 'leftHand',
-	get: ->
-		if not @_leftHand
-			@_leftHand = new HandControls('left')
-		return @_leftHand
-
-Hologram.define 'rightHand',
-	get: ->
-		if not @_rightHand
-			@_rightHand = new HandControls('right')
-		return @_rightHand
-###
+	onGripDown 		: (callback)-> @on Events.GripDown, cb
+	onGripUp 		: (callback)-> @on Events.GripUp, cb
+	onPointUp 		: (callback)-> @on Events.PointUp, cb
+	onPointDown 	: (callback)-> @on Events.PointDown, cb
+	onThumbUp 		: (callback)-> @on Events.ThumbUp, cb
+	onThumbDown 	: (callback)-> @on Events.ThumbDown, cb
+	onPointingStart : (callback)-> @on Events.PointingStart, cb
+	onPointingEnd 	: (callback)-> @on Events.PointingEnd, cb
+	onPistolStart 	: (callback)-> @on Events.PistolStart, cb
+	onPistolEnd 	: (callback)-> @on Events.PistolEnd, cb

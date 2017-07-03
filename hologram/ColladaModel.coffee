@@ -1,11 +1,13 @@
 {Entity} = require "./Entity"
+{Events} = require "./Events"
 
 class exports.ColladaModel extends Entity
 
-	_kind 		 	: 'ColladaModel'
-	_elementType 	: 'a-collada-model'
+	entity :
+		name: "ColladaModel"
+		type: "a-collada-model"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	onLoad : (callback)-> @on Event.Load, cb
+	onLoad : (cb)-> @on Events.Load, cb

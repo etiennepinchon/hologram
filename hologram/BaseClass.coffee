@@ -3,18 +3,20 @@ Utils = require "./Utils"
 
 class exports.BaseClass extends EventEmitter
 
-	_kind : 'BaseClass'
+	entity :
+		name: "BaseClass"
+		type: "div"
 
 	constructor: (options={}) ->
-		@_id 								= Utils.randomID()
-		@__options 							= options
-		@_context 							= Hologram.CurrentContext
+		@_id = Utils.randomID()
+		@__options = options
+		@_context = Hologram.CurrentContext
 		@['_DefinedPropertiesValuesKey'] 	= {}
 
 	######################################################
 
 	toInspect: =>
-		"<#{@_kind} id:#{@id or null}>"
+		"<#{@entity.name} id:#{@id or null}>"
 
 	######################################################
 
@@ -25,7 +27,7 @@ class exports.BaseClass extends EventEmitter
 				throw Error("woops #{propertyName} #{descriptor[i]}") if not Utils.isBoolean(descriptor[i])
 
 		# See if we need to add this property to the internal properties class
-		if @ isnt Element
+		if @ isnt BaseClass
 			descriptor.propertyName = propertyName
 
 			# Have the following flags set to true when undefined:
@@ -111,7 +113,6 @@ class exports.BaseClass extends EventEmitter
 			Utils.pick(@, keys)
 
 		set: (value) ->
-
 			# If the value is array:
 			#	first arg: default value
 			#	second arg: user properties
@@ -126,13 +127,4 @@ class exports.BaseClass extends EventEmitter
 			action = null
 			propertyList = @_propertyList()
 			for k,v of value
-
-				# We want to execute the do action at the end of the props
-				if k is 'do'
-					action = v
-				else
-					# We only apply properties that we know and are marked to be
-					# importable.
-					@[k] = v if propertyList[k]?.importable
-			if action
-				@do = action
+				@[k] = v if propertyList[k]?.importable

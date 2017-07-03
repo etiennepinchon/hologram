@@ -1,17 +1,17 @@
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
 
 class exports.Box extends Entity
 
-	_kind 		 	: 'Box'
-	_elementType 	: 'a-box'
+	entity :
+		name: "Box",
+		type: "a-box"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	@_d 'width', 				1
-	@_d 'height', 				1
-	@_d 'depth', 				1
-
-	@_d 'segmentsWidth', 		1
-	@_d 'segmentsHeight', 		1
-	@_d 'segmentsDepth',		1
+	@define "width", entityAttribute("width", "width", 1)
+	@define "height", entityAttribute("height", "height", 1)
+	@define "depth", entityAttribute("depth", "depth", 1)
+	@define "segmentsWidth", entityAttribute("segmentsWidth", "segments-width", 1)
+	@define "segmentsHeight", entityAttribute("segmentsHeight", "segments-height", 1)
+	@define "segmentsDepth", entityAttribute("segmentsDepth", "segments-depth", 1)

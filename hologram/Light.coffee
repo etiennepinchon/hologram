@@ -1,34 +1,24 @@
 Utils    = require "./Utils"
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
 
-class exports.Light extends Entity
+class Light extends Entity
 
-	_kind 		 	: 'Light'
-	_elementType 	: 'a-light'
+	entity :
+		name: "Light"
+		type: "a-light"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	@_d 'angle', 		60
-	@_d 'decay', 		1
-	@_d 'distance', 	0
-	@_d 'intensity', 	1
-	@_d 'penumbra', 	0
-	@_d 'type', 		'directional'
+	@define "angle", entityAttribute("angle", "angle", 60)
+	@define "decay", entityAttribute("decay", "decay", 1)
+	@define "distance", entityAttribute("distance", "distance", 0)
+	@define "intensity", entityAttribute("intensity", "intensity", 1)
+	@define "penumbra", entityAttribute("penumbra", "penumbra", 0)
+	@define "type", entityAttribute("type", "type", "directional")
 
 	# Only works for Hemisphere light
-	@define 'groundColor',
-		get: ->
-			@_groundColor
-		set: (value) ->
-			value = '#FFF'  if not value
-			value = Color.toColor(value)
-			if value and value.color
-				@_groundColor = value.color
-			else
-				@_groundColor = value
-			@_element.setAttribute 'ground-color', value
-			return
+	@define "groundColor", entityAttribute("groundColor", "ground-color", "#FFF")
 
 	@define 'target',
 		get: ->
@@ -44,3 +34,9 @@ class exports.Light extends Entity
 				target = "#Hologram#{target._kind}-#{target.id}"
 			@_element.setAttribute 'target', target
 			return
+
+keywords = ["ambient", "directional", "hemisphere", "point", "spot"]
+for item in keywords
+	Light[item] = item
+
+module.exports = Light

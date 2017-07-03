@@ -62,19 +62,19 @@ Utils.keys = (object) ->
 	return Object.keys(object)
 
 Utils.reset = ->
-	Hologram._currentContext.reset() if Hologram._currentContext != undefined
+	Hologram.CurrentContext.reset() if Hologram.CurrentContext != undefined
 
 #-------------------------------------------------------
 # INTERVAL/DELAY
 
-Delay = (time, f) ->
+Utils.delay = (time, f) ->
 	timer = setTimeout(f, time * 1000)
-	Hologram._currentContext.addTimer(timer)
+	Hologram.CurrentContext.addTimer(timer)
 	return timer
 
-Interval = (time, f) ->
+Utils.interval = (time, f) ->
 	timer = setInterval(f, time * 1000)
-	Hologram._currentContext.addInterval(timer)
+	Hologram.CurrentContext.addInterval(timer)
 	return {
 		stop : ->
 			clearInterval(timer)
@@ -154,11 +154,6 @@ Utils.domCompleteCancel = (f) ->
 	__domComplete = Utils.without(__domComplete, f)
 	return
 
-Utils.domValidEvent = (element, eventName) ->
-	return if not eventName
-	return true if eventName in ["touchstart", "touchmove", "touchend"]
-	return typeof(element["on#{eventName.toLowerCase()}"]) isnt "undefined"
-
 Utils.loadScript = (url, callback) ->
 	# TODO improve this, maybe
 	script = document.createElement "script"
@@ -183,6 +178,14 @@ Utils.insertCSS = (css) ->
 	Utils.domComplete ->
 		head = document.head or document.getElementsByTagName('head')[0]
 		head.appendChild styleElement
+
+# Determine whether the view is embed in a iframe or not
+Utils.isEmbed = ->
+		try
+			return window.self isnt window.top
+		catch e
+			true
+		return
 
 #-------------------------------------------------------
 # INSPECTOR

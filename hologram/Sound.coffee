@@ -1,25 +1,30 @@
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
+{Events} = require "./Events"
 
 class exports.Sound extends Entity
 
-	_kind 		 	: 'Sound'
-	_elementType 	: 'a-sound'
+	entity :
+		name: "Sound"
+		type: "a-sound"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	@_d 'autoplay', 	no
-	@_d 'loop', 		no
-	@_d 'volume', 		1
+	@define "autoplay", entityAttribute("autoplay", "autoplay", no)
+	@define "loop", entityAttribute("loop", "loop", no)
+	@define "volume", entityAttribute("volume", "volume", 1)
 
 	@play = ->
 		@_element.components.sound.playSound()
+		return
 
 	@pause = ->
 		@_element.components.sound.pauseSound()
+		return
 
 	@stop = ->
 		@_element.components.sound.stopSound()
+		return
 
 	#-------------------------------------------------------
 	# METHODS

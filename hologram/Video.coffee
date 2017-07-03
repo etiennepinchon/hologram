@@ -1,15 +1,16 @@
-{Entity} = require "./Entity"
+{entityAttribute, Entity} = require "./Entity"
 
 class exports.Video extends Entity
 
-	_kind 		 	: 'Video'
-	_elementType 	: 'a-video'
+	entity :
+		name: "Video"
+		type: "a-video"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	@_d 'width', 		3
-	@_d 'height', 		1.75
-	@_d 'autoplay', 	no
-	@_d 'loop', 		no
-	@_d 'volume', 		1
+	@define "width", entityAttribute("width", "width", 3)
+	@define "height", entityAttribute("height", "height", 1.75)
+	@define "autoplay", entityAttribute("autoplay", "autoplay", no)
+	@define "loop", entityAttribute("loop", "loop", no)
+	@define "volume", entityAttribute("volume", "volume", 1)
