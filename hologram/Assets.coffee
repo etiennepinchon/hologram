@@ -12,6 +12,11 @@ class _AssetItem extends Entity
 		name: "AssetItem"
 		type: "a-asset-item"
 
+class _AssetModel extends Entity
+	entity :
+		name: "AssetModel"
+		type: "a-asset-item"
+
 class _AssetAudio extends Entity
 	entity :
 		name: "AssetAudio"
@@ -29,6 +34,12 @@ class _AssetVideo extends Entity
 
 AssetItem = (src) ->
 	asset = new _AssetItem
+		src: src
+		parent: Hologram.assets
+	return asset
+
+AssetModel = (src) ->
+	asset = new _AssetModel
 		src: src
 		parent: Hologram.assets
 	return asset

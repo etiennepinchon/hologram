@@ -7,8 +7,8 @@ Games and rich 3D experiences traditionally preload their assets, such as models
 Assets include:
 
 *
-		AssetItem
-	Miscellaneous assets such as 3D models and materials
+		AssetModel, AssetItem
+	3D models, textures
 *
 		AssetAudio
 	Sound files
@@ -24,7 +24,7 @@ Note: The scene won’t render or initialize until the browser fetches (or error
 	myCat = AssetImage 'assets/cat.jpg'
 	mySong = AssetAudio 'assets/song.mp3'
 	myVideo = AssetVideo 'assets/coolMovie.mp4'
-	myObject = AssetItem 'assets/object.obj'
+	myObject = AssetModel 'assets/object.obj'
 	myTexture = AssetItem 'assets/object.mlt'
 	myVideo = AssetVideo 'assets/coolMovie.mp4'
 

@@ -123,3 +123,12 @@ Defines the intensity of the light. Default is 1.0.
 
 	myLight = new Light
 		intensity: 2.0
+
+
+#### [light.castShadow](#light-castShadow) *<float>*
+
+Whether this light casts shadows on the scene. Default is false.
+Note that shadows are supported by Point, Spot and Directional lights.
+
+	myLight = new Light
+		castShadow: yes

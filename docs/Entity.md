@@ -147,6 +147,8 @@ Whether to render an entity. If true the entity will be rendered and visible. De
 		text: "Hello, World!"
 		visible: no
 
+-------------------------------------------------------
+
 #### [entity.lookAt](#entity-lookat) *<entity>*
 
 Tell an entity to face towards another entity or position.
@@ -158,6 +160,59 @@ Tell an entity to face towards another entity or position.
 	myOtherBox = new Box
 		lookAt: myBox
 
+-------------------------------------------------------
+
+#### [entity.link](#entity-link) *<entity>*
+
+Add an hyperlink to your entity.
+
+	myBox = new Box
+		link:
+			href: "index.html"
+			title: "My Homepage"
+			image: "assets/homeThumbnail.png"
+			visualAspectEnabled: no
+		position: "3 0 3"
+
+##### Values:
+
+*
+		color
+	Background color of the portal. Default #FFF
+*
+		highlighted
+	Boolean to toggle link highlight color.	Default is false.
+*
+		highlightedColor
+	Border color when highlighted. Default is #24CAFF
+
+*
+		href
+	Destiantion URL where the link points to.
+*
+		image
+	360° image used as scene preview in the portal.
+*
+		peekMode
+	Whether the 360° image is fully expanded for preview. Default is false.
+*
+		title
+	Text displayed on the link. The href or page URL is used if not defined.
+*
+		visualAspectEnabled
+	Whether to enable the default visual appearance of a portal. Set to false if we want to implement our own pattern or form of link traversal. Default is true.
+
+-------------------------------------------------------
+
+#### [entity.shadow](#entity-shadow) *<entity>*
+
+Enable shadows to your entity.
+
+	myBox = new Box
+		shadow: yes
+		position: "3 0 3"
+
+-------------------------------------------------------
 
 ### [Events](#entity-events)
 
@@ -170,6 +225,8 @@ Emitted on both cursor and intersected entity if a currently intersected entity 
 	myBox.onClick ->
 		print "clicked!"
 
+-------------------------------------------------------
+
 #### [entity.onFusing(*callback*)](#entity-onfusing)
 
 Emitted on both cursor and intersected entity when fuse-based cursor starts counting down.
@@ -178,6 +235,8 @@ Emitted on both cursor and intersected entity when fuse-based cursor starts coun
 		color: Color.lavender
 	myBox.onFusing ->
 		print "fuse!"
+
+-------------------------------------------------------
 
 #### [entity.onMouseDown(*callback*)](#entity-onmousedown)
 
@@ -188,6 +247,8 @@ Emitted on both cursor and intersected entity (if any) on mousedown on the canva
 	myBox.onMouseDown ->
 		print "mouse down on me!"
 
+-------------------------------------------------------
+
 #### [entity.onMouseUp(*callback*)](#entity-onmouseup)
 
 Emitted on both cursor and intersected entity (if any) on mouseup on the canvas element.
@@ -196,6 +257,8 @@ Emitted on both cursor and intersected entity (if any) on mouseup on the canvas 
 		color: Color.turquoise
 	myBox.onMouseUp ->
 		print "mouse up!"
+
+-------------------------------------------------------
 
 #### [entity.onMouseIn(*callback*)](#entity-onmousein)
 
@@ -206,6 +269,8 @@ Emitted on both cursor and intersected entity (if any) when cursor intersects wi
 	myBox.onMouseUp ->
 		print "mouse in!"
 
+-------------------------------------------------------
+
 #### [entity.onMouseOut(*callback*)](#entity-onmouseout)
 
 Emitted on both cursor and intersected entity (if any) when cursor no longer intersects with previously intersected entity.
@@ -214,6 +279,8 @@ Emitted on both cursor and intersected entity (if any) when cursor no longer int
 		color: Color.silver
 	myBox.onMouseOut ->
 		print "mouse out!"
+
+-------------------------------------------------------
 
 #### [entity.onCollide(*callback*)](#entity-onCollide)
 

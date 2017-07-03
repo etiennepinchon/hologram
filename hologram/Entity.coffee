@@ -9,14 +9,16 @@ entityAttribute = (name, attributeName, fallback) ->
 			return @_properties[name] if @_properties.hasOwnProperty(name)
 			return fallback
 		set: (value) ->
-			if name is "constraint" and Utils.isObject(value)
+			if name is "shadow"
+				value = "receive: #{value}"
+			else if name is "constraint" and Utils.isObject(value)
 				if value.target && Utils.isObject(value.target)
 					value.target = "#Hologram#{value.target.entity.name}-#{value.target.id}"
 			else if name is "lookAt" and Utils.isObject(value)
 				value = "#Hologram#{value.entity.name}-#{value.id}"
 			@_properties[name] = value
 
-			if value is false
+			if value is null
 				@_element.removeAttribute attributeName
 				return
 			if Utils.isObject(value)
@@ -86,6 +88,9 @@ class exports.Entity extends BaseClass
 
 	# Look at
 	@define "lookAt", entityAttribute("lookAt", "look-at", null)
+
+	# Link
+	@define "link", entityAttribute("link", "link", null)
 
 	#-------------------------------------------------------
 	# DOM ELEMENTS
@@ -261,7 +266,6 @@ class exports.Entity extends BaseClass
 		try
 		  @_element.parentNode?.removeChild @_element
 		catch error
-
 
 		@removeAllListeners()
 		@_context.removeView(@)

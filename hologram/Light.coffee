@@ -16,6 +16,7 @@ class Light extends Entity
 	@define "intensity", entityAttribute("intensity", "intensity", 1)
 	@define "penumbra", entityAttribute("penumbra", "penumbra", 0)
 	@define "type", entityAttribute("type", "type", "directional")
+	@define "castShadow", entityAttribute("castShadow", "castShadow", no)
 
 	# Only works for Hemisphere light
 	@define "groundColor", entityAttribute("groundColor", "ground-color", "#FFF")

@@ -153,10 +153,10 @@ importVendors = ->
 			path: 'https://wizgrav.github.io/aframe-effects/dist/aframe-effects.min.js'
 		,
 			name: 'aframe_physics'
-			path: 'https://cdn.rawgit.com/donmccurdy/aframe-physics-system/v1.4.0/dist/aframe-physics-system.min.js'
+			path: 'https://raw.githubusercontent.com/donmccurdy/aframe-physics-system/master/dist/aframe-physics-system.min.js'
 		,
 			name: 'aframe_particles'
-			path: 'https://unpkg.com/aframe-particle-system-component@1.0.9/dist/aframe-particle-system-component.min.js'
+			path: 'https://raw.githubusercontent.com/IdeaSpaceVR/aframe-particle-system-component/master/dist/aframe-particle-system-component.min.js'
 		,
 			name: 'aframe_look_at'
 			path: 'https://raw.githubusercontent.com/ngokevin/kframe/master/components/look-at/dist/aframe-look-at-component.min.js'
