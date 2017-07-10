@@ -10,7 +10,7 @@ The sphere geometry creates spheres (e.g., balls).
 
 -------------------------------------------------------
 
-#### [sphere.color](#sphere-color) *<color>*
+#### [sphere.color](#sphere-color) *color*
 
 Defines the color of the sphere. Default is white.
 
@@ -19,7 +19,7 @@ Defines the color of the sphere. Default is white.
 
 -------------------------------------------------------
 
-#### [sphere.radius](#sphere-radius) *<integer>*
+#### [sphere.radius](#sphere-radius) *integer*
 
 Defines the radius of the sphere. Default is 1.
 
@@ -29,7 +29,7 @@ Defines the radius of the sphere. Default is 1.
 
 -------------------------------------------------------
 
-#### [sphere.src](#sphere-src) *<string/AssetImage>*
+#### [sphere.src](#sphere-src) *string/AssetImage*
 
 Defines the material used when rendering the sphere.
 
@@ -38,7 +38,7 @@ Defines the material used when rendering the sphere.
 
 -------------------------------------------------------
 
-### [sphere.transparency](#sphere-transparency) *<boolean>*
+#### [sphere.transparency](#sphere-transparency) *boolean*
 
 Set the transparency of the sphere. Default is no.
 
@@ -47,7 +47,7 @@ Set the transparency of the sphere. Default is no.
 
 -------------------------------------------------------
 
-### [sphere.opacity](#sphere-opacity) *<float>*
+#### [sphere.opacity](#sphere-opacity) *float*
 
 Set the opacity of the sphere. Default is 1.
 
@@ -57,7 +57,7 @@ Set the opacity of the sphere. Default is 1.
 
 -------------------------------------------------------
 
-#### [sphere.metalness](#sphere-metalness) *<float>*
+#### [sphere.metalness](#sphere-metalness) *float*
 
 Set the metalness aspect of the sphere. Default is 0.
 
@@ -67,7 +67,7 @@ Set the metalness aspect of the sphere. Default is 0.
 
 -------------------------------------------------------
 
-#### [sphere.repeat](#sphere-repeat) *<string>*
+#### [sphere.repeat](#sphere-repeat) *string*
 
 Define how many times the texture should be repeated on the sphere on the x and y axies. Default is None.
 
@@ -77,7 +77,7 @@ Define how many times the texture should be repeated on the sphere on the x and 
 
 -------------------------------------------------------
 
-#### [sphere.roughness](#sphere-roughness) *<float>*
+#### [sphere.roughness](#sphere-roughness) *float*
 
 Define the roughness aspect of the sphere. Default is 0.5.
 
@@ -87,7 +87,7 @@ Define the roughness aspect of the sphere. Default is 0.5.
 
 -------------------------------------------------------
 
-#### [sphere.shader](#sphere-shader) *<shader type>*
+#### [sphere.shader](#sphere-shader) *shader*
 
 Define the shader to use to render the sphere on the scene. Default is standard.
 
@@ -96,7 +96,7 @@ Define the shader to use to render the sphere on the scene. Default is standard.
 
 -------------------------------------------------------
 
-#### [sphere.side](#sphere-side) *<string>*
+#### [sphere.side](#sphere-side) *string*
 
 Defines which of the face sides will be rendered. Default is front, can be either front, back or both.
 
@@ -106,7 +106,7 @@ Defines which of the face sides will be rendered. Default is front, can be eithe
 
 -------------------------------------------------------
 
-#### [sphere.segmentsWidth](#sphere-segmentswidth) *<integer>*
+#### [sphere.segmentsWidth](#sphere-segmentswidth) *integer*
 
 Defines the segements width to use when rendering the sphere. Default is 18.
 
@@ -116,7 +116,7 @@ Defines the segements width to use when rendering the sphere. Default is 18.
 
 -------------------------------------------------------
 
-#### [sphere.segmentsHeight](#sphere-segmentsheight) *<integer>*
+#### [sphere.segmentsHeight](#sphere-segmentsheight) *integer*
 
 Defines the segements height to use when rendering the sphere. Default is 36.
 
@@ -126,7 +126,7 @@ Defines the segements height to use when rendering the sphere. Default is 36.
 
 -------------------------------------------------------
 
-#### [sphere.thetaLength](#sphere-thetalength) *<integer>*
+#### [sphere.thetaLength](#sphere-thetalength) *integer*
 
 Defines the theta length of the sphere. Default is 180.
 
@@ -137,7 +137,7 @@ Defines the theta length of the sphere. Default is 180.
 
 -------------------------------------------------------
 
-#### [sphere.thetaStart](#sphere-thetastart) *<integer>*
+#### [sphere.thetaStart](#sphere-thetastart) *integer*
 
 Defines the theta start value of the sphere. Default is 0.
 
@@ -149,7 +149,7 @@ Defines the theta start value of the sphere. Default is 0.
 
 -------------------------------------------------------
 
-#### [sphere.phiLength](#sphere-philength) *<integer>*
+#### [sphere.phiLength](#sphere-philength) *integer*
 
 Defines the phi length of the sphere. Default is 360.
 
@@ -160,7 +160,7 @@ Defines the phi length of the sphere. Default is 360.
 
 -------------------------------------------------------
 
-#### [sphere.phiStart](#sphere-phistart) *<integer>*
+#### [sphere.phiStart](#sphere-phistart) *integer*
 
 Defines the phi start value of the sphere. Default is 0.
 
@@ -172,7 +172,7 @@ Defines the phi start value of the sphere. Default is 0.
 
 -------------------------------------------------------
 
-#### [sphere.wireframe](#sphere-wireframe) *<boolean>*
+#### [sphere.wireframe](#sphere-wireframe) *boolean*
 
 Render the sphere wireframe only. Default is false.
 
@@ -181,7 +181,7 @@ Render the sphere wireframe only. Default is false.
 
 -------------------------------------------------------
 
-#### [sphere.wireframeWidth](#sphere-wireframewidth) *<integer>*
+#### [sphere.wireframeWidth](#sphere-wireframewidth) *integer*
 
 Wireframe width. Default is 2.
 
@@ -191,7 +191,7 @@ Wireframe width. Default is 2.
 
 -------------------------------------------------------
 
-#### [sphere.fog](#sphere-fog) *<boolean>*
+#### [sphere.fog](#sphere-fog) *boolean*
 
 React to the scene fog. Default is true.
 

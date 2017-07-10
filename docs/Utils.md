@@ -11,12 +11,9 @@ Hologram utility modules to help you create cool stuff faster!
 Rounds a number.
 
 ##### Arguments
-*
-		value
-	A floating point number.
-*
-		decimals
-	The amount which appear after the decimal point. (Optional)
+
+* `value - A floating point number.`
+* `decimals - The amount which appear after the decimal point. (Optional)`
 
 
 	print Utils.round(100.12345, 0)
@@ -44,12 +41,9 @@ Returns a random color with the specified opacity.
 Generate a random number between a and b.
 
 ##### Arguments
-*
-		a
-	A number, the first value of the range.
-*
-		b
-	A number, the final value of the range.
+
+* `a - A number, the first value of the range.`
+* `b - A number, the final value of the range.`
 
 
 	print Utils.randomNumber(0, 1)
@@ -76,12 +70,9 @@ Capitalize the first letter of a string.
 Calls a function after a certain day defined in seconds.
 
 ##### Arguments
-*
-		delay
-	Delay in seconds.
-*
-		handler
-	Callback function.
+
+* `delay - Delay in seconds.`
+* `handler - Callback function.`
 
 
 	Utils.delay 0.5, ->
@@ -95,12 +86,9 @@ Calls a function after a certain day defined in seconds.
 Calls a function every x seconds.
 
 ##### Arguments
-*
-		interval
-	Interval in seconds.
-*
-		handler
-	Callback function.
+
+* `interval - Interval in seconds.`
+* `handler - Callback function.`
 
 
 	Utils.interval 2, ->

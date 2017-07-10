@@ -11,7 +11,7 @@ The line component draws a line given a start coordinate and end coordinate.
 
 -------------------------------------------------------
 
-### [line.start](#line-start) *<string>*
+#### [line.start](#line-start) *string*
 
 Set the start point coordinate. Default is 0 0 0
 
@@ -20,7 +20,7 @@ Set the start point coordinate. Default is 0 0 0
 
 -------------------------------------------------------
 
-### [link.end](#link-end) *<string>*
+#### [link.end](#link-end) *string*
 
 Set the end coordinate. Default is 0 0 0
 
@@ -29,7 +29,7 @@ Set the end coordinate. Default is 0 0 0
 
 -------------------------------------------------------
 
-### [link.color](#link-color) *<string>*
+#### [link.color](#link-color) *string*
 
 Set the color of the line. Default is #74BEC1.
 
@@ -38,7 +38,7 @@ Set the color of the line. Default is #74BEC1.
 
 -------------------------------------------------------
 
-### [link.visible](#link-visible) *<string>*
+#### [link.visible](#link-visible) *string*
 
 Whether the material visible. Default is true.
 

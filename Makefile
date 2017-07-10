@@ -2,7 +2,7 @@
 
 BIN = $(CURDIR)/node_modules/.bin
 
-.PHONY: bootstrap unbootstrap clean watch build debug lint release
+.PHONY: bootstrap unbootstrap clean watch build debug lint release docs vendors
 
 default: build
 
@@ -15,13 +15,13 @@ bootstrap:
 unbootstrap:
 	rm -Rf node_modules
 
-clean: clearvendors
+clean:
+	rm -rf vendors
 	rm -rf build
 	rm -Rf node_modules
 
-clearvendors: SHELL:=/bin/bash
 clearvendors:
-	bash -c "rm -R ./vendors"
+	rm -rf vendors
 
 #-------------------------------------------------------
 # Build

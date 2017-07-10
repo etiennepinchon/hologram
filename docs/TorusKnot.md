@@ -13,7 +13,7 @@ The torus knot geometry creates a pretzel shape. A pair of coprime integers, p a
 
 -------------------------------------------------------
 
-#### [torusKnot.color](#torusKnot-color) *<color>*
+#### [torusKnot.color](#torusKnot-color) *color*
 
 Defines the color of the torus knot. Default is white.
 
@@ -22,7 +22,7 @@ Defines the color of the torus knot. Default is white.
 
 -------------------------------------------------------
 
-#### [torusKnot.radius](#torusKnot-radius) *<float>*
+#### [torusKnot.radius](#torusKnot-radius) *float*
 
 Radius that contains the torus knot. Default is 1.
 
@@ -32,7 +32,7 @@ Radius that contains the torus knot. Default is 1.
 
 -------------------------------------------------------
 
-#### [torusKnot.radiusTubular](#torusKnot-radiustubular) *<float>*
+#### [torusKnot.radiusTubular](#torusKnot-radiustubular) *float*
 
 Radius of the tubes of the torus knot. Default is 0.2.
 
@@ -42,7 +42,7 @@ Radius of the tubes of the torus knot. Default is 0.2.
 
 -------------------------------------------------------
 
-#### [torusKnot.segmentsRadial](#torusKnot-segmentsradial) *<integer>*
+#### [torusKnot.segmentsRadial](#torusKnot-segmentsradial) *integer*
 
 Number of segments along the circumference of the tube ends. A higher number means the tube will be more round. Default is 36.
 
@@ -51,7 +51,7 @@ Number of segments along the circumference of the tube ends. A higher number mea
 
 -------------------------------------------------------
 
-#### [torusKnot.segmentsTubular](#torusKnot-segmentstubular) *<integer>*
+#### [torusKnot.segmentsTubular](#torusKnot-segmentstubular) *integer*
 
 Number of segments along the circumference of the tube face. A higher number means the tube will be more round. Default is 32.
 
@@ -60,7 +60,7 @@ Number of segments along the circumference of the tube face. A higher number mea
 
 -------------------------------------------------------
 
-#### [torusKnot.p](#torusKnot-p) *<integer>*
+#### [torusKnot.p](#torusKnot-p) *integer*
 
 How many times the geometry winds around its axis of rotational symmetry. Default is 2.
 
@@ -69,7 +69,7 @@ How many times the geometry winds around its axis of rotational symmetry. Defaul
 
 -------------------------------------------------------
 
-#### [torusKnot.q](#torusKnot-q) *<integer>*
+#### [torusKnot.q](#torusKnot-q) *integer*
 
 How many times the geometry winds around a circle in the interior of the torus. Default is 3.
 
@@ -78,7 +78,7 @@ How many times the geometry winds around a circle in the interior of the torus. 
 
 -------------------------------------------------------
 
-#### [torusKnot-src](#torusKnot-src) *<string/AssetImage>*
+#### [torusKnot-src](#torusKnot-src) *string/AssetImage*
 
 Defines the material used when rendering the torus knot.
 

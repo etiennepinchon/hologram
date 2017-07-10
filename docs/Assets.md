@@ -6,18 +6,10 @@ Games and rich 3D experiences traditionally preload their assets, such as models
 
 Assets include:
 
-*
-		AssetModel, AssetItem
-	3D models, textures
-*
-		AssetAudio
-	Sound files
-*
-		AssetImage
-	Image textures
-*
-		AssetVideo
-	Video textures
+* `AssetModel, AssetItem: 3D models, textures`
+* `AssetAudio: Sound files`
+* `AssetImage: Image textures`
+* `AssetVideo: Video textures`
 
 Note: The scene won’t render or initialize until the browser fetches (or errors out) all the assets or the asset system reaches the timeout.
 

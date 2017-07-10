@@ -12,7 +12,7 @@ Box creates shapes such as boxes, cubes, or walls. It is an entity that prescrib
 
 -------------------------------------------------------
 
-### [box.width](#box-width) *<float>*
+#### [box.width](#box-width) *float*
 
 Set the width of the box. Default is 1.
 
@@ -21,7 +21,7 @@ Set the width of the box. Default is 1.
 
 -------------------------------------------------------
 
-### [box.height](#box-height) *<float>*
+#### [box.height](#box-height) *float*
 
 Set the height of the box. Default is 1.
 
@@ -30,7 +30,7 @@ Set the height of the box. Default is 1.
 
 -------------------------------------------------------
 
-### [box.depth](#box-depth) *<float>*
+#### [box.depth](#box-depth) *float*
 
 Set the depth of the box. Default is 1.
 
@@ -39,7 +39,7 @@ Set the depth of the box. Default is 1.
 
 -------------------------------------------------------
 
-#### [box.color](#box-color) *<color>*
+#### [box.color](#box-color) *color*
 
 Defines the color of the cube. Default is white.
 
@@ -52,7 +52,7 @@ Defines the color of the cube. Default is white.
 
 -------------------------------------------------------
 
-### [box.transparency](#box-transparency) *<boolean>*
+#### [box.transparency](#box-transparency) *boolean*
 
 Set the transparency of the box. Default is no.
 
@@ -65,7 +65,7 @@ Set the transparency of the box. Default is no.
 
 -------------------------------------------------------
 
-### [box.opacity](#box-opacity) *<float>*
+#### [box.opacity](#box-opacity) *float*
 
 Set the opacity of the box. Default is 1.
 
@@ -78,7 +78,7 @@ Set the opacity of the box. Default is 1.
 
 -------------------------------------------------------
 
-#### [box.metalness](#box-metalness) *<float>*
+#### [box.metalness](#box-metalness) *float*
 
 Set the metalness aspect of the box. Default is 0.
 
@@ -91,7 +91,7 @@ Set the metalness aspect of the box. Default is 0.
 
 -------------------------------------------------------
 
-#### [box.repeat](#box-repeat) *<string>*
+#### [box.repeat](#box-repeat) *string*
 
 Define how many times the texture should be repeated on the cube on the x and y axies. Default is None.
 
@@ -104,7 +104,7 @@ Define how many times the texture should be repeated on the cube on the x and y 
 
 -------------------------------------------------------
 
-#### [box.roughness](#box-roughness) *<float>*
+#### [box.roughness](#box-roughness) *float*
 
 Define the roughness aspect of the cube. Default is 0.5.
 
@@ -117,7 +117,7 @@ Define the roughness aspect of the cube. Default is 0.5.
 
 -------------------------------------------------------
 
-#### [box.shader](#box-shader) *<string>*
+#### [box.shader](#box-shader) *string*
 
 Define the shader to use to render the cube on the scene. Default is standard.
 
@@ -130,7 +130,7 @@ Define the shader to use to render the cube on the scene. Default is standard.
 
 -------------------------------------------------------
 
-#### [box.side](#box-side) *<string>*
+#### [box.side](#box-side) *string*
 
 Defines which of the face sides will be rendered. Default is front, can be either front, back or double.
 
@@ -143,7 +143,7 @@ Defines which of the face sides will be rendered. Default is front, can be eithe
 
 -------------------------------------------------------
 
-#### [box.segmentsWidth](#box-segmentswidth) *<integer>*
+#### [box.segmentsWidth](#box-segmentswidth) *integer*
 
 Defines the segements width to use when rendering the cube. Default is 1.
 
@@ -156,7 +156,7 @@ Defines the segements width to use when rendering the cube. Default is 1.
 
 -------------------------------------------------------
 
-#### [box.segmentsHeight](#box-segmentsheight) *<integer>*
+#### [box.segmentsHeight](#box-segmentsheight) *integer*
 
 Defines the segements height to use when rendering the cube. Default is 1.
 
@@ -169,7 +169,7 @@ Defines the segements height to use when rendering the cube. Default is 1.
 
 -------------------------------------------------------
 
-#### [box.segmentsDepth](#box-segmentsdepth) *<integer>*
+#### [box.segmentsDepth](#box-segmentsdepth) *integer*
 
 Defines the segements depth to use when rendering the cube. Default is 1.
 
@@ -182,7 +182,7 @@ Defines the segements depth to use when rendering the cube. Default is 1.
 
 -------------------------------------------------------
 
-#### [box.wireframe](#box-wireframe) *<boolean>*
+#### [box.wireframe](#box-wireframe) *boolean*
 
 Render the plane wireframe only. Default is false.
 
@@ -191,7 +191,7 @@ Render the plane wireframe only. Default is false.
 
 -------------------------------------------------------
 
-#### [box.wireframeWidth](#box-wireframewidth) *<integer>*
+#### [box.wireframeWidth](#box-wireframewidth) *integer*
 
 Wireframe width. Default is 2.
 
@@ -201,7 +201,7 @@ Wireframe width. Default is 2.
 
 -------------------------------------------------------
 
-#### [box.fog](#box-fog) *<boolean>*
+#### [box.fog](#box-fog) *boolean*
 
 React to the scene fog. Default is true.
 

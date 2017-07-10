@@ -54,6 +54,8 @@
   "homepage": "https://hologram.cool",
   "dependencies": {
     "eventemitter3": "^1.2.0",
+    "fs-extra": "^3.0.1",
+    "highlight.js": "^9.12.0",
     "prepend-webpack-plugin": "^1.0.2",
     "replacestream": "^4.0.2",
     "webpack-dev-server": "^1.16.5"

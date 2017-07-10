@@ -12,7 +12,7 @@ A link in VR can be anything such as grabbing onto an object, placing something 
 
 -------------------------------------------------------
 
-### [link.href](#link-href) *<string>*
+#### [link.href](#link-href) *string*
 
 Set the destiantion URL where the link points to.
 
@@ -21,7 +21,7 @@ Set the destiantion URL where the link points to.
 
 -------------------------------------------------------
 
-### [link.title](#link-title) *<string>*
+#### [link.title](#link-title) *string*
 
 Set the text displayed on the link. The href or page URL is used if not defined.
 
@@ -30,7 +30,7 @@ Set the text displayed on the link. The href or page URL is used if not defined.
 
 -------------------------------------------------------
 
-### [link.href](#link-href) *<string>*
+#### [link.href](#link-href) *string*
 
 Set the link preview, a 360° image used as scene preview in the portal.
 

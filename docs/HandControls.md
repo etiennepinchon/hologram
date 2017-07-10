@@ -1,4 +1,4 @@
-## [Hand Controls](#hand-controls)
+## [Hand Controls](#handcontrols)
 
 ### Extends: [Entity](#entity)
 
@@ -9,9 +9,9 @@ The hand-controls gives tracked hands (using a prescribed model) with animated g
 
 -------------------------------------------------------
 
-### Events
+### [Events](#handcontrols-events)
 
-#### [hand.onGripDown(*callback*)](#hand-controls-ongripdown)
+#### [hand.onGripDown(*callback*)](#handcontrols-ongripdown)
 	
 The hand is closed into a fist without thumb raised.
 
@@ -21,7 +21,7 @@ The hand is closed into a fist without thumb raised.
 		
 -------------------------------------------------------
 
-#### [hand.onGripUp(*callback*)](#hand-controls-ongripup)
+#### [hand.onGripUp(*callback*)](#handcontrols-ongripup)
 	
 The hand is no longer closed into a fist without thumb raised.
 
@@ -31,7 +31,7 @@ The hand is no longer closed into a fist without thumb raised.
 
 -------------------------------------------------------
 
-#### [hand.onPointUp(*callback*)](#hand-controls-onpointup)
+#### [hand.onPointUp(*callback*)](#handcontrols-onpointup)
 	
 The hand is touching or pressing the trigger only.
 
@@ -41,7 +41,7 @@ The hand is touching or pressing the trigger only.
 
 -------------------------------------------------------
 
-#### [hand.onGripDown(*callback*)](#hand-controls-ongripdown)
+#### [hand.onGripDown(*callback*)](#handcontrols-ongripdown)
 	
 The hand is no longer touching or pressing the trigger only.
 
@@ -51,7 +51,7 @@ The hand is no longer touching or pressing the trigger only.
 
 -------------------------------------------------------
 
-#### [hand.onThumbUp(*callback*)](#hand-controls-onthumbup)
+#### [hand.onThumbUp(*callback*)](#handcontrols-onthumbup)
 	
 The hand is closed into a fist with thumb raised.
 
@@ -61,7 +61,7 @@ The hand is closed into a fist with thumb raised.
 
 -------------------------------------------------------
 
-#### [hand.onThumbDown(*callback*)](#hand-controls-onthumbdown)
+#### [hand.onThumbDown(*callback*)](#handcontrols-onthumbdown)
 	
 The hand is no longer closed into a fist with thumb raised.
 
@@ -71,7 +71,7 @@ The hand is no longer closed into a fist with thumb raised.
 
 -------------------------------------------------------
 
-#### [hand.onPointingStart(*callback*)](#hand-controls-onpointingstart)
+#### [hand.onPointingStart(*callback*)](#handcontrols-onpointingstart)
 	
 The hand is pointing with index finger without thumb raised.
 
@@ -81,7 +81,7 @@ The hand is pointing with index finger without thumb raised.
 	
 -------------------------------------------------------
 
-#### [hand.onPointingEnd(*callback*)](#hand-controls-onpointingend)
+#### [hand.onPointingEnd(*callback*)](#handcontrols-onpointingend)
 	
 The hand is no longer pointing without thumb raised.
 
@@ -91,7 +91,7 @@ The hand is no longer pointing without thumb raised.
 
 -------------------------------------------------------
 
-#### [hand.onPistolStart(*callback*)](#hand-controls-onpistolstart)
+#### [hand.onPistolStart(*callback*)](#handcontrols-onpistolstart)
 	
 The hand is pointing with index finger and thumb raised.
 
@@ -101,7 +101,7 @@ The hand is pointing with index finger and thumb raised.
 
 -------------------------------------------------------
 
-#### [hand.onPistolEnd(*callback*)](#hand-controls-onpistolend)
+#### [hand.onPistolEnd(*callback*)](#handcontrols-onpistolend)
 	
 The hand is no longer pointing with thumb raised.
 

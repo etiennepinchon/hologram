@@ -6,6 +6,11 @@ class exports.Text extends Entity
 		name: "Text"
 		type: "a-text"
 
+	constructor: (options)->
+		super
+		# Double side entity
+		if options.side is undefined then @side = 'double'
+
 	#-------------------------------------------------------
 	# PROPERTIES
 

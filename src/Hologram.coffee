@@ -4,8 +4,6 @@ window._Image = Image
 require "../vendors/aframe"
 require "../vendors/aframe_gif_shader"
 require "../vendors/aframe_effects"
-require "../vendors/aframe_physics"
-require "../vendors/aframe_particles"
 require "../vendors/aframe_look_at"
 require "../vendors/aframe_mouse_cursor"
 
@@ -29,7 +27,6 @@ Hologram.Direction = (require "./Values").Direction
 Hologram.Fill = (require "./Values").Fill
 Hologram.Shape = (require "./Values").Shape
 Hologram.Constraint = (require "./Values").Constraint
-Hologram.Particles = (require "./Values").Particles
 
 # Entities
 Hologram.Entity = (require "./Entity").Entity
@@ -47,6 +44,9 @@ Hologram.HandControls = (require "./HandControls").HandControls
 Hologram.Icosahedron = (require "./Icosahedron").Icosahedron
 Hologram.Image = (require "./Image").Image
 Hologram.Light = (require "./Light")
+Hologram.Line = (require "./Line").Line
+Hologram.Link = (require "./Link").Link
+Hologram.Model = (require "./Model").Model
 Hologram.ObjectModel = (require "./ObjectModel").ObjectModel
 Hologram.Octahedron = (require "./Octahedron").Octahedron
 Hologram.Plane = (require "./Plane").Plane
@@ -61,6 +61,7 @@ Hologram.Tetrahedron = (require "./Tetrahedron").Tetrahedron
 Hologram.Text = (require "./Text").Text
 Hologram.Torus = (require "./Torus").Torus
 Hologram.TorusKnot = (require "./TorusKnot").TorusKnot
+Hologram.Triangle = (require "./Triangle").Triangle
 Hologram.Video = (require "./Video").Video
 Hologram.VideoSphere = (require "./VideoSphere").VideoSphere
 
@@ -95,14 +96,6 @@ Hologram.define 'rightHand',
 		if not @_properties["rightHand"]
 			@_properties["rightHand"] = new HandControls('right')
 		return @_properties["rightHand"]
-
-# Physics
-Hologram.define 'physics',
-	get: ->
-		return @scene.physics
-	set: (value)->
-		@scene.physics = value
-		return
 
 # Create the default context, set it to invisble by default so
 # the preloader can pick it up if it needs to.

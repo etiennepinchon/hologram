@@ -6,25 +6,28 @@ class exports.ObjectModel extends Entity
 
 	entity :
 		name: "ObjectModel"
-		type: "a-object-model"
+		type: "a-obj-model"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
 	@define 'mtl',
 		get: ->
-			return undefined if not @_mtl
-			@_mtl
+			return undefined if not @_properties["mtl"]
+			@_properties["mtl"]
 		set: (value) ->
+			value = Utils.parseAssets(value)
 			if Utils.isObject(value)
 				if not value.id
 					return
 				value = "#Hologram#{value._kind}-#{value.id}"
-			@_mtl = value
+			else if Utils.isString value
+				value = "url(#{Utils.parseAssets(value)})"
+			@_properties["mtl"] = value
 			@_element.setAttribute 'mtl', value
 			return
 
 	#-------------------------------------------------------
 	# METHODS
 
-	onLoad : (cb)-> @on Events.Load, cb
+	onLoad : (cb)-> @on Events.ModelLoad, cb

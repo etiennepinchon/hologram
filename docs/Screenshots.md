@@ -4,15 +4,15 @@ The screenshot component lets us take different types of screenshots with keyboa
 
 -------------------------------------------------------
 
-#### [Simple Screenshot](#simple-screenshot)
-To take a normal (perspective) screenshot, press <ctrl> + <alt> + s on the keyboard.
+### [Simple Screenshot](#simple-screenshot)
+To take a normal (perspective) screenshot, press CTRL + ALT + S on the keyboard.
 
-![](https://cloud.githubusercontent.comassets/674727/22461641/ea43c218-e75e-11e6-8c5e-84c0bd2d691b.png)
+![](https://cloud.githubusercontent.com/assets/674727/22461641/ea43c218-e75e-11e6-8c5e-84c0bd2d691b.png)
 
 -------------------------------------------------------
 
-#### [360 Screenshot](#360-screenshot)
+### [360 Screenshot](#360-screenshot)
 
-To take a 360° (equirectangular) screenshot, press <ctrl> + <alt> + <shift> + s on the keyboard.
+To take a 360° (equirectangular) screenshot, press CTRL + ALT + SHIFT + S on the keyboard.
 
-![](https://cloud.githubusercontent.comassets/674727/22461640/ea408ea4-e75e-11e6-9f8e-7566c4542587.png)
+![](https://cloud.githubusercontent.com/assets/674727/22461640/ea408ea4-e75e-11e6-9f8e-7566c4542587.png)

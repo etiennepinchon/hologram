@@ -5,6 +5,7 @@ Utils = require "./Utils"
 entityAttribute = (name, attributeName, fallback) ->
 	result =
 		default: fallback
+		configurable: yes
 		get: ->
 			return @_properties[name] if @_properties.hasOwnProperty(name)
 			return fallback
@@ -45,6 +46,9 @@ class exports.Entity extends BaseClass
 		else if options.parent
 			@parent = options.parent
 
+		# Double side entity
+		#if not options.side then options.side = 'double'
+
 		delete options.parent if options.parent
 		@props = options if options
 
@@ -77,19 +81,7 @@ class exports.Entity extends BaseClass
 	@define "fog", entityAttribute("fog", "fog", no)
 	@define "color", entityAttribute("color", "color", '#FFF')
 	@define "camera", entityAttribute("camera", "camera", null)
-
-	# Physics
-	@define "static", entityAttribute("static", "static-body", null)
-	@define "dynamic", entityAttribute("dynamic", "dynamic-body", null)
-	@define "constraint", entityAttribute("constraint", "constraint", null)
-
-	# Particles
-	@define "particles", entityAttribute("particles", "particle-system", null)
-
-	# Look at
 	@define "lookAt", entityAttribute("lookAt", "look-at", null)
-
-	# Link
 	@define "link", entityAttribute("link", "link", null)
 
 	#-------------------------------------------------------
@@ -149,12 +141,10 @@ class exports.Entity extends BaseClass
 		set: (value)->
 			@_properties["gif"] = value
 			if value
-				if @_properties["shader"]
-					@_properties["oshader"] = @_properties["shader"]
+				@_properties["oshader"] = @_properties["shader"] if @_properties["shader"]
 				@shader = "gif"
 			else
-				if @_properties["oshader"]
-					@shader = @_properties["oshader"]
+				@shader = @_properties["oshader"] if @_properties["oshader"]
 			return
 
 	@define 'src',
@@ -162,18 +152,19 @@ class exports.Entity extends BaseClass
 			return null if not @_properties["src"]
 			@_properties["src"]
 		set: (value) ->
-			@_properties["gif"] = null
+			@gif = null
+			is_gif = no
 			if Utils.isObject value
-				if not value.id
-					return
-				if value._gif
-					@gif = true
+				return if not value.id
+				is_gif = true if value._properties and value._properties["gif"]
 				value = "#Hologram#{value.entity.name}-#{value.id}"
 			else if Utils.isString value
-				if value.split('.').pop() is "gif"
-					@_properties["gif"] = true
+				value = Utils.parseAssets(value)
+				is_gif = true if value.split('.').pop() is "gif"
+				value = "url(#{value})"
 			@_properties["src"] = value
 			@_element.setAttribute 'src', value
+			@gif = is_gif
 			return
 
 	#-------------------------------------------------------

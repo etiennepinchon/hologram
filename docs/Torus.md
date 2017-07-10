@@ -12,7 +12,7 @@ The torus geometry creates a donut or curved tube shape.
 
 -------------------------------------------------------
 
-#### [torus.color](#torus-color) *<color>*
+#### [torus.color](#torus-color) *color*
 
 Defines the color of the torus. Default is white.
 
@@ -21,7 +21,7 @@ Defines the color of the torus. Default is white.
 
 -------------------------------------------------------
 
-#### [torus.radius](#torus-radius) *<float>*
+#### [torus.radius](#torus-radius) *float*
 
 Radius that contains the torus. Default is 1.
 
@@ -31,7 +31,7 @@ Radius that contains the torus. Default is 1.
 
 -------------------------------------------------------
 
-#### [torus.radiusTubular](#torus-radiusTubular) *<float>*
+#### [torus.radiusTubular](#torus-radiusTubular) *float*
 
 Radius of the tubes of the torus. Default is 0.2.
 
@@ -41,7 +41,7 @@ Radius of the tubes of the torus. Default is 0.2.
 
 -------------------------------------------------------
 
-#### [torus.segmentsRadial](#torus-segmentsRadial) *<integer>*
+#### [torus.segmentsRadial](#torus-segmentsRadial) *integer*
 
 Number of segments along the circumference of the tube ends. A higher number means the tube will be more round. Default is 36.
 
@@ -50,7 +50,7 @@ Number of segments along the circumference of the tube ends. A higher number mea
 
 -------------------------------------------------------
 
-#### [torus.segmentsTubular](#torus-segmentstubular) *<integer>*
+#### [torus.segmentsTubular](#torus-segmentstubular) *integer*
 
 Number of segments along the circumference of the tube face. A higher number means the tube will be more round. Default is 32.
 
@@ -59,7 +59,7 @@ Number of segments along the circumference of the tube face. A higher number mea
 
 -------------------------------------------------------
 
-#### [torus.arc](#torus-arc) *<integer>*
+#### [torus.arc](#torus-arc) *integer*
 
 Central angle. Default is 360.
 
@@ -68,7 +68,7 @@ Central angle. Default is 360.
 
 -------------------------------------------------------
 
-#### [torus.src](#torus-src) *<string/AssetImage>*
+#### [torus.src](#torus-src) *string/AssetImage*
 
 Defines the material used when rendering the torus.
 

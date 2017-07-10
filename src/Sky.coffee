@@ -6,6 +6,10 @@ class exports.Sky extends Entity
 		name: "Sky"
 		type: "a-sky"
 
+	constructor: (options)->
+		super
+		@side = 'back'
+
 	#-------------------------------------------------------
 	# PROPERTIES
 

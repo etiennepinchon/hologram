@@ -17,7 +17,7 @@ With a plain color as a background:
 
 -------------------------------------------------------
 
-#### [sky.color](#sky-color) *<color>*
+#### [sky.color](#sky-color) *color*
 
 Defines the color of the sky. Default is white.
 
@@ -26,7 +26,7 @@ Defines the color of the sky. Default is white.
 
 -------------------------------------------------------
 
-#### [sky.radius](#sky-radius) *<integer>*
+#### [sky.radius](#sky-radius) *integer*
 
 Defines the radius of the sky. Default is 5000.
 
@@ -36,29 +36,9 @@ Defines the radius of the sky. Default is 5000.
 
 -------------------------------------------------------
 
-#### [sky.src](#sky-src) *<string/AssetImage/AssetVideo>*
+#### [sky.src](#sky-src) *string/AssetImage/AssetVideo*
 
 Defines the material used when rendering the sky.
 
 	mySky = new Sky
 		src: "assets/sky.png"
-
--------------------------------------------------------
-
-### [sky.opacity](#sky-opacity) *<float>*
-
-Set the opacity of the sky. Default is 1.
-
-	mySky = new Sky
-		src: "assets/sky.png"
-		opacity: 0.8
-
--------------------------------------------------------
-
-#### [sky.metalness](#sky-metalness) *<float>*
-
-Set the metalness aspect of the sky. Default is 0.
-
-	mySky = new Sky
-		color: Color.lightpink
-		metalness: 0.5

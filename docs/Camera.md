@@ -9,14 +9,16 @@ Let's add a camera situated at the average height of human eye level (1.6 meters
 	myCamera = new Camera
 		userHeight: 1.6
 
+
 Note: by default a camera is added to the scene, here is how to access it:
+
 
 	myCamera = Hologram.camera
 	myCamera.userHeight = 1.6
 
 -------------------------------------------------------
 
-### [camera.active](#camera-active) *<boolean>*
+#### [camera.active](#camera-active) *boolean*
 
 Whether the camera is the active camera in a scene with more than one camera. Default is yes.
 
@@ -25,7 +27,7 @@ Whether the camera is the active camera in a scene with more than one camera. De
 
 -------------------------------------------------------
 
-### [camera.far](#camera-far) *<integer>*
+#### [camera.far](#camera-far) *integer*
 
 Camera frustum far clipping plane. Default is 10000.
 
@@ -34,7 +36,7 @@ Camera frustum far clipping plane. Default is 10000.
 
 -------------------------------------------------------
 
-### [camera.fov](#camera-fov) *<integer>*
+#### [camera.fov](#camera-fov) *integer*
 
 Field of view (in degrees). Default is 80.
 
@@ -43,7 +45,7 @@ Field of view (in degrees). Default is 80.
 
 -------------------------------------------------------
 
-### [camera.near](#camera-near) *<float>*
+#### [camera.near](#camera-near) *float*
 
 Camera frustum near clipping plane. Default is 0.005.
 
@@ -52,7 +54,7 @@ Camera frustum near clipping plane. Default is 0.005.
 
 -------------------------------------------------------
 
-### [camera.userHeight](#camera-userheight) *<float>*
+#### [camera.userHeight](#camera-userheight) *float*
 
 How much height to add to the camera when not in VR mode. The default camera has this set to 1.6 (meters, to represent average eye level.). Default is 0.
 
@@ -61,21 +63,21 @@ How much height to add to the camera when not in VR mode. The default camera has
 
 -------------------------------------------------------
 
-### [camera.zoom](#camera-zoom) *<float>*
+#### [camera.zoom](#camera-zoom) *float*
 
 Zoom factor of the camera. Default is 1.
 
 	myCamera = new Camera
 		zoom: 1.2
 
-### [camera.wasdControls](#camera-wasdcontrols) *<boolean>*
+#### [camera.wasdControls](#camera-wasdcontrols) *boolean*
 
 Setting whether the keyboard keys w, a, s, d can move the camera around the scene. Default is yes.
 
 	myCamera = new Camera
 		wasdControls: no
 
-### [camera.mouseCursor](#camera-mousecursor) *<boolean>*
+#### [camera.mouseCursor](#camera-mousecursor) *boolean*
 
 Add mouse cursor on the camera. A alternative to the cursor useful in development. Default is yes.
 

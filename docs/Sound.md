@@ -13,7 +13,7 @@ With an image as a background:
 
 -------------------------------------------------------
 
-#### [sound.autoplay](#sound-autoplay) *<color>*
+#### [sound.autoplay](#sound-autoplay) *color*
 
 Whether the sound should play right after being loaded. Default is false.
 
@@ -23,7 +23,7 @@ Whether the sound should play right after being loaded. Default is false.
 
 -------------------------------------------------------
 
-#### [sound.loop](#sound-loop) *<boolean>*
+#### [sound.loop](#sound-loop) *boolean*
 
 Whether the sound should repeat. Default is false.
 
@@ -33,7 +33,7 @@ Whether the sound should repeat. Default is false.
 
 -------------------------------------------------------
 
-#### [sound.volume](#sound-volume) *<float>*
+#### [sound.volume](#sound-volume) *float*
 
 Defines the volume of the sound. Default is 1.
 
@@ -43,7 +43,7 @@ Defines the volume of the sound. Default is 1.
 
 -------------------------------------------------------
 
-#### [sound.src](#sound-src) *<string/AssetAudio>*
+#### [sound.src](#sound-src) *string/AssetAudio*
 
 Path to sound.
 	

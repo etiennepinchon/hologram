@@ -9,7 +9,7 @@ Time to creates a triangle.
 
 -------------------------------------------------------
 
-### [triangle.width](#triangle-width) *<float>*
+#### [triangle.width](#triangle-width) *float*
 
 Set the width of the triangle. Default is 1.
 
@@ -18,7 +18,7 @@ Set the width of the triangle. Default is 1.
 
 -------------------------------------------------------
 
-### [triangle.height](#triangle-height) *<float>*
+#### [triangle.height](#triangle-height) *float*
 
 Set the height of the triangle. Default is 1.
 
@@ -27,7 +27,7 @@ Set the height of the triangle. Default is 1.
 		
 -------------------------------------------------------
 
-#### [triangle.color](#triangle-color) *<color>*
+#### [triangle.color](#triangle-color) *color*
 
 Defines the color of the triangle. Default is white.
 
@@ -36,7 +36,7 @@ Defines the color of the triangle. Default is white.
 
 -------------------------------------------------------
 
-#### [triangle.src](#triangle-src) *<string/AssetImage>*
+#### [triangle.src](#triangle-src) *string/AssetImage*
 
 Defines the material used when rendering the triangle.
 

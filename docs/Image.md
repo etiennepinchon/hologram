@@ -11,7 +11,7 @@ The image primitive shows an image on a flat plane.
 		
 -------------------------------------------------------
 
-### [image.width](#image-width) *<float>*
+#### [image.width](#image-width) *float*
 
 Set the width of the plane. Default is 1.
 
@@ -21,7 +21,7 @@ Set the width of the plane. Default is 1.
 
 -------------------------------------------------------
 
-### [image.height](#image-height) *<float>*
+#### [image.height](#image-height) *float*
 
 Set the height of the image. Default is 1.
 
@@ -31,7 +31,7 @@ Set the height of the image. Default is 1.
 
 -------------------------------------------------------
 
-#### [image.src](#image-src) *<string/AssetImage>*
+#### [image.src](#image-src) *string/AssetImage*
 
 Defines the material used when rendering the image.
 	
@@ -40,7 +40,7 @@ Defines the material used when rendering the image.
 
 -------------------------------------------------------
 
-### [image.transparency](#image-transparency) *<boolean>*
+#### [image.transparency](#image-transparency) *boolean*
 
 Set the transparency of the image. Default is no.
 
@@ -50,7 +50,7 @@ Set the transparency of the image. Default is no.
 
 -------------------------------------------------------
 
-### [image.opacity](#image-opacity) *<float>*
+#### [image.opacity](#image-opacity) *float*
 
 Set the opacity of the image. Default is 1.
 

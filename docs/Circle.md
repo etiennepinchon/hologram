@@ -6,11 +6,11 @@ The circle geometry creates flat two-dimensional circles. These can be complete 
 
 	myCircle = new Circle
 		color: "#CCC"
-		radius: "20"
+		radius: 20
 
 -------------------------------------------------------
 
-#### [circle.color](#circle-color) *<color>*
+#### [circle.color](#circle-color) *color*
 
 Defines the color of the circle. Default is white.
 
@@ -19,7 +19,7 @@ Defines the color of the circle. Default is white.
 
 -------------------------------------------------------
 
-#### [circle.radius](#circle-radius) *<integer>*
+#### [circle.radius](#circle-radius) *integer*
 
 Defines the radius of the circle. Default is 1.
 
@@ -29,7 +29,7 @@ Defines the radius of the circle. Default is 1.
 
 -------------------------------------------------------
 
-#### [circle.src](#circle-src) *<string/AssetImage>*
+#### [circle.src](#circle-src) *string/AssetImage*
 
 Defines the material used when rendering the circle.
 
@@ -42,7 +42,7 @@ Defines the material used when rendering the circle.
 
 -------------------------------------------------------
 
-### [circle.transparency](#circle-transparency) *<boolean>*
+#### [circle.transparency](#circle-transparency) *boolean*
 
 Set the transparency of the circle. Default is no.
 
@@ -51,7 +51,7 @@ Set the transparency of the circle. Default is no.
 
 -------------------------------------------------------
 
-### [circle.opacity](#circle-opacity) *<float>*
+#### [circle.opacity](#circle-opacity) *float*
 
 Set the opacity of the circle. Default is 1.
 
@@ -61,7 +61,7 @@ Set the opacity of the circle. Default is 1.
 
 -------------------------------------------------------
 
-#### [circle.metalness](#circle-metalness) *<float>*
+#### [circle.metalness](#circle-metalness) *float*
 
 Set the metalness aspect of the circle. Default is 0.
 
@@ -71,7 +71,7 @@ Set the metalness aspect of the circle. Default is 0.
 
 -------------------------------------------------------
 
-#### [circle.repeat](#circle-repeat) *<string>*
+#### [circle.repeat](#circle-repeat) *string*
 
 Define how many times the texture should be repeated on the circle on the x and y axies. Default is None.
 
@@ -81,7 +81,7 @@ Define how many times the texture should be repeated on the circle on the x and 
 
 -------------------------------------------------------
 
-#### [circle.roughness](#circle-roughness) *<float>*
+#### [circle.roughness](#circle-roughness) *float*
 
 Define the roughness aspect of the circle. Default is 0.5.
 
@@ -91,7 +91,7 @@ Define the roughness aspect of the circle. Default is 0.5.
 
 -------------------------------------------------------
 
-#### [circle.shader](#circle-shader) *<shader type>*
+#### [circle.shader](#circle-shader) *shader*
 
 Define the shader to use to render the circle on the scene. Default is standard.
 
@@ -100,7 +100,7 @@ Define the shader to use to render the circle on the scene. Default is standard.
 
 -------------------------------------------------------
 
-#### [circle.segments](#circle-segments) *<integer>*
+#### [circle.segments](#circle-segments) *integer*
 
 Defines the number of segments of the circle. Default is 32.
 
@@ -109,7 +109,7 @@ Defines the number of segments of the circle. Default is 32.
 
 -------------------------------------------------------
 
-#### [circle.thetaLength](#circle-thetalength) *<integer>*
+#### [circle.thetaLength](#circle-thetalength) *integer*
 
 Defines the theta length of the circle. Default is 360.
 
@@ -120,7 +120,7 @@ Defines the theta length of the circle. Default is 360.
 
 -------------------------------------------------------
 
-#### [circle.thetaStart](#circle-thetastart) *<integer>*
+#### [circle.thetaStart](#circle-thetastart) *integer*
 
 Defines the theta start value of the circle. Default is 0.
 

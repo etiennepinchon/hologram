@@ -10,7 +10,7 @@ The dodecahedron geometry creates a polygon with twelve equally-sized faces.
 
 -------------------------------------------------------
 
-#### [dodecahedron.color](#dodecahedron-color) *<color>*
+#### [dodecahedron.color](#dodecahedron-color) *color*
 
 Defines the color of the dodecahedron. Default is white.
 
@@ -19,7 +19,7 @@ Defines the color of the dodecahedron. Default is white.
 
 -------------------------------------------------------
 
-#### [dodecahedron.radius](#dodecahedron-radius) *<float>*
+#### [dodecahedron.radius](#dodecahedron-radius) *float*
 
 Defines the radius of the dodecahedron. Default is 1.
 
@@ -29,7 +29,7 @@ Defines the radius of the dodecahedron. Default is 1.
 
 -------------------------------------------------------
 
-#### [dodecahedron.src](#dodecahedron-src) *<string/AssetImage>*
+#### [dodecahedron.src](#dodecahedron-src) *string/AssetImage*
 
 Defines the material used when rendering the dodecahedron.
 
@@ -38,7 +38,7 @@ Defines the material used when rendering the dodecahedron.
 
 -------------------------------------------------------
 
-### [dodecahedron.transparency](#dodecahedron-transparency) *<boolean>*
+#### [dodecahedron.transparency](#dodecahedron-transparency) *boolean*
 
 Set the transparency of the dodecahedron. Default is no.
 
@@ -47,7 +47,7 @@ Set the transparency of the dodecahedron. Default is no.
 
 -------------------------------------------------------
 
-### [dodecahedron.opacity](#dodecahedron-opacity) *<float>*
+#### [dodecahedron.opacity](#dodecahedron-opacity) *float*
 
 Set the opacity of the dodecahedron. Default is 1.
 
@@ -57,7 +57,7 @@ Set the opacity of the dodecahedron. Default is 1.
 
 -------------------------------------------------------
 
-#### [dodecahedron.metalness](#dodecahedron-metalness) *<float>*
+#### [dodecahedron.metalness](#dodecahedron-metalness) *float*
 
 Set the metalness aspect of the dodecahedron. Default is 0.
 
@@ -67,7 +67,7 @@ Set the metalness aspect of the dodecahedron. Default is 0.
 
 -------------------------------------------------------
 
-#### [dodecahedron.repeat](#dodecahedron-repeat) *<string>*
+#### [dodecahedron.repeat](#dodecahedron-repeat) *string*
 
 Define how many times the texture should be repeated on the dodecahedron on the x and y axies. Default is None.
 
@@ -77,7 +77,7 @@ Define how many times the texture should be repeated on the dodecahedron on the 
 
 -------------------------------------------------------
 
-#### [dodecahedron.roughness](#dodecahedron-roughness) *<float>*
+#### [dodecahedron.roughness](#dodecahedron-roughness) *float*
 
 Define the roughness aspect of the dodecahedron. Default is 0.5.
 
@@ -87,7 +87,7 @@ Define the roughness aspect of the dodecahedron. Default is 0.5.
 
 -------------------------------------------------------
 
-#### [dodecahedron.shader](#dodecahedron-shader) *<shader type>*
+#### [dodecahedron.shader](#dodecahedron-shader) *shader*
 
 Define the shader to use to render the dodecahedron on the scene. Default is standard.
 
@@ -96,7 +96,7 @@ Define the shader to use to render the dodecahedron on the scene. Default is sta
 
 -------------------------------------------------------
 
-#### [dodecahedron.segmentsHeight](#dodecahedron-segmentsheight) *<float>*
+#### [dodecahedron.segmentsHeight](#dodecahedron-segmentsheight) *float*
 
 Defines the segements height to use when rendering the dodecahedron. Default is 18.
 
@@ -106,7 +106,7 @@ Defines the segements height to use when rendering the dodecahedron. Default is 
 
 -------------------------------------------------------
 
-#### [dodecahedron.segmentsRadial](#dodecahedron-segmentsradial) *<float>*
+#### [dodecahedron.segmentsRadial](#dodecahedron-segmentsradial) *float*
 
 Defines the segements radial to use when rendering the dodecahedron. Default is 36.
 
@@ -116,7 +116,7 @@ Defines the segements radial to use when rendering the dodecahedron. Default is 
 
 -------------------------------------------------------
 
-#### [dodecahedron.thetaLength](#dodecahedron-thetalength) *<integer>*
+#### [dodecahedron.thetaLength](#dodecahedron-thetalength) *integer*
 
 Defines the theta length of the dodecahedron. Default is 360.
 
@@ -127,7 +127,7 @@ Defines the theta length of the dodecahedron. Default is 360.
 
 -------------------------------------------------------
 
-#### [dodecahedron.thetaStart](#dodecahedron-thetastart) *<integer>*
+#### [dodecahedron.thetaStart](#dodecahedron-thetastart) *integer*
 
 Defines the theta start value of the dodecahedron. Default is 0.
 
@@ -139,7 +139,7 @@ Defines the theta start value of the dodecahedron. Default is 0.
 
 -------------------------------------------------------
 
-#### [dodecahedron.wireframe](#dodecahedron-wireframe) *<boolean>*
+#### [dodecahedron.wireframe](#dodecahedron-wireframe) *boolean*
 
 Render the dodecahedron wireframe only. Default is false.
 
@@ -148,7 +148,7 @@ Render the dodecahedron wireframe only. Default is false.
 
 -------------------------------------------------------
 
-#### [dodecahedron.wireframeWidth](#dodecahedron-wireframewidth) *<integer>*
+#### [dodecahedron.wireframeWidth](#dodecahedron-wireframewidth) *integer*
 
 Wireframe width. Default is 2.
 
@@ -158,7 +158,7 @@ Wireframe width. Default is 2.
 
 -------------------------------------------------------
 
-#### [dodecahedron.fog](#dodecahedron-fog) *<boolean>*
+#### [dodecahedron.fog](#dodecahedron-fog) *boolean*
 
 React to the scene fog. Default is true.
 

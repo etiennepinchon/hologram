@@ -18,7 +18,7 @@ The video primitive plays a video as a texture on a flat plane.
 
 -------------------------------------------------------
 
-### [video.width](#video-width) *<float>*
+#### [video.width](#video-width) *float*
 
 Set the width of the video. Default is 1.
 
@@ -27,7 +27,7 @@ Set the width of the video. Default is 1.
 
 -------------------------------------------------------
 
-### [video.height](#video-height) *<float>*
+#### [video.height](#video-height) *float*
 
 Set the height of the video. Default is 1.
 
@@ -36,7 +36,7 @@ Set the height of the video. Default is 1.
 
 -------------------------------------------------------
 
-#### [video.color](#video-color) *<color>*
+#### [video.color](#video-color) *color*
 
 Defines the color of the video. Default is white.
 
@@ -45,7 +45,7 @@ Defines the color of the video. Default is white.
 
 -------------------------------------------------------
 
-#### [video.autoplay](#video-autoplay) *<color>*
+#### [video.autoplay](#video-autoplay) *color*
 
 Whether the video should play right after being loaded. Default is false.
 
@@ -55,7 +55,7 @@ Whether the video should play right after being loaded. Default is false.
 
 -------------------------------------------------------
 
-#### [video.loop](#video-loop) *<boolean>*
+#### [video.loop](#video-loop) *boolean*
 
 Whether the video should repeat. Default is false.
 
@@ -65,7 +65,7 @@ Whether the video should repeat. Default is false.
 
 -------------------------------------------------------
 
-#### [video.src](#video-src) *<string/AssetAudio>*
+#### [video.src](#video-src) *string/AssetAudio*
 
 Path to video.
 

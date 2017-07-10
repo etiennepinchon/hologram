@@ -11,7 +11,7 @@ The plane geometry creates a flat surface.
 
 -------------------------------------------------------
 
-### [plane.width](#plane-width) *<float>*
+#### [plane.width](#plane-width) *float*
 
 Set the width of the plane. Default is 1.
 
@@ -20,7 +20,7 @@ Set the width of the plane. Default is 1.
 
 -------------------------------------------------------
 
-### [plane.height](#plane-height) *<float>*
+#### [plane.height](#plane-height) *float*
 
 Set the height of the plane. Default is 1.
 
@@ -29,7 +29,7 @@ Set the height of the plane. Default is 1.
 
 -------------------------------------------------------
 
-#### [plane.color](#plane-color) *<color>*
+#### [plane.color](#plane-color) *color*
 
 Defines the color of the plane. Default is white.
 
@@ -38,7 +38,7 @@ Defines the color of the plane. Default is white.
 
 -------------------------------------------------------
 
-#### [plane.src](#plane-src) *<string/AssetImage>*
+#### [plane.src](#plane-src) *string/AssetImage*
 
 Defines the material used when rendering the plane.
 
@@ -47,7 +47,7 @@ Defines the material used when rendering the plane.
 
 -------------------------------------------------------
 
-### [plane.transparency](#plane-transparency) *<boolean>*
+#### [plane.transparency](#plane-transparency) *boolean*
 
 Set the transparency of the plane. Default is no.
 
@@ -56,7 +56,7 @@ Set the transparency of the plane. Default is no.
 
 -------------------------------------------------------
 
-### [plane.opacity](#plane-opacity) *<float>*
+#### [plane.opacity](#plane-opacity) *float*
 
 Set the opacity of the plane. Default is 1.
 
@@ -66,7 +66,7 @@ Set the opacity of the plane. Default is 1.
 
 -------------------------------------------------------
 
-#### [plane.metalness](#plane-metalness) *<float>*
+#### [plane.metalness](#plane-metalness) *float*
 
 Set the metalness aspect of the plane. Default is 0.
 
@@ -76,7 +76,7 @@ Set the metalness aspect of the plane. Default is 0.
 
 -------------------------------------------------------
 
-#### [plane.repeat](#plane-repeat) *<string>*
+#### [plane.repeat](#plane-repeat) *string*
 
 Define how many times the texture should be repeated on the plane on the x and y axies. Default is None.
 
@@ -86,7 +86,7 @@ Define how many times the texture should be repeated on the plane on the x and y
 
 -------------------------------------------------------
 
-#### [plane.roughness](#plane-roughness) *<float>*
+#### [plane.roughness](#plane-roughness) *float*
 
 Define the roughness aspect of the plane. Default is 0.5.
 
@@ -96,7 +96,7 @@ Define the roughness aspect of the plane. Default is 0.5.
 
 -------------------------------------------------------
 
-#### [plane.shader](#plane-shader) *<shader type>*
+#### [plane.shader](#plane-shader) *shader*
 
 Define the shader to use to render the plane on the scene. Default is standard.
 
@@ -105,7 +105,7 @@ Define the shader to use to render the plane on the scene. Default is standard.
 
 -------------------------------------------------------
 
-#### [plane.wireframe](#plane-wireframe) *<boolean>*
+#### [plane.wireframe](#plane-wireframe) *boolean*
 
 Render the plane wireframe only. Default is false.
 
@@ -114,7 +114,7 @@ Render the plane wireframe only. Default is false.
 
 -------------------------------------------------------
 
-#### [plane.wireframeWidth](#plane-wireframewidth) *<integer>*
+#### [plane.wireframeWidth](#plane-wireframewidth) *integer*
 
 Wireframe width. Default is 2.
 
@@ -124,7 +124,7 @@ Wireframe width. Default is 2.
 
 -------------------------------------------------------
 
-#### [plane.fog](#plane-fog) *<boolean>*
+#### [plane.fog](#plane-fog) *boolean*
 
 React to the scene fog. Default is true.
 

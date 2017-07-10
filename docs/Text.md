@@ -11,7 +11,7 @@ NOTE: To change the size of the text, use the scale component or position the te
 
 -------------------------------------------------------
 
-#### [text.align](#text-align) *<string>*
+#### [text.align](#text-align) *string*
 
 Multi-line text alignment (Align.left, Align.center, Align.right). Default is Align.left.
 
@@ -21,7 +21,7 @@ Multi-line text alignment (Align.left, Align.center, Align.right). Default is Al
 
 -------------------------------------------------------
 
-#### [text.anchor](#text-anchor) *<string>*
+#### [text.anchor](#text-anchor) *string*
 
 Horizontal positioning (Anchor.left, Anchor.center, Anchor.right, Anchor.align). Default is Anchor.center.
 
@@ -31,7 +31,7 @@ Horizontal positioning (Anchor.left, Anchor.center, Anchor.right, Anchor.align).
 
 -------------------------------------------------------
 
-#### [text.baseline](#text-baseline) *<string>*
+#### [text.baseline](#text-baseline) *string*
 
 Vertical positioning (Baseline.top, Baseline.center, Baseline.bottom). Default is Baseline.center.
 
@@ -41,7 +41,7 @@ Vertical positioning (Baseline.top, Baseline.center, Baseline.bottom). Default i
 
 -------------------------------------------------------
 
-#### [text.color](#text-color) *<color>*
+#### [text.color](#text-color) *color*
 
 Text color. Default is white.
 
@@ -51,36 +51,28 @@ Text color. Default is white.
 
 -------------------------------------------------------
 
-#### [text.font](#text-font) *<string>*
+#### [text.font](#text-font) *string*
 
 Font to render text, either the name of one of Hologram’s stock fonts or a URL to a font file.
 
 	myText = new Text
 		text: "Hello, World!"
-		font: Font.roboto
+		font: Font.mozillavr
 
 ##### Available font:
 
-*
-		Font.aileronsemibold
-*
-		Font.dejavu
-*
-		Font.exo2bold
-*
-		Font.exo2semibold
-*
-		Font.kelsonsans
-*
-		Font.monoid
-*
-		Font.mozillavr
-*
-		Font.sourcecodepro
+	Font.aileronsemibold
+	Font.dejavu
+	Font.exo2bold
+	Font.exo2semibold
+	Font.kelsonsans
+	Font.monoid
+	Font.mozillavr
+	Font.sourcecodepro
 
 -------------------------------------------------------
 
-### [text.width](#text-width) *<float>*
+#### [text.width](#text-width) *float*
 
 Set the width of the text block.
 
@@ -90,7 +82,7 @@ Set the width of the text block.
 
 -------------------------------------------------------
 
-### [text.height](#text-height) *<float>*
+#### [text.height](#text-height) *float*
 
 Set the height of the text block.
 
@@ -99,17 +91,8 @@ Set the height of the text block.
 		height: 5
 
 -------------------------------------------------------
-<!--
-### text.letterSpacing *<float>*
 
-Letter spacing in pixels. Default is 0.
-
-	myText = new Text
-		text: "Hello, World!"
-		letterSpacing: 0.2
--->
-
-### [text.lineHeight](#text-lineheight) *<float>*
+#### [text.lineHeight](#text-lineheight) *float*
 
 Line height in pixels.
 
@@ -119,7 +102,7 @@ Line height in pixels.
 
 -------------------------------------------------------
 
-### [text.transparency](#text-transparency) *<boolean>*
+#### [text.transparency](#text-transparency) *boolean*
 
 Set the transparency of the text. Default is no.
 
@@ -128,7 +111,7 @@ Set the transparency of the text. Default is no.
 
 -------------------------------------------------------
 
-### [text.opacity](#text-opacity) *<float>*
+#### [text.opacity](#text-opacity) *float*
 
 Set the opacity of the text. Default is 1.
 
@@ -138,7 +121,7 @@ Set the opacity of the text. Default is 1.
 
 -------------------------------------------------------
 
-### [text.whitespace](#text-whitespace) *<float>*
+#### [text.whitespace](#text-whitespace) *float*
 
 How whitespace should be handled (i.e., Whitespace.normal, Whitespace.pre, Whitespace.nowrap). Default is Whitespace.normal.
 
@@ -148,7 +131,7 @@ How whitespace should be handled (i.e., Whitespace.normal, Whitespace.pre, White
 
 -------------------------------------------------------
 
-### [text.zindex](#text-zindex) *<float>*
+#### [text.zindex](#text-zindex) *float*
 
 Z-index to apply to avoid Z-fighting if using with a geometry as a background. Default is 0.001
 
@@ -158,7 +141,7 @@ Z-index to apply to avoid Z-fighting if using with a geometry as a background. D
 
 -------------------------------------------------------
 
-#### [text.shader](#text-shader) *<string>*
+#### [text.shader](#text-shader) *string*
 
 Define the shader to use to render the text on the scene. Default is standard.
 
@@ -167,7 +150,7 @@ Define the shader to use to render the text on the scene. Default is standard.
 
 -------------------------------------------------------
 
-#### [text.side](#text-side) *<string>*
+#### [text.side](#text-side) *string*
 
 Defines which of the face sides will be rendered. Default is front, can be either Side.front, Side.back or Side.both.
 

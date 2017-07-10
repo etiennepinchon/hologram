@@ -1,5 +1,14 @@
 Utils = {}
 
+Utils.parseAssets = (value)->
+	return value if not value or not Utils.isString(value)
+	if window.__assets and window.__assets[value]
+		temp = value.split('.').shift()
+		if value is temp
+			value = "assets/#{window.__assets[value]}"
+			value = "#{window.__path}/#{value}" if window.__path
+	value
+
 # Difference between 2 arrays
 # Return the value A without the values of B find in A
 Utils.without = (a, b) ->

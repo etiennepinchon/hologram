@@ -10,7 +10,7 @@ The octahedron geometry creates a polygon with eight equilateral triangular face
 
 -------------------------------------------------------
 
-#### [octahedron.color](#octahedron-color) *<color>*
+#### [octahedron.color](#octahedron-color) *color*
 
 Defines the color of the octahedron. Default is white.
 
@@ -19,7 +19,7 @@ Defines the color of the octahedron. Default is white.
 
 -------------------------------------------------------
 
-#### [octahedron.radius](#octahedron-radius) *<float>*
+#### [octahedron.radius](#octahedron-radius) *float*
 
 Defines the radius of the octahedron. Default is 1.
 
@@ -29,7 +29,7 @@ Defines the radius of the octahedron. Default is 1.
 
 -------------------------------------------------------
 
-#### [octahedron.src](#octahedron-src) *<string/AssetImage>*
+#### [octahedron.src](#octahedron-src) *string/AssetImage*
 
 Defines the material used when rendering the octahedron.
 

@@ -11,7 +11,7 @@ The cone geometry is a cylinder geometry that have different top and bottom radi
 
 -------------------------------------------------------
 
-#### [cone.color](#cone-color) *<color>*
+#### [cone.color](#cone-color) *color*
 
 Defines the color of the cone. Default is white.
 
@@ -20,7 +20,7 @@ Defines the color of the cone. Default is white.
 
 -------------------------------------------------------
 
-#### [cone.radiusTop](#cone-radiustop) *<float>*
+#### [cone.radiusTop](#cone-radiustop) *float*
 
 Defines the top radius of the cone. Default is 0.8.
 
@@ -30,7 +30,7 @@ Defines the top radius of the cone. Default is 0.8.
 
 -------------------------------------------------------
 
-#### [cone.radiusBottom](#cone-radiusbottom) *<float>*
+#### [cone.radiusBottom](#cone-radiusbottom) *float*
 
 Defines the bottom radius of the cone. Default is 1.
 
@@ -41,7 +41,7 @@ Defines the bottom radius of the cone. Default is 1.
 
 -------------------------------------------------------
 
-#### [cone.src](#cone-src) *<string/AssetImage>*
+#### [cone.src](#cone-src) *string/AssetImage*
 
 Defines the material used when rendering the cone.
 
@@ -50,7 +50,7 @@ Defines the material used when rendering the cone.
 
 -------------------------------------------------------
 
-### [cone.transparency](#cone-transparency) *<boolean>*
+#### [cone.transparency](#cone-transparency) *boolean*
 
 Set the transparency of the cone. Default is no.
 
@@ -59,7 +59,7 @@ Set the transparency of the cone. Default is no.
 
 -------------------------------------------------------
 
-### [cone.opacity](#cone-opacity) *<float>*
+#### [cone.opacity](#cone-opacity) *float*
 
 Set the opacity of the cone. Default is 1.
 
@@ -69,7 +69,7 @@ Set the opacity of the cone. Default is 1.
 
 -------------------------------------------------------
 
-#### [cone.metalness](#cone-metalness) *<float>*
+#### [cone.metalness](#cone-metalness) *float*
 
 Set the metalness aspect of the cone. Default is 0.
 
@@ -79,7 +79,7 @@ Set the metalness aspect of the cone. Default is 0.
 
 -------------------------------------------------------
 
-#### [cone.repeat](#cone-repeat) *<string>*
+#### [cone.repeat](#cone-repeat) *string*
 
 Define how many times the texture should be repeated on the cone on the x and y axies. Default is None.
 
@@ -89,7 +89,7 @@ Define how many times the texture should be repeated on the cone on the x and y 
 
 -------------------------------------------------------
 
-#### [cone.roughness](#cone-roughness) *<float>*
+#### [cone.roughness](#cone-roughness) *float*
 
 Define the roughness aspect of the cone. Default is 0.5.
 
@@ -99,7 +99,7 @@ Define the roughness aspect of the cone. Default is 0.5.
 
 -------------------------------------------------------
 
-#### [cone.shader](#cone-shader) *<shader type>*
+#### [cone.shader](#cone-shader) *shader*
 
 Define the shader to use to render the cone on the scene. Default is standard.
 
@@ -108,7 +108,7 @@ Define the shader to use to render the cone on the scene. Default is standard.
 
 -------------------------------------------------------
 
-#### [cone.segmentsHeight](#cone-segmentsheight) *<float>*
+#### [cone.segmentsHeight](#cone-segmentsheight) *float*
 
 Defines the segements height to use when rendering the cone. Default is 18.
 
@@ -118,7 +118,7 @@ Defines the segements height to use when rendering the cone. Default is 18.
 
 -------------------------------------------------------
 
-#### [cone.segmentsRadial](#cone-segmentsradial) *<float>*
+#### [cone.segmentsRadial](#cone-segmentsradial) *float*
 
 Defines the segements radial to use when rendering the cone. Default is 36.
 
@@ -128,7 +128,7 @@ Defines the segements radial to use when rendering the cone. Default is 36.
 
 -------------------------------------------------------
 
-#### [cone.thetaLength](#cone-thetalength) *<integer>*
+#### [cone.thetaLength](#cone-thetalength) *integer*
 
 Defines the theta length of the cone. Default is 180.
 
@@ -139,7 +139,7 @@ Defines the theta length of the cone. Default is 180.
 
 -------------------------------------------------------
 
-#### [cone.thetaStart](#cone-thetastart) *<integer>*
+#### [cone.thetaStart](#cone-thetastart) *integer*
 
 Defines the theta start value of the cone. Default is 0.
 
@@ -151,7 +151,7 @@ Defines the theta start value of the cone. Default is 0.
 
 -------------------------------------------------------
 
-#### [cone.wireframe](#cone-wireframe) *<boolean>*
+#### [cone.wireframe](#cone-wireframe) *boolean*
 
 Render the cone wireframe only. Default is false.
 
@@ -160,7 +160,7 @@ Render the cone wireframe only. Default is false.
 
 -------------------------------------------------------
 
-#### [cone.wireframeWidth](#cone-wireframewidth) *<integer>*
+#### [cone.wireframeWidth](#cone-wireframewidth) *integer*
 
 Wireframe width. Default is 2.
 
@@ -170,7 +170,7 @@ Wireframe width. Default is 2.
 
 -------------------------------------------------------
 
-#### [cone.fog](#cone-fog) *<boolean>*
+#### [cone.fog](#cone-fog) *boolean*
 
 React to the scene fog. Default is true.
 

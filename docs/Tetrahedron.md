@@ -10,7 +10,7 @@ The tetrahedron geometry creates a polygon with four triangular faces.
 
 -------------------------------------------------------
 
-#### [tetrahedron.color](#tetrahedron-color) *<color>*
+#### [tetrahedron.color](#tetrahedron-color) *color*
 
 Defines the color of the tetrahedron. Default is white.
 
@@ -19,7 +19,7 @@ Defines the color of the tetrahedron. Default is white.
 
 -------------------------------------------------------
 
-#### [tetrahedron.radius](#tetrahedron-radius) *<float>*
+#### [tetrahedron.radius](#tetrahedron-radius) *float*
 
 Defines the radius of the tetrahedron. Default is 1.
 
@@ -29,7 +29,7 @@ Defines the radius of the tetrahedron. Default is 1.
 
 -------------------------------------------------------
 
-#### [tetrahedron.src](#tetrahedron-src) *<string/AssetImage>*
+#### [tetrahedron.src](#tetrahedron-src) *string/AssetImage*
 
 Defines the material used when rendering the tetrahedron.
 

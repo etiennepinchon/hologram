@@ -1,6 +1,7 @@
 Events = {}
 
 # Entity
+Events.ModelLoad     = 'model-loaded'
 Events.Load 	       = 'load'
 
 # Entity interaction

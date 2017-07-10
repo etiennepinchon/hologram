@@ -7,13 +7,13 @@ Add a source of light to your scene. Light affects all materials that have not s
 	myLight = new Light
 		color: "#AFA"
 		intensity: 1.5
-		position:"-1 1 0"
+		position: "-1 1 0"
 
 By default, Hologram scenes have a default lighting: an ambient light and a directional light. Whenever you add any lights, Hologram will removes the default lights from the scene.
 
 -------------------------------------------------------
 
-#### [light.type](#light-type) *<string>*
+#### [light.type](#light-type) *string*
 Set the type of light. Default is no.
 
 ##### [Ambient](#light-type-ambient)
@@ -56,12 +56,11 @@ Hemisphere lights are like an ambient light, but with two different colors, one 
 		type: Light.hemisphere
 		color: "#33C"
 		groundColor: "#3C3"
-		intensity: "2"
+		intensity: 2
 
 ###### Property
-*
-		groundColor
-	Light color from below.
+
+* `groundColor: Light color from below.`
 
 -------------------------------------------------------
 
@@ -76,12 +75,8 @@ Point lights, unlike directional lights, are omni-directional and affect materia
 		position: "0 10 10"
 
 ###### Properties
-*
-		decay
-	Amount the light dims along the distance of the light. Default is 1.0.
-*
-		distance
-	Distance where intensity becomes 0. If distance is 0, then the point light does not decay with distance. Default is 0.0.
+* `decay: Amount the light dims along the distance of the light. Default is 1.0.`
+* `distance: Distance where intensity becomes 0. If distance is 0, then the point light does not decay with distance. Default is 0.0.`
 
 -------------------------------------------------------
 
@@ -92,40 +87,29 @@ Spot lights are like point lights in the sense that they affect materials depend
 		type: Light.spot
 
 ###### Properties
-*
-		angle
-	Maximum extent of spot light from its direction (in degrees). Default is 60.
-*
-		decay
-	Amount the light dims along the distance of the light. Default is 1.0.
-*
-		distance
-	Distance where intensity becomes 0. If distance is 0, then the point light does not decay with distance. Default is 0.0.
-*
-		penumbra
-	Percent of the spotlight cone that is attenuated due to penumbra. Default is 0.0.
-*
-		target
-	Element the spot should point to. set to null to transform spotlight by orientation, pointing to it’s -Z axis. Default is 1.0.
+* `angle: Maximum extent of spot light from its direction (in degrees). Default is 60.`
+* `decay: Amount the light dims along the distance of the light. Default is 1.0.`
+* `distance: Distance where intensity becomes 0. If distance is 0, then the point light does not decay with distance. Default is 0.0.`
+* `penumbra: Percent of the spotlight cone that is attenuated due to penumbra. Default is 0.0.`
+* `target: Element the spot should point to. set to null to transform spotlight by orientation, pointing to it’s -Z axis. Default is 1.0.`
 
 -------------------------------------------------------
 
-#### [light.color](#light-color) *<color>*
+#### [light.color](#light-color) *color*
 
 Defines the color of the cube. Default is white.
 
 	myLight = new Light
 		color: Color.tomato
 
-#### [light.intensity](#light-intensity) *<float>*
+#### [light.intensity](#light-intensity) *float*
 
 Defines the intensity of the light. Default is 1.0.
 
 	myLight = new Light
 		intensity: 2.0
 
-
-#### [light.castShadow](#light-castShadow) *<float>*
+#### [light.castShadow](#light-castShadow) *float*
 
 Whether this light casts shadows on the scene. Default is false.
 Note that shadows are supported by Point, Spot and Directional lights.

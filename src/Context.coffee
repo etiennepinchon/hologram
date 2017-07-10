@@ -26,13 +26,16 @@ class exports.Context extends BaseClass
 	reset: ->
 		@_createDOMEventManager()
 		@_createRootElement()
+		Hologram.scene = null
+		@softReset()
+		@emit("reset", @)
+		return
 
+	softReset: ->
 		@resetViews()
 		@resetAnimations()
 		@resetTimers()
 		@resetIntervals()
-
-		@emit("reset", @)
 		return
 
 	# destroy: ->

@@ -1,13 +1,13 @@
 {Entity} = require "./Entity"
 {Events} = require "./Events"
 
-class exports.ColladaModel extends Entity
+class exports.GltfModel extends Entity
 
 	entity :
-		name: "ColladaModel"
-		type: "a-collada-model"
+		name: "GltfModel"
+		type: "a-gltf-model"
 
 	#-------------------------------------------------------
 	# PROPERTIES
 
-	onLoad : (cb)-> @on Events.Load, cb
+	onLoad : (cb)-> @on Events.ModelLoad, cb

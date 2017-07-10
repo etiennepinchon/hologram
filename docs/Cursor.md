@@ -23,37 +23,37 @@ When the mouse clicks, the closest visible entity intersecting the cursor, if an
 All the cursor events are listed in the [entity events section](#entity-events).
 
 
-#### [Hologram.cursor.enabled](#cursor-enabled) *<boolean>*
+#### [Hologram.cursor.enabled](#cursor-enabled) *boolean*
 
 	Hologram.cursor.enabled = true
 
-#### [Hologram.cursor.fuse](#cursor-fuse) *<boolean>*
+#### [Hologram.cursor.fuse](#cursor-fuse) *boolean*
 
 Whether cursor is fuse-based. Default is true.
 
 	Hologram.cursor.fuse = true
 
-#### [Hologram.cursor.fuseTimeout](#cursor-fusetimeout) *<float>*
+#### [Hologram.cursor.fuseTimeout](#cursor-fusetimeout) *float*
 
 How long to wait in seconds before triggering a fuse-based click event. Default is 1.5.
 
 	Hologram.cursor.fuseTimeout = 0.5
 
-#### [Hologram.cursor.maxDistance](#cursor-maxDistance) *<float>*
+#### [Hologram.cursor.maxDistance](#cursor-maxDistance) *float*
 
 How far can the cursor reach. Default is 1000.
 
 	# Max distance of 10 meters
 	Hologram.cursor.maxDistance = 10
 
-#### [Custom cursor](#cursor-custom)
+### [Custom cursor](#cursor-custom)
 
 	# Little red cursor
 	Hologram.cursor.color = red
 	Hologram.cursor.radiusInner = 0.005
 	Hologram.cursor.radiusOuter = 0.01
 
-#### [Super custom cursor](#cursor-super-custom)
+### [Super custom cursor](#cursor-super-custom)
 
 Note: only for the braves.
 Cursors are entities and therefore can be totally changed to your need.

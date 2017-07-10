@@ -10,7 +10,7 @@ The icosahedron primitive is used to create icosahedron.
 
 -------------------------------------------------------
 
-#### [icosahedron.color](#icosahedron-color) *<color>*
+#### [icosahedron.color](#icosahedron-color) *color*
 
 Defines the color of the icosahedron. Default is white.
 
@@ -19,7 +19,7 @@ Defines the color of the icosahedron. Default is white.
 
 -------------------------------------------------------
 
-#### [icosahedron.radius](#icosahedron-radius) *<float>*
+#### [icosahedron.radius](#icosahedron-radius) *float*
 
 Defines the radius of the icosahedron. Default is 1.
 
@@ -29,7 +29,7 @@ Defines the radius of the icosahedron. Default is 1.
 
 -------------------------------------------------------
 
-#### [icosahedron.src](#icosahedron-src) *<string/AssetImage>*
+#### [icosahedron.src](#icosahedron-src) *string/AssetImage*
 
 Defines the material used when rendering the icosahedron.
 

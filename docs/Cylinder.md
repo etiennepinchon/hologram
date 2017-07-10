@@ -29,7 +29,7 @@ The cylinder geometry creates cylinders in the traditional sense like a Coca-Col
 
 -------------------------------------------------------
 
-#### [cylinder.color](#cylinder-color)  *<color>*
+#### [cylinder.color](#cylinder-color)  *color*
 
 Defines the color of the cylinder. Default is white.
 
@@ -38,7 +38,7 @@ Defines the color of the cylinder. Default is white.
 
 -------------------------------------------------------
 
-#### [cylinder.radius](#cylinder-radius) *<float>*
+#### [cylinder.radius](#cylinder-radius) *float*
 
 Defines the radius of the cylinder. Default is 1.
 
@@ -46,14 +46,14 @@ Defines the radius of the cylinder. Default is 1.
 		radius: 2
 		color: Color.blue
 
-### [cylinder.height](#cylinder-height) *<float>*
+#### [cylinder.height](#cylinder-height) *float*
 
 Set the height of the cylinder. Default is 2.
 
 	myCylinder = new Cylinder
 		height: 5
 
-### [cylinder.openEnded](#cylinder-openended) *<boolean>*
+#### [cylinder.openEnded](#cylinder-openended) *boolean*
 
 Whether the ends of the cylinder are open (true) or capped (false).
 
@@ -62,7 +62,7 @@ Whether the ends of the cylinder are open (true) or capped (false).
 
 -------------------------------------------------------
 
-#### [cylinder.src](#cylinder-src) *<string/AssetImage>*
+#### [cylinder.src](#cylinder-src) *string/AssetImage*
 
 Defines the material used when rendering the cylinder.
 
@@ -71,7 +71,7 @@ Defines the material used when rendering the cylinder.
 
 -------------------------------------------------------
 
-### [cylinder.transparency](#cylinder-transparency) *<boolean>*
+#### [cylinder.transparency](#cylinder-transparency) *boolean*
 
 Set the transparency of the cylinder. Default is no.
 
@@ -80,7 +80,7 @@ Set the transparency of the cylinder. Default is no.
 
 -------------------------------------------------------
 
-### [cylinder.opacity](#cylinder-opacity) *<float>*
+#### [cylinder.opacity](#cylinder-opacity) *float*
 
 Set the opacity of the cylinder. Default is 1.
 
@@ -90,7 +90,7 @@ Set the opacity of the cylinder. Default is 1.
 
 -------------------------------------------------------
 
-#### [cylinder.metalness](#cylinder-metalness) *<float>*
+#### [cylinder.metalness](#cylinder-metalness) *float*
 
 Set the metalness aspect of the cylinder. Default is 0.
 
@@ -100,7 +100,7 @@ Set the metalness aspect of the cylinder. Default is 0.
 
 -------------------------------------------------------
 
-#### [cylinder.repeat](#cylinder-repeat) *<string>*
+#### [cylinder.repeat](#cylinder-repeat) *string*
 
 Define how many times the texture should be repeated on the cylinder on the x and y axies. Default is None.
 
@@ -110,7 +110,7 @@ Define how many times the texture should be repeated on the cylinder on the x an
 
 -------------------------------------------------------
 
-#### [cylinder.roughness](#cylinder-roughness) *<float>*
+#### [cylinder.roughness](#cylinder-roughness) *float*
 
 Define the roughness aspect of the cylinder. Default is 0.5.
 
@@ -120,7 +120,7 @@ Define the roughness aspect of the cylinder. Default is 0.5.
 
 -------------------------------------------------------
 
-#### [cylinder.shader](#cylinder-shader) *<shader type>*
+#### [cylinder.shader](#cylinder-shader) *shader*
 
 Define the shader to use to render the cylinder on the scene. Default is standard.
 
@@ -129,7 +129,7 @@ Define the shader to use to render the cylinder on the scene. Default is standar
 
 -------------------------------------------------------
 
-#### [cylinder.segmentsHeight](#cylinder-segmentsheight) *<float>*
+#### [cylinder.segmentsHeight](#cylinder-segmentsheight) *float*
 
 Defines the segements height to use when rendering the cylinder. Default is 18.
 
@@ -139,7 +139,7 @@ Defines the segements height to use when rendering the cylinder. Default is 18.
 
 -------------------------------------------------------
 
-#### [cylinder.segmentsRadial](#cylinder-segmentsradial) *<float>*
+#### [cylinder.segmentsRadial](#cylinder-segmentsradial) *float*
 
 Defines the segements radial to use when rendering the cylinder. Default is 36.
 
@@ -149,7 +149,7 @@ Defines the segements radial to use when rendering the cylinder. Default is 36.
 
 -------------------------------------------------------
 
-#### [cylinder.thetaLength](#cylinder-thetalength) *<integer>*
+#### [cylinder.thetaLength](#cylinder-thetalength) *integer*
 
 Defines the theta length of the cylinder. Default is 180.
 
@@ -160,7 +160,7 @@ Defines the theta length of the cylinder. Default is 180.
 
 -------------------------------------------------------
 
-#### [cylinder.thetaStart](#cylinder-thetastart) *<integer>*
+#### [cylinder.thetaStart](#cylinder-thetastart) *integer*
 
 Defines the theta start value of the cylinder. Default is 0.
 
@@ -172,7 +172,7 @@ Defines the theta start value of the cylinder. Default is 0.
 
 -------------------------------------------------------
 
-#### [cylinder.wireframe](#cylinder-wireframe) *<boolean>*
+#### [cylinder.wireframe](#cylinder-wireframe) *boolean*
 
 Render the cylinder wireframe only. Default is false.
 
@@ -181,7 +181,7 @@ Render the cylinder wireframe only. Default is false.
 
 -------------------------------------------------------
 
-#### [cylinder.wireframeWidth](#cylinder-wireframewidth) *<integer>*
+#### [cylinder.wireframeWidth](#cylinder-wireframewidth) *integer*
 
 Wireframe width. Default is 2.
 
@@ -191,7 +191,7 @@ Wireframe width. Default is 2.
 
 -------------------------------------------------------
 
-#### [cylinder.fog](#cylinder-fog) *<boolean>*
+#### [cylinder.fog](#cylinder-fog) *boolean*
 
 React to the scene fog. Default is true.
 

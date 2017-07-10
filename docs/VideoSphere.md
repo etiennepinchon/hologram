@@ -15,7 +15,7 @@ The videosphere primitive plays 360° videos in the background of the scene. Vid
 
 -------------------------------------------------------
 
-#### [videoSphere.src](#videosphere-src) *<string/AssetAudio>*
+#### [videoSphere.src](#videosphere-src) *string/AssetVideo*
 
 Path to video.
 
@@ -25,7 +25,7 @@ Path to video.
 
 -------------------------------------------------------
 
-#### [videoSphere.autoplay](#videosphere-autoplay) *<color>*
+#### [videoSphere.autoplay](#videosphere-autoplay) *color*
 
 Whether the video sphere should play right after being loaded. Default is false.
 
@@ -35,7 +35,7 @@ Whether the video sphere should play right after being loaded. Default is false.
 
 -------------------------------------------------------
 
-#### [videoSphere.loop](#videosphere-loop) *<boolean>*
+#### [videoSphere.loop](#videosphere-loop) *boolean*
 
 Whether the video sphere should repeat. Default is false.
 
@@ -45,7 +45,7 @@ Whether the video sphere should repeat. Default is false.
 
 -------------------------------------------------------
 
-#### [videoSphere.radius](#videosphere-radius) *<integer>*
+#### [videoSphere.radius](#videosphere-radius) *integer*
 
 Defines the radius of the video sphere. Default is 5000.
 

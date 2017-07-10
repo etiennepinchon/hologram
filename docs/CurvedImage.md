@@ -14,13 +14,14 @@ Under the hood, a curved image is a double-sided open-ended cylinder with textur
 		rotation: "0 100 0"
 		scale: "0.8 0.8 0.8"
 
-### Fine-Tuning
+
+### [Fine-Tuning](#curvedimage-fine-tuning)
 
 Ensuring that the image is not distorted by stretching requires us to carefully set the height, radius, and theta-length attributes relative to the image aspect ratio. Once those values are fine-tuned to avoid distortion, we can use scale to safely adjust the distance of the curved image relative to the user.
 
 -------------------------------------------------------
 
-#### [curvedImage.color](#curvedimage-color) *<color>*
+#### [curvedImage.color](#curvedimage-color) *color*
 
 Defines the color of the curved image. Default is white.
 
@@ -29,7 +30,7 @@ Defines the color of the curved image. Default is white.
 
 -------------------------------------------------------
 
-#### [curvedImage.radius](#curvedimage-radius) *<float>*
+#### [curvedImage.radius](#curvedimage-radius) *float*
 
 Defines the radius of the curved image. Default is 0.8.
 
@@ -39,7 +40,7 @@ Defines the radius of the curved image. Default is 0.8.
 
 -------------------------------------------------------
 
-### [curvedImage.height](#curvedimage-height) *<float>*
+#### [curvedImage.height](#curvedimage-height) *float*
 
 Set the height of the curved image. Default is 1.
 
@@ -48,7 +49,7 @@ Set the height of the curved image. Default is 1.
 
 -------------------------------------------------------
 
-#### [curvedImage.src](#curvedimage-src) *<string/AssetImage>*
+#### [curvedImage.src](#curvedimage-src) *string/AssetImage*
 
 Defines the material used when rendering the curved image.
 
@@ -57,7 +58,7 @@ Defines the material used when rendering the curved image.
 
 -------------------------------------------------------
 
-### [curvedImage.transparency](#curvedimage-transparency) *<boolean>*
+#### [curvedImage.transparency](#curvedimage-transparency) *boolean*
 
 Set the transparency of the curved image. Default is no.
 
@@ -66,7 +67,7 @@ Set the transparency of the curved image. Default is no.
 
 -------------------------------------------------------
 
-### [curvedImage.opacity](#curvedimage-opacity) *<float>*
+#### [curvedImage.opacity](#curvedimage-opacity) *float*
 
 Set the opacity of the curved image. Default is 1.
 
@@ -76,7 +77,7 @@ Set the opacity of the curved image. Default is 1.
 
 -------------------------------------------------------
 
-#### [curvedImage.metalness](#curvedimage-metalness) *<float>*
+#### [curvedImage.metalness](#curvedimage-metalness) *float*
 
 Set the metalness aspect of the curved image. Default is 0.
 
@@ -86,7 +87,7 @@ Set the metalness aspect of the curved image. Default is 0.
 
 -------------------------------------------------------
 
-#### [curvedImage.repeat](#curvedimage-repeat) *<string>*
+#### [curvedImage.repeat](#curvedimage-repeat) *string*
 
 Define how many times the texture should be repeated on the curved image on the x and y axies. Default is None.
 
@@ -96,7 +97,7 @@ Define how many times the texture should be repeated on the curved image on the 
 
 -------------------------------------------------------
 
-#### [curvedImage.roughness](#curvedimage-roughness) *<float>*
+#### [curvedImage.roughness](#curvedimage-roughness) *float*
 
 Define the roughness aspect of the curved image. Default is 0.5.
 
@@ -106,7 +107,7 @@ Define the roughness aspect of the curved image. Default is 0.5.
 
 -------------------------------------------------------
 
-#### [curvedImage.shader](#curvedimage-shader) *<shader type>*
+#### [curvedImage.shader](#curvedimage-shader) *shader*
 
 Define the shader to use to render the curved image on the scene. Default is standard.
 
@@ -115,7 +116,7 @@ Define the shader to use to render the curved image on the scene. Default is sta
 
 -------------------------------------------------------
 
-#### [curvedImage.segmentsHeight](#curvedimage-segmentsheight) *<float>*
+#### [curvedImage.segmentsHeight](#curvedimage-segmentsheight) *float*
 
 Defines the segements height to use when rendering the curved image. Default is 18.
 
@@ -126,7 +127,7 @@ Defines the segements height to use when rendering the curved image. Default is 
 
 -------------------------------------------------------
 
-#### [curvedImage.segmentsRadial](#curvedimage-segmentsradial) *<float>*
+#### [curvedImage.segmentsRadial](#curvedimage-segmentsradial) *float*
 
 Defines the segements radial to use when rendering the curved image. Default is 48.
 
@@ -136,7 +137,7 @@ Defines the segements radial to use when rendering the curved image. Default is 
 
 -------------------------------------------------------
 
-#### [curvedImage.thetaLength](#curvedimage-thetalength) *<integer>*
+#### [curvedImage.thetaLength](#curvedimage-thetalength) *integer*
 
 Defines the theta length of the curved image. Default is 270.
 
@@ -147,7 +148,7 @@ Defines the theta length of the curved image. Default is 270.
 
 -------------------------------------------------------
 
-#### [curvedImage.thetaStart](#curvedimage-thetastart) *<integer>*
+#### [curvedImage.thetaStart](#curvedimage-thetastart) *integer*
 
 Defines the theta start value of the curved image. Default is 0.
 

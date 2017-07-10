@@ -5,13 +5,13 @@
 The ring geometry creates a flat ring, like a CD.
 
 	myRing = new Ring
-		color: teal
+		color: Color.olive
 		radiusInner: 1
 		radiusOuter: 2
 
 -------------------------------------------------------
 
-#### [ring.color](#ring-color) *<color>*
+#### [ring.color](#ring-color) *color*
 
 Defines the color of the ring. Default is white.
 
@@ -20,7 +20,7 @@ Defines the color of the ring. Default is white.
 
 -------------------------------------------------------
 
-#### [ring.radiusInner](#ring-radiusinner) *<float>*
+#### [ring.radiusInner](#ring-radiusinner) *float*
 
 Defines the inner radius of the ring. Default is 1.
 
@@ -30,7 +30,7 @@ Defines the inner radius of the ring. Default is 1.
 
 -------------------------------------------------------
 
-#### [ring.radiusOuter](#ring-radiusouter) *<float>*
+#### [ring.radiusOuter](#ring-radiusouter) *float*
 
 Defines the outer radius of the ring. Default is 1.
 
@@ -40,7 +40,7 @@ Defines the outer radius of the ring. Default is 1.
 
 -------------------------------------------------------
 
-#### [ring.src](#ring-src) *<string/AssetImage>*
+#### [ring.src](#ring-src) *string/AssetImage*
 
 Defines the material used when rendering the ring.
 
@@ -49,7 +49,7 @@ Defines the material used when rendering the ring.
 
 -------------------------------------------------------
 
-### [ring.transparency](#ring-transparency) *<boolean>*
+#### [ring.transparency](#ring-transparency) *boolean*
 
 Set the transparency of the ring. Default is no.
 
@@ -58,7 +58,7 @@ Set the transparency of the ring. Default is no.
 
 -------------------------------------------------------
 
-### [ring.opacity](#ring-opacity) *<float>*
+#### [ring.opacity](#ring-opacity) *float*
 
 Set the opacity of the ring. Default is 1.
 
@@ -68,7 +68,7 @@ Set the opacity of the ring. Default is 1.
 
 -------------------------------------------------------
 
-#### [ring.metalness](#ring-metalness) *<float>*
+#### [ring.metalness](#ring-metalness) *float*
 
 Set the metalness aspect of the ring. Default is 0.
 
@@ -78,7 +78,7 @@ Set the metalness aspect of the ring. Default is 0.
 
 -------------------------------------------------------
 
-#### [ring.repeat](#ring-repeat) *<string>*
+#### [ring.repeat](#ring-repeat) *string*
 
 Define how many times the texture should be repeated on the ring on the x and y axies. Default is None.
 
@@ -88,7 +88,7 @@ Define how many times the texture should be repeated on the ring on the x and y 
 
 -------------------------------------------------------
 
-#### [ring.roughness](#ring-roughness)  *<float>*
+#### [ring.roughness](#ring-roughness)  *float*
 
 Define the roughness aspect of the ring. Default is 0.5.
 
@@ -98,7 +98,7 @@ Define the roughness aspect of the ring. Default is 0.5.
 
 -------------------------------------------------------
 
-#### [ring.shader](#ring-shader) *<shader type>*
+#### [ring.shader](#ring-shader) *shader*
 
 Define the shader to use to render the ring on the scene. Default is standard.
 
@@ -107,7 +107,7 @@ Define the shader to use to render the ring on the scene. Default is standard.
 
 -------------------------------------------------------
 
-#### [ring.side](#ring-side) *<string>*
+#### [ring.side](#ring-side) *string*
 
 Defines which of the face sides will be rendered. Default is front, can be either front, back or both.
 
@@ -116,7 +116,7 @@ Defines which of the face sides will be rendered. Default is front, can be eithe
 
 -------------------------------------------------------
 
-#### [ring.segmentsTheta](#ring-segmentstheta) *<integer>*
+#### [ring.segmentsTheta](#ring-segmentstheta) *integer*
 
 Number of segments. A higher number means the ring will be more round. Default is 32.
 
@@ -125,7 +125,7 @@ Number of segments. A higher number means the ring will be more round. Default i
 
 -------------------------------------------------------
 
-#### [ring.segmentsPhi](#ring-segmentsphi) *<integer>*
+#### [ring.segmentsPhi](#ring-segmentsphi) *integer*
 
 Number of triangles within each face defined by segmentsTheta. Default is 8.
 
@@ -134,7 +134,7 @@ Number of triangles within each face defined by segmentsTheta. Default is 8.
 
 -------------------------------------------------------
 
-#### [ring.thetaLength](#ring-thetalength) *<integer>*
+#### [ring.thetaLength](#ring-thetalength) *integer*
 
 Starting angle in degrees of the ring. Default is 180.
 
@@ -145,7 +145,7 @@ Starting angle in degrees of the ring. Default is 180.
 
 -------------------------------------------------------
 
-#### [ring.thetaStart](#ring-thetastart) *<integer>*
+#### [ring.thetaStart](#ring-thetastart) *integer*
 
 Central angle in degrees of the ring. Default is 0.
 
