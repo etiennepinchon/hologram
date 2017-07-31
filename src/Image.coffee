@@ -6,7 +6,7 @@ class exports.Image extends Entity
 		name: "Image"
 		type: "a-image"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "width", entityAttribute("width", "width", 1)

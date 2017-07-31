@@ -6,7 +6,7 @@ class exports.VideoSphere extends Entity
 		name: "VideoSphere"
 		type: "a-videosphere"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "radius", entityAttribute("radius", "radius", 5000)

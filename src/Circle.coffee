@@ -6,7 +6,7 @@ class exports.Circle extends Entity
 		name: "Circle"
 		type: "a-circle"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "radius", entityAttribute("radius", "radius", 1)

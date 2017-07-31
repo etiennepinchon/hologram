@@ -6,7 +6,12 @@ class exports.Plane extends Entity
 		name: "Plane"
 		type: "a-plane"
 
-	#-------------------------------------------------------
+	constructor: (options={})->
+		if not options.rotation or not options.rotationX
+			options.rotationX = -90
+		super
+
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "width", entityAttribute("width", "width", 1)

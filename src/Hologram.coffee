@@ -1,4 +1,9 @@
 window._Image = Image
+window.console.silence = ->
+
+Hologram = _properties: {}
+Hologram.Version = (require "../dist/Version")
+console.log("Hologram Build #{Hologram.Version.build}")
 
 # Vendors
 require "../vendors/aframe"
@@ -7,7 +12,6 @@ require "../vendors/aframe_effects"
 require "../vendors/aframe_look_at"
 require "../vendors/aframe_mouse_cursor"
 
-Hologram = _properties: {}
 Hologram.define = (name, args) -> Object.defineProperty this, name, args
 
 # Root level modules
@@ -25,10 +29,9 @@ Hologram.Font = (require "./Values").Font
 Hologram.Curve = (require "./Values").Curve
 Hologram.Direction = (require "./Values").Direction
 Hologram.Fill = (require "./Values").Fill
-Hologram.Shape = (require "./Values").Shape
-Hologram.Constraint = (require "./Values").Constraint
 
 # Entities
+Hologram._entityAttribute = (require "./Entity").entityAttribute
 Hologram.Entity = (require "./Entity").Entity
 Hologram.Box = (require "./Box").Box
 Hologram.Circle = (require "./Circle").Circle
@@ -45,7 +48,7 @@ Hologram.Icosahedron = (require "./Icosahedron").Icosahedron
 Hologram.Image = (require "./Image").Image
 Hologram.Light = (require "./Light")
 Hologram.Line = (require "./Line").Line
-Hologram.Link = (require "./Link").Link
+Hologram.Portal = (require "./Portal").Portal
 Hologram.Model = (require "./Model").Model
 Hologram.ObjectModel = (require "./ObjectModel").ObjectModel
 Hologram.Octahedron = (require "./Octahedron").Octahedron
@@ -73,17 +76,19 @@ Hologram.Context = (require "./Context").Context
 Hologram.Config = (require "./Config").Config
 Hologram.EventEmitter = (require "./EventEmitter").EventEmitter
 Hologram.BaseClass = (require "./BaseClass").BaseClass
-Hologram.Version = (require "../build/Version")
 
 window.Hologram = Hologram if window
 
 # Registrations
-Hologram.addShader 		= AFRAME.registerShader
-Hologram.addComponent = AFRAME.registerComponent
-Hologram.addPrimitive = AFRAME.registerPrimitive
-Hologram.addSystem 		= AFRAME.registerSystem
-Hologram.addElement 	= AFRAME.registerElement
-Hologram.addGeometry	= AFRAME.registerGeometry
+Hologram.registerShader 		= AFRAME.registerShader
+Hologram.registerComponent 	= AFRAME.registerComponent
+Hologram.registerPrimitive 	= AFRAME.registerPrimitive
+Hologram.registerSystem 		= AFRAME.registerSystem
+Hologram.registerElement 		= AFRAME.registerElement
+Hologram.registerGeometry		= AFRAME.registerGeometry
+Hologram.registerModule 		= (name, module)->
+	window[name] = Hologram[name] = module
+	return
 
 # HandControls
 Hologram.define 'leftHand',

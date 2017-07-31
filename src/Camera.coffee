@@ -6,7 +6,7 @@ class exports.Camera extends Entity
 		name: "Camera"
 		type: "a-camera"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "far", entityAttribute("far", "far", 10000)

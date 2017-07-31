@@ -6,7 +6,7 @@ class exports.Icosahedron extends Entity
 		name: "Icosahedron"
 		type: "a-icosahedron"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "radius", entityAttribute("radius", "radius", 1)

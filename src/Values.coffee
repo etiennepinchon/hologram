@@ -46,24 +46,6 @@ for item in ['roboto', 'aileronsemibold', 'dejavu', 'exo2bold', 'exo2semibold', 
   Font[item] = item
 exports.Font = Font
 
-# Physics - Shape
-Shape = {}
-for item in ['auto', 'box', 'cylinder', 'sphere', 'hull', 'none']
-	Shape[item] = item
-exports.Shape = Shape
-
-# Physics - Constraint
-Constraint = {}
-for item in ['lock', 'distance', 'hinge', 'coneTwist', 'pointToPoint']
-	Constraint[item] = item
-exports.Constraint = Constraint
-
-# Particles
-Particles = {}
-for item in ['default', 'dust', 'snow', 'rain']
-	Particles[item] = item
-exports.Particles = Particles
-
 # Animation Curve
 Curve = {}
 curves = [
@@ -82,7 +64,6 @@ curves = [
 for item in curves
 	Curve[item] = item
 exports.Curve = Curve
-
 
 # Animation Direction
 Direction = {}

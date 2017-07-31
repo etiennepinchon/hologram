@@ -33,7 +33,7 @@ Utils.extend = (a, b) ->
 			a[key] = b[key]
 	return a
 
-#-------------------------------------------------------
+# ----------------------------------------------------------------------------
 # Variable check
 
 Utils.isString = (string) ->
@@ -64,7 +64,7 @@ Utils.isObject = (obj) ->
 	return true if obj and typeof obj is 'object'
 	return false
 
-#-------------------------------------------------------
+# ----------------------------------------------------------------------------
 # VALUES
 
 Utils.keys = (object) ->
@@ -73,7 +73,7 @@ Utils.keys = (object) ->
 Utils.reset = ->
 	Hologram.CurrentContext.reset() if Hologram.CurrentContext != undefined
 
-#-------------------------------------------------------
+# ----------------------------------------------------------------------------
 # INTERVAL/DELAY
 
 Utils.delay = (time, f) ->
@@ -91,7 +91,7 @@ Utils.interval = (time, f) ->
 			clearInterval(timer)
 	}
 
-#-------------------------------------------------------
+# ----------------------------------------------------------------------------
 # HANDY FUNCTIONS
 
 Utils.randomColor = ->
@@ -108,14 +108,27 @@ Utils.randomNumber = (a=0, b=1) ->
 Utils.randomID = ->
 	Math.floor Math.random() * 100000 + 1
 
-#-------------------------------------------------------
+Utils.hexToRgb = (hex) ->
+	return hex if hex[0] isnt "#"
+	# Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+	shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i
+	hex = hex.replace(shorthandRegex, (m, r, g, b) ->
+		r + r + g + g + b + b
+	)
+	result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
+	if result
+		"#{parseInt(result[1], 16)}, #{parseInt(result[2], 16)}, #{parseInt(result[3], 16)}"
+	else
+		null
+
+# ----------------------------------------------------------------------------
 # MATH FUNCTIONS
 
 Utils.round = (value, decimals=0) ->
 	d = Math.pow 10, decimals
 	Math.round(value * d) / d
 
-#-------------------------------------------------------
+# ----------------------------------------------------------------------------
 # DEVICE
 
 Utils.hasPositionalTracking = -> AFRAME.utils.device.checkHasPositionalTracking()
@@ -123,20 +136,20 @@ Utils.isHeadsetConnected = -> AFRAME.utils.device.checkHeadsetConnected()
 Utils.isGearVR = -> AFRAME.utils.device.isGearVR()
 Utils.isMobile = -> AFRAME.utils.device.isMobile()
 
-#-------------------------------------------------------
+# ----------------------------------------------------------------------------
 # VECTOR
 
 Utils.isVector = (value) -> AFRAME.utils.coordinates.isCoordinate(value)
 Utils.parseVector = (value) -> AFRAME.utils.coordinates.parse(value)
 Utils.stringifyVector = (value) -> AFRAME.utils.coordinates.stringify(value)
 
-#-------------------------------------------------------
+# ----------------------------------------------------------------------------
 # OBJECT
 
 Utils.deepEqual = (a, b) -> AFRAME.utils.deepEqual(a, b)
 Utils.diff = (a, b) -> AFRAME.utils.diff(a, b)
 
-#-------------------------------------------------------
+# ----------------------------------------------------------------------------
 # DOM FUNCTIONS
 
 __domComplete = []
@@ -196,7 +209,7 @@ Utils.isEmbed = ->
 			true
 		return
 
-#-------------------------------------------------------
+# ----------------------------------------------------------------------------
 # INSPECTOR
 
 Utils.inspectObjectType = (item) ->

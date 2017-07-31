@@ -6,7 +6,7 @@ class exports.Triangle extends Entity
 		name: "Triangle",
 		type: "a-triangle"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "width", entityAttribute("width", "width", 1)

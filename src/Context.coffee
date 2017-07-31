@@ -13,7 +13,7 @@ class exports.Context extends BaseClass
 		if not options.name
 			throw Error('Context: name required.')
 
-		#-------------------------------------------------------
+		# ----------------------------------------------------------------------------
 
 		@_parent = options.parent
 		@_name = options.name
@@ -47,7 +47,7 @@ class exports.Context extends BaseClass
 	@define "element",
 		get: -> @_element
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# Collections
 
 	# Views
@@ -67,7 +67,7 @@ class exports.Context extends BaseClass
 		@_views = []
 		return
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# Animations
 	# TODO: might need to adpated it to AFRAME or delete it
 
@@ -94,7 +94,7 @@ class exports.Context extends BaseClass
 
 
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# Timers
 
 	@define "timers", get: -> Utils.clone(@_timers)
@@ -113,7 +113,7 @@ class exports.Context extends BaseClass
 		@_timers = []
 		return
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# Intervals
 
 	@define "intervals", get: -> Utils.clone(@_intervals)
@@ -160,7 +160,7 @@ class exports.Context extends BaseClass
 			parent: Hologram.scene
 		Hologram.cursor = new Cursor()
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# Runtime controls
 
 	# Remove all events from a context
@@ -214,7 +214,7 @@ class exports.Context extends BaseClass
 		delete @_frozenEvents
 		return
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# DOM
 
 	# Create a DOMEventManager inside the context
@@ -269,7 +269,7 @@ class exports.Context extends BaseClass
 		@_element = undefined
 		return
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# Geometry
 
 	# Remember the context doesn't really have height. These are just a reference

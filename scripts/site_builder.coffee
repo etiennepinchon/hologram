@@ -82,8 +82,8 @@ uploadFile = (path, remotePath="") ->
 	console.log "Upload #{path} -> #{remotePath}"
 
 	client = knox.createClient
-		key: process.env.AWS_ACCESS_KEY_ID
-		secret: process.env.AWS_SECRET_ACCESS_KEY
+		key: process.env.AWS_KEY_ID
+		secret: process.env.AWS_ACCESS_KEY
 		bucket: Config.bucket
 
 	buffer = fs.readFileSync path

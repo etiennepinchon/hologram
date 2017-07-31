@@ -8,9 +8,9 @@ class exports.Sky extends Entity
 
 	constructor: (options)->
 		super
-		@side = 'back'
+		@side = 'double'
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "radius", entityAttribute("radius", "radius", 5000)

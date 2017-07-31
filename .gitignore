@@ -28,3 +28,4 @@ _projects
 node_modules
 dist/
 vendors/
+scripts/

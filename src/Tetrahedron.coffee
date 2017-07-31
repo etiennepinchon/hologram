@@ -6,7 +6,7 @@ class exports.Tetrahedron extends Entity
 		name: "Tetrahedron"
 		type: "a-tetrahedron"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "radius", entityAttribute("radius", "radius", 1)

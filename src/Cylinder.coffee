@@ -6,7 +6,7 @@ class exports.Cylinder extends Entity
 		name: "Cylinder",
 		type: "a-cylinder"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "radius", entityAttribute("radius", "radius", 1)

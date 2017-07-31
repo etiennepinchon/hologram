@@ -7,7 +7,7 @@ class exports.ColladaModel extends Entity
 		name: "ColladaModel"
 		type: "a-collada-model"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	onLoad : (cb)-> @on Events.ModelLoad, cb

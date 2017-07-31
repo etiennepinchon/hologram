@@ -6,7 +6,7 @@ class exports.CurvedImage extends Entity
 		name: "CurvedImage",
 		type: "a-curvedimage"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "height", entityAttribute("height", "height", 1)

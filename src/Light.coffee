@@ -7,7 +7,7 @@ class Light extends Entity
 		name: "Light"
 		type: "a-light"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "angle", entityAttribute("angle", "angle", 60)

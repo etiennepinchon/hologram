@@ -1,8 +1,8 @@
 {
   "name": "hologramjs",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Creative WebVR Framework",
-  "main": "build/hologram.js",
+  "main": "dist/hologram.js",
   "directories": {
     "doc": "docs",
     "test": "test"

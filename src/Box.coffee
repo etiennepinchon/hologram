@@ -6,7 +6,7 @@ class exports.Box extends Entity
 		name: "Box",
 		type: "a-box"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "width", entityAttribute("width", "width", 1)

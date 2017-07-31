@@ -7,7 +7,7 @@ class exports.Sound extends Entity
 		name: "Sound"
 		type: "a-sound"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "autoplay", entityAttribute("autoplay", "autoplay", no)
@@ -26,7 +26,7 @@ class exports.Sound extends Entity
 		@_element.components.sound.stopSound()
 		return
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# METHODS
 
 	onSoundEnd : (callback)-> @on Events.SoundEnd, cb

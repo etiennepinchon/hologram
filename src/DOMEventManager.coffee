@@ -20,7 +20,7 @@ class DOMEventManagerElement extends EventEmitter
 	addEventListener: @::addListener
 	removeEventListener: @::removeListener
 
-#-------------------------------------------------------
+# ----------------------------------------------------------------------------
 
 EventManagerIdCounter = 0
 

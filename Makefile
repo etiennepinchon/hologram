@@ -17,7 +17,7 @@ unbootstrap:
 
 clean:
 	rm -rf vendors
-	rm -rf build
+	rm -rf dist
 	rm -Rf node_modules
 
 clearvendors:
@@ -51,7 +51,9 @@ dist: release
 	scripts/dist.sh
 
 predeploy: dist
+	. ../Pipeline/env.sh; \
 	scripts/site_builder.sh
 
 deploy: predeploy
+	. ../Pipeline/env.sh; \
 	$(BIN)/coffee scripts/site_builder.coffee upload

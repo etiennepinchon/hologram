@@ -32,7 +32,7 @@ class exports.Scene extends Entity
 		type: "a-scene"
 	effects : []
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "stats", entityAttribute("stats", "stats", no)
@@ -49,7 +49,7 @@ class exports.Scene extends Entity
 			@_element.setAttribute 'vr-mode-ui', 'enabled: '+value
 			return
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# FOG
 
 	# type:  linear / exponential
@@ -67,7 +67,7 @@ class exports.Scene extends Entity
 			@_element.setAttribute 'fog', AFRAME.utils.styleParser.stringify(value)
 			return
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PHYSICS
 
 	@define "physics", entityAttribute("physics", "physics", null)
@@ -83,7 +83,7 @@ class exports.Scene extends Entity
 			return
 	###
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# EFFECTS
 
 	@define 'bloom', effectAttribute("bloom")
@@ -93,7 +93,7 @@ class exports.Scene extends Entity
 	@define 'glitch', effectAttribute("glitch")
 	@define 'colors', effectAttribute("colors")
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PRIVATE
 
 	_addEffect: (name)->

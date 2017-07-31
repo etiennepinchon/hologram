@@ -1,15 +1,19 @@
 {entityAttribute, Entity} = require "./Entity"
 
-class exports.Link extends Entity
+class exports.Portal extends Entity
 
 	entity :
-		name: "Link",
+		name: "Portal",
 		type: "a-link"
 
-	#-------------------------------------------------------
+	constructor: (options={})->
+		options.href = "index.html" if not options.href
+		super
+
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
-	@define "href", entityAttribute("href", "href", null)
+	@define "href", entityAttribute("href", "href", "index.html")
 	@define "title", entityAttribute("title", "title", null)
 	@define "highlight", entityAttribute("highlight", "highlighted", no)
 	@define "highlightColor", entityAttribute("highlightColor", "highlightedColor", "#24CAFF")
@@ -19,6 +23,9 @@ class exports.Link extends Entity
 			return null if not @_properties["image"]
 			@_properties["image"]
 		set: (value) ->
+			if value is null
+				@_element.removeAttribute 'image'
+				return
 			if Utils.isObject value
 				return if not value.id
 				value = "#Hologram#{value.entity.name}-#{value.id}"

@@ -10,8 +10,8 @@ cp -R extras/templates/Project build/Hologram/Project
 
 # Copy over the hologram build files
 mkdir -p build/Hologram/Project/hologram
-cp build/hologram.js build/Hologram/Project/hologram/hologram.js
-cp build/hologram.js.map build/Hologram/Project/hologram/hologram.js.map
+cp dist/hologram.js build/Hologram/Project/hologram/hologram.js
+cp dist/hologram.js.map build/Hologram/Project/hologram/hologram.js.map
 
 # Clean up and zip the result
 find build/Hologram -name ".DS_Store" -depth -exec rm {} \;

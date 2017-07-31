@@ -6,7 +6,7 @@ class exports.Dodecahedron extends Entity
 		name: "Dodecahedron"
 		type: "a-dodecahedron"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "radius", entityAttribute("radius", "radius", 1)

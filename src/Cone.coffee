@@ -6,7 +6,7 @@ class exports.Cone extends Entity
 		name: "Cone",
 		type: "a-cone"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "radiusTop", entityAttribute("radiusTop", "radius-top", .8)

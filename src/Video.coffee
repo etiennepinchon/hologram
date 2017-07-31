@@ -6,7 +6,7 @@ class exports.Video extends Entity
 		name: "Video"
 		type: "a-video"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "width", entityAttribute("width", "width", 3)

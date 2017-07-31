@@ -22,7 +22,7 @@ class exports.Cursor extends Entity
 		@_updateMaterial()
 		@_updateRaycaster()
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define 'enabled',
@@ -84,7 +84,7 @@ class exports.Cursor extends Entity
 			@_updateRaycaster()
 			return
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PRIVATE METHODS
 
 	_updateCursor : ->

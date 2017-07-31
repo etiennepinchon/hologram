@@ -1,18 +1,18 @@
-_ 								= require("lodash")
-async 						= require("async")
-gulp 							= require("gulp")
-webpack 					= require("webpack")
+_ 								= require "lodash"
+async 						= require "async"
+gulp 							= require "gulp"
+webpack 					= require "webpack"
 webpackDevServer 	= require "webpack-dev-server"
-rename 						= require("gulp-rename")
-template 					= require("gulp-template")
-gutil 						= require("gulp-util")
-{exec} 						= require("child_process")
-coffeelint 				= require('gulp-coffeelint')
-fs 								= require("fs-extra")
-path 							= require("path")
-config 						= require("./config")
+rename 						= require "gulp-rename"
+template 					= require "gulp-template"
+gutil 						= require "gulp-util"
+{exec} 						= require "child_process"
+coffeelint 				= require 'gulp-coffeelint'
+fs 								= require "fs-extra"
+path 							= require "path"
 http 							= require 'https'
 replaceStream 		= require 'replacestream'
+config 						= require "./config"
 
 #-------------------------------------------------------------------------------
 # CONFIG
@@ -39,7 +39,7 @@ gulp.task "watch", ["webpack:debug"], ->
 	gulp.watch(["./*.coffee", "src/**", "!Version.coffee"], ["webpack:debug"])
 
 gulp.task 'lint', ->
-	gulp.src(["./src/**/*.coffee", "!./src/Version.coffee.template", "./gulpfile.coffee", "scripts/site_builder.coffee"])
+	gulp.src(["./src/**/*.coffee", "!./src/Version.coffee.template", "./gulpfile.coffee"])
 		.pipe(coffeelint())
 		.pipe(coffeelint.reporter())
 
@@ -55,7 +55,7 @@ gulp.task "version", (callback) ->
 				basename: "Version",
 				extname: ".coffee"
 			}))
-			.pipe(gulp.dest("build"))
+			.pipe(gulp.dest("dist"))
 		callback(null, task)
 
 #-------------------------------------------------------------------------------
@@ -149,6 +149,7 @@ importVendors = ->
 				response
 					.pipe(replaceStream('new Image;', 'new _Image;')) # replace Image by _Image
 					.pipe(replaceStream('console.log(source,material);', '')) # patch for aframe_effects
+					.pipe(replaceStream('console.log', 'console.silence'))
 					.pipe file
 				return
 	return

@@ -7,7 +7,7 @@ class exports.GltfModel extends Entity
 		name: "GltfModel"
 		type: "a-gltf-model"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	onLoad : (cb)-> @on Events.ModelLoad, cb

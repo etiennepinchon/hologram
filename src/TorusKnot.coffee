@@ -6,7 +6,7 @@ class exports.TorusKnot extends Entity
 		name: "TorusKnot"
 		type: "a-torus-knot"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "radius", entityAttribute("radius", "radius", 1)

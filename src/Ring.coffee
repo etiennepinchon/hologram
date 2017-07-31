@@ -6,7 +6,7 @@ class exports.Ring extends Entity
 		name: "Ring"
 		type: "a-ring"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "radiusInner", entityAttribute("radiusInner", "radius-inner", .8)

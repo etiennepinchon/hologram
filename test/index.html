@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+  </head>
+  <body>
+    <script src="../dist/hologram.debug.js"></script>
+    <script type="text/javascript">
+      Hologram.ready(()=> {
+        let box = new Box({
+          color: Color.red,
+          position: {z: -5},
+          x: -1,
+          rotation: {z: -45}
+        })
+        box.animate({
+          rotationY: 360,
+          y: 3,
+          repeat: 10
+        })
+
+        new Line({
+          start: {x: 1},
+          end: {x: 4, y: 3, z: -2}
+        })
+      });
+    </script>
+  </body>
+</html>

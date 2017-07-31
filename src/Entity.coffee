@@ -28,16 +28,49 @@ entityAttribute = (name, attributeName, fallback) ->
 
 exports.entityAttribute = entityAttribute
 
+entityPosition = (name, fallback) ->
+	result =
+		default: fallback
+		configurable: yes
+		get: ->
+			return @_properties[name] if @_properties.hasOwnProperty(name)
+			return fallback
+		set: (value) ->
+			@_properties[name] = value
+			@_element.setAttribute 'position', "#{@x} #{@y} #{@z}"
+			return
+entityRotation = (name, fallback) ->
+	result =
+		default: fallback
+		configurable: yes
+		get: ->
+			return @_properties[name] if @_properties.hasOwnProperty(name)
+			return fallback
+		set: (value) ->
+			@_properties[name] = value
+			@_element.setAttribute 'rotation', "#{@rotationX} #{@rotationY} #{@rotationZ}"
+			return
+entityScale = (name, fallback) ->
+	result =
+		default: fallback
+		configurable: yes
+		get: ->
+			return @_properties[name] if @_properties.hasOwnProperty(name)
+			return fallback
+		set: (value) ->
+			@_properties[name] = value
+			@_element.setAttribute 'scale', "#{@scaleX} #{@scaleY} #{@scaleZ}"
+			return
+
 class exports.Entity extends BaseClass
 	constructor: (options={}) ->
 
 		@_element 		= {}
 		@_animations	= []
-
 		super
 
 		@_properties = {}
-		@_children 		 = []
+		@_children = []
 		@_createElement()
 		@_context.addView @
 
@@ -46,22 +79,18 @@ class exports.Entity extends BaseClass
 		else if options.parent
 			@parent = options.parent
 
-		# Double side entity
-		#if not options.side then options.side = 'double'
+		if options.transparent is undefined then @transparent = yes
 
 		delete options.parent if options.parent
 		@props = options if options
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	entity :
 		name: "Entity",
 		type: "a-entity"
 
-	@define "position", entityAttribute("position", "position", null)
-	@define "rotation", entityAttribute("rotation", "rotation", null)
-	@define "scale", entityAttribute("scale", "scale", null)
 	@define "geometry",  entityAttribute("geometry", "geometry", null)
 	@define "material",  entityAttribute("material", "material", null)
 	@define "cursor", entityAttribute("cursor", "cursor", null)
@@ -75,7 +104,7 @@ class exports.Entity extends BaseClass
 	@define "roughness", entityAttribute("roughness", "roughness", .5)
 	@define "shader", entityAttribute("shader", "shader", "standard")
 	@define "side", entityAttribute("side", "side", "front")
-	@define "transparent", entityAttribute("transparent", "transparent", no)
+	@define "transparent", entityAttribute("transparent", "transparent", yes)
 	@define "wireframe", entityAttribute("wireframe", "wireframe", no)
 	@define "wireframeWidth", entityAttribute("wireframeWidth", "wireframe-width", 2)
 	@define "fog", entityAttribute("fog", "fog", no)
@@ -84,7 +113,65 @@ class exports.Entity extends BaseClass
 	@define "lookAt", entityAttribute("lookAt", "look-at", null)
 	@define "link", entityAttribute("link", "link", null)
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
+	# POSITION / ROTATION / SCALE
+
+	@define 'x', entityPosition("x", 0)
+	@define 'y', entityPosition("y", 0)
+	@define 'z', entityPosition("z", 0)
+	@define 'rotationX', entityRotation("rotationX", 0)
+	@define 'rotationY', entityRotation("rotationY", 0)
+	@define 'rotationZ', entityRotation("rotationZ", 0)
+	@define 'scaleX', entityScale("scaleX", 1)
+	@define 'scaleY', entityScale("scaleY", 1)
+	@define 'scaleZ', entityScale("scaleZ", 1)
+	@define 'position',
+		default: 0
+		configurable: yes
+		get: ->
+			return {x: @x, y: @y, z: @z}
+		set: (value) ->
+			if Utils.isString value
+				value = Utils.parseVector value
+			if not Utils.isObject value
+				value = {x: value, y: value, z: value}
+			@_properties["x"] = value.x if value.hasOwnProperty("x")
+			@_properties["y"] = value.y if value.hasOwnProperty("y")
+			@_properties["z"] = value.z if value.hasOwnProperty("z")
+			@_element.setAttribute 'position', "#{@x} #{@y} #{@z}"
+			return
+	@define 'rotation',
+		default: {x: 0, y: 0, z: 0}
+		configurable: yes
+		get: ->
+			return {x: @rotationX, y: @rotationY, z: @rotationZ}
+		set: (value) ->
+			if Utils.isString value
+				value = Utils.parseVector value
+			if not Utils.isObject value
+				value = {x: value, y: value, z: value}
+			@_properties["rotationX"] = value.x if value.hasOwnProperty("x")
+			@_properties["rotationY"] = value.y if value.hasOwnProperty("y")
+			@_properties["rotationZ"] = value.z if value.hasOwnProperty("z")
+			@_element.setAttribute 'rotation', "#{@rotationX} #{@rotationY} #{@rotationZ}"
+			return
+	@define 'scale',
+		default: {x: 1, y: 1, z: 1}
+		configurable: yes
+		get: ->
+			return {x: @scaleX, y: @scaleY, z: @scaleZ}
+		set: (value) ->
+			if Utils.isString value
+				value = Utils.parseVector value
+			if not Utils.isObject value
+				value = {x: value, y: value, z: value}
+			@_properties["scaleX"] = value.x if @_properties.hasOwnProperty("x")
+			@_properties["scaleY"] = value.y if @_properties.hasOwnProperty("y")
+			@_properties["scaleZ"] = value.z if @_properties.hasOwnProperty("z")
+			@_element.setAttribute 'scale', "#{@scaleX} #{@scaleY} #{@scaleZ}"
+			return
+
+	# ----------------------------------------------------------------------------
 	# DOM ELEMENTS
 
 	@define 'html',
@@ -102,7 +189,7 @@ class exports.Entity extends BaseClass
 		get: ->
 			return @_element
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define 'parent',
@@ -131,7 +218,7 @@ class exports.Entity extends BaseClass
 		get: ->
 			@_children or []
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# GIF
 
 	@define 'gif',
@@ -152,6 +239,12 @@ class exports.Entity extends BaseClass
 			return null if not @_properties["src"]
 			@_properties["src"]
 		set: (value) ->
+			@_properties["gif"] = null
+			@_properties["oshader"] = @_properties["shader"] = undefined
+			@_element.removeAttribute 'shader'
+			if value is null
+				@_element.removeAttribute 'src'
+				return
 			@gif = null
 			is_gif = no
 			if Utils.isObject value
@@ -167,7 +260,7 @@ class exports.Entity extends BaseClass
 			@gif = is_gif
 			return
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# ANIMATIONS
 
 	animate: (options={})->
@@ -180,7 +273,7 @@ class exports.Entity extends BaseClass
 		for item in @_animations
 			item.stop()
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# EVENTS
 
 	emit: (eventName, args...) ->
@@ -249,7 +342,7 @@ class exports.Entity extends BaseClass
 		@on Events.Collide, cb
 		return
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# DOM METHODS
 
 	destroy : (descendance) ->
@@ -271,7 +364,7 @@ class exports.Entity extends BaseClass
 		@_element.instance = @
 		return
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# INSPECTOR
 
 	toInspect: ->

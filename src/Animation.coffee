@@ -37,11 +37,47 @@ class exports.Animation extends BaseClass
 
 	constructor: (options={}) ->
 		super
+
+		if options.entity
+			_position = options.entity.position
+			_rotation = options.entity.rotation
+			_scale = options.entity.scale
+
+			for item of options
+				if item is "x" or item is "y" or item is "z"
+					options.position = {} if not options.position
+					options.position[item.toLowerCase().substr(-1)] = options[item]
+					delete options[item]
+				else if item is "rotationX" or item is "rotationY" or item is "rotationZ"
+					options.rotation = {} if not options.rotation
+					options.rotation[item.toLowerCase().substr(-1)] = options[item]
+					delete options[item]
+				else if item is "scaleX" or item is "scaleY" or item is "scaleZ"
+					options.scale = {} if not options.scale
+					options.scale[item.toLowerCase().substr(-1)] = options[item]
+					delete options[item]
+
+			if options.position and Utils.isObject(options.position)
+				options.position.x = _position.x if not options.position.hasOwnProperty("x")
+				options.position.y = _position.y if not options.position.hasOwnProperty("y")
+				options.position.z = _position.z if not options.position.hasOwnProperty("z")
+				options.position = Utils.stringifyVector(options.position)
+			if options.rotation and Utils.isObject(options.rotation)
+				options.rotation.x = _rotation.x if not options.rotation.hasOwnProperty("x")
+				options.rotation.y = _rotation.y if not options.rotation.hasOwnProperty("y")
+				options.rotation.z = _rotation.z if not options.rotation.hasOwnProperty("z")
+				options.rotation = Utils.stringifyVector(options.rotation)
+			if options.scale and Utils.isObject(options.scale)
+				options.scale.x = _scale.x if not options.scale.hasOwnProperty("x")
+				options.scale.y = _scale.y if not options.scale.hasOwnProperty("y")
+				options.scale.z = _scale.z if not options.scale.hasOwnProperty("z")
+				options.scale = Utils.stringifyVector(options.scale)
+
 		# Retrieve properties to animate
 		excluded = ['time', 'delay', 'repeat', 'curve', 'direction', 'fill', 'entity', 'then']
 		for item of options
 			if excluded.indexOf(item) is -1
-				@properties[item] = options[item]
+				@properties[item] = options[item] if options[item]
 			else
 				@[item] = options[item]
 		if options.entity
@@ -100,7 +136,7 @@ class exports.Animation extends BaseClass
 			@then()
 			@emit Events.AnimationStop
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# METHODS
 
 	onStart : (cb)-> @on Events.AnimationStart, cb

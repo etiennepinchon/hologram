@@ -6,7 +6,7 @@ class exports.Sphere extends Entity
 		name: "Sphere"
 		type: "a-sphere"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "radius", entityAttribute("radius", "radius", 1)

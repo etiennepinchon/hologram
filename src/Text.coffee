@@ -11,7 +11,7 @@ class exports.Text extends Entity
 		# Double side entity
 		if options.side is undefined then @side = 'double'
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define "text", entityAttribute("text", "value", "")

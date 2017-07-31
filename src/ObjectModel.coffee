@@ -8,7 +8,7 @@ class exports.ObjectModel extends Entity
 		name: "ObjectModel"
 		type: "a-obj-model"
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# PROPERTIES
 
 	@define 'mtl',
@@ -16,6 +16,9 @@ class exports.ObjectModel extends Entity
 			return undefined if not @_properties["mtl"]
 			@_properties["mtl"]
 		set: (value) ->
+			if value is null
+				@_element.removeAttribute 'mtl'
+				return
 			value = Utils.parseAssets(value)
 			if Utils.isObject(value)
 				if not value.id
@@ -27,7 +30,7 @@ class exports.ObjectModel extends Entity
 			@_element.setAttribute 'mtl', value
 			return
 
-	#-------------------------------------------------------
+	# ----------------------------------------------------------------------------
 	# METHODS
 
 	onLoad : (cb)-> @on Events.ModelLoad, cb
