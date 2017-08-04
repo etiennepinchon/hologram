@@ -10,6 +10,7 @@ class exports.Text extends Entity
 		super
 		# Double side entity
 		if options.side is undefined then @side = 'double'
+		if option.text is undefined then @text = 'Hello'
 
 	# ----------------------------------------------------------------------------
 	# PROPERTIES
