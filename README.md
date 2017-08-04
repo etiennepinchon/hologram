@@ -1,11 +1,21 @@
-# Hologram Framework
-Beyond Wonderland.
+<h1 align="center">
+  <br>
+  <a href="https://hologram.cool">
+    <img src="extras/Hero@2x.png" alt="Hologram" width="256">
+  </a>
+  <br>
+  Hologram Framework
+  <br>
+  <br>
+</h1>
+ 
+<h2 align="center">All-in-one WebVR creation.</h2>
+<h4 align="center"><a href="https://hologram.cool">Visit Hologram.cool</a></h4>
 
-[Visit Hologram.cool](https://hologram.cool)
+# Learn
 
-# Documentation
-
-[Documentation](https://hologram.cool/docs)
+- [Get Started with Hologram](https://hologram.cool/getstarted)
+- [Documentation](https://hologram.cool/docs)
 
 # Contribute
 
@@ -18,13 +28,12 @@ Beyond Wonderland.
 
 ###### Reporting Issues
 
-- Please use the issue tracker
 - Try to include an example and clearly describe expected behaviour
 
 # Others
-- [Twitter](https://twitter.com/hologram_cool) — Follow us for updates & the latest work
-- [Latest builds](http://builds.hologram.cool/) — The latest builds of Hologram.js
-- [The Newsletter](https://hologram.cool/newsletter/) — Get the best work & latest news in your inbox
+- [Twitter](https://twitter.com/hologramcool) — Follow us for updates & the latest work
+- [Latest builds](https://builds.hologram.cool/) — The latest builds of Hologram.js
+- [The Newsletter](https://hologram.cool/newsletter/) — The latest Hologram news, articles and resources, sent straight to your inbox every month.
 
 # About
 Created by Etienne Pinchon (@etiennepinchon)

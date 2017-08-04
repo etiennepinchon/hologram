@@ -7,8 +7,8 @@ class exports.Plane extends Entity
 		type: "a-plane"
 
 	constructor: (options={})->
-		if not options.rotation or not options.rotationX
-			options.rotationX = -90
+		if not options.side then options.side = 'double'
+		if not options.rotation and not options.rotationX then options.rotationX = -90
 		super
 
 	# ----------------------------------------------------------------------------

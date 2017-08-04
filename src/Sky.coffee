@@ -7,9 +7,9 @@ class exports.Sky extends Entity
 		type: "a-sky"
 
 	constructor: (options)->
+		if not options.side then options.side = 'double'
 		super
-		@side = 'double'
-
+		
 	# ----------------------------------------------------------------------------
 	# PROPERTIES
 

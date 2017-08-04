@@ -94,10 +94,10 @@ gulp.task 'webpack:dev-server', (callback) ->
 			sourceMapFilename: "[file].map?hash=[hash]"
 	new webpackDevServer(webpack(_.clone(config)),
 		publicPath: __dirname+'/test/default/'
-		stats: colors: true).listen 8080, '192.168.0.24', (err) ->
+		stats: colors: true).listen 7070, '127.0.0.1', (err) ->
 		if err
 		  throw new (gutil.PluginError)('webpack-dev-server', err)
-		log 'webpack-dev-server', 'http://localhost:8080/webpack-dev-server'
+		log 'webpack-dev-server', 'http://localhost:7070/webpack-dev-server'
 		return
 
 #-------------------------------------------------------------------------------

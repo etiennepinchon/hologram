@@ -112,6 +112,8 @@ class exports.Entity extends BaseClass
 	@define "camera", entityAttribute("camera", "camera", null)
 	@define "lookAt", entityAttribute("lookAt", "look-at", null)
 	@define "link", entityAttribute("link", "link", null)
+	@define "shadow", entityAttribute("shadow", "shadow", no)
+	@define "castShadow", entityAttribute("castShadow", "cast-shadow", no)
 
 	# ----------------------------------------------------------------------------
 	# POSITION / ROTATION / SCALE
