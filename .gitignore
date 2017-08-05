@@ -26,6 +26,6 @@ _projects
 
 # Dev
 node_modules
-dist/
+build/
 vendors/
 scripts/
