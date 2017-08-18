@@ -1,7 +1,7 @@
 <h1 align="center">
   <br>
   <a href="https://hologram.cool">
-    <img src="extras/Hero@2x.png" alt="Hologram" width="256">
+    <img src="extras/Hero2@2x.png" alt="Hologram" width="256">
   </a>
   <br>
   Hologram Framework

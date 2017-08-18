@@ -32,31 +32,31 @@ class _AssetVideo extends Entity
 		name: "AssetVideo"
 		type: "video"
 
-AssetItem = (src) ->
+exports.AssetItem = (src) ->
 	asset = new _AssetItem
 		src: src
 		parent: Hologram.assets
 	return asset
 
-AssetModel = (src) ->
+exports.AssetModel = (src) ->
 	asset = new _AssetModel
 		src: src
 		parent: Hologram.assets
 	return asset
 
-AssetAudio = (src) ->
+exports.AssetAudio = (src) ->
 	asset = new _AssetAudio
 		src: src
 		parent: Hologram.assets
 	return asset
 
-AssetImage = (src) ->
+exports.AssetImage = (src) ->
 	asset = new _AssetImage
 		src: src
 		parent: Hologram.assets
 	return asset
 
-AssetVideo = (src) ->
+exports.AssetVideo = (src) ->
 	asset = new _AssetVideo
 		src: src
 		parent: Hologram.assets

@@ -11,7 +11,7 @@ entityAttribute = (name, attributeName, fallback) ->
 			return fallback
 		set: (value) ->
 			if name is "shadow"
-				value = "receive: #{value}"
+				value = {receive: value, cast: value}
 			else if name is "constraint" and Utils.isObject(value)
 				if value.target && Utils.isObject(value.target)
 					value.target = "#Hologram#{value.target.entity.name}-#{value.target.id}"
@@ -33,6 +33,11 @@ entityPosition = (name, fallback) ->
 		default: fallback
 		configurable: yes
 		get: ->
+			current = @_element.getAttribute 'position'
+			if current
+				if name.indexOf("x") then return current.x
+				if name.indexOf("y") then return current.y
+				if name.indexOf("z") then return current.z
 			return @_properties[name] if @_properties.hasOwnProperty(name)
 			return fallback
 		set: (value) ->
@@ -44,6 +49,11 @@ entityRotation = (name, fallback) ->
 		default: fallback
 		configurable: yes
 		get: ->
+			current = @_element.getAttribute 'rotation'
+			if current
+				if name.indexOf("X") then return current.x
+				if name.indexOf("Y") then return current.y
+				if name.indexOf("Z") then return current.z
 			return @_properties[name] if @_properties.hasOwnProperty(name)
 			return fallback
 		set: (value) ->
@@ -55,6 +65,11 @@ entityScale = (name, fallback) ->
 		default: fallback
 		configurable: yes
 		get: ->
+			current = @_element.getAttribute 'scale'
+			if current
+				if name.indexOf("X") then return current.x
+				if name.indexOf("Y") then return current.y
+				if name.indexOf("Z") then return current.z
 			return @_properties[name] if @_properties.hasOwnProperty(name)
 			return fallback
 		set: (value) ->
@@ -128,10 +143,13 @@ class exports.Entity extends BaseClass
 	@define 'scaleY', entityScale("scaleY", 1)
 	@define 'scaleZ', entityScale("scaleZ", 1)
 	@define 'position',
-		default: 0
+		default: {x: 0, y: 0, z: 0}
 		configurable: yes
 		get: ->
+			current = @_element.getAttribute 'position'
+			if current then return current
 			return {x: @x, y: @y, z: @z}
+			return {x: 0, y: 0, z: 0}
 		set: (value) ->
 			if Utils.isString value
 				value = Utils.parseVector value
@@ -140,13 +158,16 @@ class exports.Entity extends BaseClass
 			@_properties["x"] = value.x if value.hasOwnProperty("x")
 			@_properties["y"] = value.y if value.hasOwnProperty("y")
 			@_properties["z"] = value.z if value.hasOwnProperty("z")
-			@_element.setAttribute 'position', "#{@x} #{@y} #{@z}"
+			@_element.setAttribute 'position', "#{@_properties['x']} #{@_properties['y']} #{@_properties['z']}"
 			return
 	@define 'rotation',
 		default: {x: 0, y: 0, z: 0}
 		configurable: yes
 		get: ->
+			current = @_element.getAttribute 'rotation'
+			if current then return current
 			return {x: @rotationX, y: @rotationY, z: @rotationZ}
+			return {x: 0, y: 0, z: 0}
 		set: (value) ->
 			if Utils.isString value
 				value = Utils.parseVector value
@@ -155,22 +176,25 @@ class exports.Entity extends BaseClass
 			@_properties["rotationX"] = value.x if value.hasOwnProperty("x")
 			@_properties["rotationY"] = value.y if value.hasOwnProperty("y")
 			@_properties["rotationZ"] = value.z if value.hasOwnProperty("z")
-			@_element.setAttribute 'rotation', "#{@rotationX} #{@rotationY} #{@rotationZ}"
+			@_element.setAttribute 'rotation', "#{@_properties['rotationX']} #{@_properties['rotationY']} #{@_properties['rotationZ']}"
 			return
 	@define 'scale',
 		default: {x: 1, y: 1, z: 1}
 		configurable: yes
 		get: ->
+			current = @_element.getAttribute 'scale'
+			if current then return current
 			return {x: @scaleX, y: @scaleY, z: @scaleZ}
+			return {x: 0, y: 0, z: 0}
 		set: (value) ->
 			if Utils.isString value
 				value = Utils.parseVector value
 			if not Utils.isObject value
 				value = {x: value, y: value, z: value}
-			@_properties["scaleX"] = value.x if @_properties.hasOwnProperty("x")
-			@_properties["scaleY"] = value.y if @_properties.hasOwnProperty("y")
-			@_properties["scaleZ"] = value.z if @_properties.hasOwnProperty("z")
-			@_element.setAttribute 'scale', "#{@scaleX} #{@scaleY} #{@scaleZ}"
+			@_properties["scaleX"] = value.x if value.hasOwnProperty("x")
+			@_properties["scaleY"] = value.y if value.hasOwnProperty("y")
+			@_properties["scaleZ"] = value.z if value.hasOwnProperty("z")
+			@_element.setAttribute 'scale', "#{@_properties['scaleX']} #{@_properties['scaleY']} #{@_properties['scaleZ']}"
 			return
 
 	# ----------------------------------------------------------------------------
@@ -201,6 +225,7 @@ class exports.Entity extends BaseClass
 		get: ->
 			@_parent or null
 		set: (view) ->
+			return if not @_parent and not view
 			return if view is @_parent or view is -1
 			if @_parent and not view
 				@_parent._children = Utils.without @_parent._children, @
@@ -274,6 +299,14 @@ class exports.Entity extends BaseClass
 	stopAnimate : ->
 		for item in @_animations
 			item.stop()
+		@_animations = []
+		return
+
+	cancelAnimate : ->
+		for item in @_animations
+			item.cancel()
+		@_animations = []
+		return
 
 	# ----------------------------------------------------------------------------
 	# EVENTS
@@ -319,27 +352,21 @@ class exports.Entity extends BaseClass
 	onClick 				: (cb) ->
 		@on Events.Click, cb
 		return
-
 	onFusing				: (cb) ->
 		@on Events.Fusing, cb
 		return
-
-	onMouseUp 				: (cb) ->
+	onCursorUp 				: (cb) ->
 		@on Events.MouseUp, cb
 		return
-
-	onMouseDown 			: (cb) ->
+	onCursorDown 			: (cb) ->
 		@on Events.MouseDown, cb
 		return
-
-	onMouseIn				: (cb) ->
+	onCursorIn				: (cb) ->
 		@on Events.MouseIn, cb
 		return
-
-	onMouseOut	 			: (cb) ->
+	onCursorOut	 			: (cb) ->
 		@on Events.MouseOut, cb
 		return
-
 	onCollide	 			: (cb) ->
 		@on Events.Collide, cb
 		return

@@ -16,3 +16,4 @@ module.exports =
       path: 'https://rawgit.com/mayognaise/aframe-mouse-cursor-component/master/dist/aframe-mouse-cursor-component.min.js'
   ]
   VENDORS_PATH: './vendors'
+  LOADERS_PATH: './loaders'

@@ -152,4 +152,6 @@ importVendors = ->
 					.pipe(replaceStream('console.log', 'console.silence'))
 					.pipe file
 				return
+			fs.copySync path.join(config.LOADERS_PATH, "fetch-script.js"), path.join(config.VENDORS_PATH, "fetch-script.js")
+			fs.copySync path.join(config.LOADERS_PATH, "gltf-model-next.js"), path.join(config.VENDORS_PATH, "gltf-model-next.js")
 	return

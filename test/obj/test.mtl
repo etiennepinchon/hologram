@@ -1,0 +1,135 @@
+newmtl default
+d 0.8
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 0 0 0
+Ks 1 1 1
+Km 0
+
+newmtl default_cabin2_door
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 1 1 1
+Ks 1 1 1
+Km 0
+map_Kd /Maps/vctu.jpg
+
+newmtl default_noozle_cover
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 1 1 1
+Ks 1 1 1
+Km 0
+map_Kd /Maps/cp2.jpg
+
+newmtl default_components
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 1 1 1
+Ks 1 1 1
+Km 0
+map_Kd /Maps/as1_02.jpg
+
+newmtl default_blades1
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 0.0901961 0.0901961 0.0901961
+Ks 1 1 1
+Km 0
+
+newmtl default_cockpit
+d 1
+Ns 1
+Ni 0
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+Km 0
+map_Kd /Maps/ggt1.jpg
+
+newmtl default_lower_display
+d 1
+Ns 1
+Ni 0
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+Km 0
+map_Kd /Maps/s1.jpg
+
+newmtl default_cockpit_cockpit
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 1 1 1
+Ks 1 1 1
+Km 0
+map_Kd /Maps/vctu.jpg
+
+newmtl default_cushion
+d 1
+Ns 0.75
+Ni 0
+Ka 0 0 0
+Kd 1 1 1
+Ks 1 1 1
+Km 0
+map_Kd /Maps/yx1_02_01_01.jpg
+
+newmtl default_manubrium
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 0.0901961 0.0901961 0.0901961
+Ks 0.27451 0.27451 0.27451
+Km 0
+
+newmtl default_yellow
+d 1
+Ns 0.75
+Ni 0
+Ka 0 0 0
+Kd 1 1 0
+Ks 1 1 1
+Km 0
+
+newmtl default_red
+d 1
+Ns 0.75
+Ni 0
+Ka 0 0 0
+Kd 1 0 0
+Ks 1 1 1
+Km 0
+
+newmtl default_manubrium_dash
+d 1
+Ns 1
+Ni 0
+Ka 1 1 1
+Kd 1 1 1
+Ks 1 1 1
+Km 0
+map_Kd /Maps/mnd1.jpg
+
+newmtl default_body1
+d 1
+Ns 1
+Ni 0
+Ka 0 0 0
+Kd 1 1 1
+Ks 1 1 1
+Km 0
+map_Kd /Maps/vctu.jpg
+

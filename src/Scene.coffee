@@ -112,9 +112,9 @@ class exports.Scene extends Entity
 			if item isnt name
 				fx.push item
 		@effects = fx
-		@_element.setAttribute name, no
+		#@_element.setAttribute name, no
 		return
 
 	_updateEffects: ->
-		@_element.setAttribute 'effects', @effects.join(", ")
+		@_element.setAttribute 'effects', @effects
 		return

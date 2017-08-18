@@ -8,7 +8,43 @@
     <script src="../dist/hologram.debug.js"></script>
     <script type="text/javascript">
       Hologram.ready(()=> {
+
         let box = new Box({
+          color: Color.red,
+          position: {z: -5},
+          x: -1,
+          rotation: {z: -45}
+        })
+
+        box.on("click", ()=>{
+          console.log(">> clicked");
+          box.animate({color: Color.blue})
+        })
+
+        box.on("fusing", ()=>{
+          console.log(">> fusing");
+        })
+
+        box.on("mouseup", ()=>{
+          console.log(">> mouseup");
+        })
+
+        box.on("mousedown", ()=>{
+          console.log(">> mousedown");
+        })
+
+        box.on("mouseenter", ()=>{
+          console.log(">> mouseenter");
+        })
+
+        box.on("mouseleave", ()=>{
+          console.log(">> mouseleave");
+          box.animate({color: Color.green})
+        })
+
+      
+
+        /*let box = new Box({
           color: Color.red,
           position: {z: -5},
           x: -1,
@@ -22,7 +58,25 @@
         new Line({
           start: {x: 1},
           end: {x: 4, y: 3, z: -2}
-        })
+        })*/
+
+        /*let gltf_demo = new GltfModel({
+          src: 'gltf23/scene.gltf'
+        });*/
+
+        /*let gltf_demo = new GltfModel({
+          src: 'gltf24/scene.gltf'
+        });*/
+
+        /*let obj_demo = new ObjectModel({
+          src: 'obj/test.obj',
+          mtl: 'obj/test.mtl'
+        });*/
+
+        /*let dae_demo = new ColladaModel({
+          src: 'dae/test.dae'
+        });*/
+
       });
     </script>
   </body>

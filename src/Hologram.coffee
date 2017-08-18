@@ -12,6 +12,11 @@ require "../vendors/aframe_effects"
 require "../vendors/aframe_look_at"
 require "../vendors/aframe_mouse_cursor"
 
+# GLTF 2.0 PATCH
+if not AFRAME.components['gltf-model-next']
+	_gltf_model_next = require("../vendors/gltf-model-next")
+	AFRAME.registerComponent('gltf-model-next', _gltf_model_next)
+
 Hologram.define = (name, args) -> Object.defineProperty this, name, args
 
 # Root level modules
@@ -56,6 +61,12 @@ Hologram.Plane = (require "./Plane").Plane
 Hologram.Ring = (require "./Ring").Ring
 Hologram.Animation = (require "./Animation").Animation
 Hologram.Assets = (require "./Assets").Assets
+Hologram.Assets = (require "./Assets").Assets
+Hologram.AssetItem = (require "./Assets").AssetItem
+Hologram.AssetModel = (require "./Assets").AssetModel
+Hologram.AssetAudio = (require "./Assets").AssetAudio
+Hologram.AssetImage = (require "./Assets").AssetImage
+Hologram.AssetVideo = (require "./Assets").AssetVideo
 Hologram.Scene = (require "./Scene").Scene
 Hologram.Sky = (require "./Sky").Sky
 Hologram.Sound = (require "./Sound").Sound

@@ -29,11 +29,13 @@ class exports.Animation extends BaseClass
 	entity : undefined
 	properties : {}
 	then: null
-	fromOrigin: no
+	fromOrigin: yes
 
 	_didStart: false
 	_didFireCallback: false
 	_animationItems : []
+
+	_props: {}
 
 	constructor: (options={}) ->
 		super
@@ -74,7 +76,8 @@ class exports.Animation extends BaseClass
 				options.scale = Utils.stringifyVector(options.scale)
 
 		# Retrieve properties to animate
-		excluded = ['time', 'delay', 'repeat', 'curve', 'direction', 'fill', 'entity', 'then']
+		@properties = {}
+		excluded = ['animate','time', 'delay', 'repeat', 'curve', 'direction', 'fill', 'entity', 'then']
 		for item of options
 			if excluded.indexOf(item) is -1
 				@properties[item] = options[item] if options[item]
@@ -89,13 +92,17 @@ class exports.Animation extends BaseClass
 		@_didStart = false
 		@_didFireCallback = false
 		@_animationItems = []
+		@_props = {}
 
 		for property of @properties
 			animationItem = new AnimationItem
 				attribute: property
 				to: @properties[property]
 			if @fromOrigin and @entity
-				animationItem.from = @entity._properties[property]
+				if @entity._properties[property]
+					animationItem.from = @_props[property] = @entity._properties[property]
+				if @entity[property] and not @_props[property]
+					@_props[property] = @entity[property]
 			if @time isnt 1
 				animationItem.dur = @time*1000
 			if @delay isnt 0
@@ -129,12 +136,23 @@ class exports.Animation extends BaseClass
 	stop : ->
 		for item in @_animationItems
 			item.parent = null
+			item.destroy(yes)
+		@_animationItems = []
 
 		# Callback once
 		if @then and not @_didFireCallback
 			@_didFireCallback = true
 			@then()
 			@emit Events.AnimationStop
+		return
+
+	cancel: ->
+		@stop()
+		for property of @properties
+			@entity[property] = @_props[property] if @_props[property]
+		@properties = {}
+		@_props = {}
+		return
 
 	# ----------------------------------------------------------------------------
 	# METHODS
